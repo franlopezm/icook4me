@@ -1,0 +1,263 @@
+$background-primary: #fcfcfc
+$link-primary: #3e75a4
+$link-primary-hover: #f49e57
+$link-second: #7f7f7f
+$link-second-hover: #373737
+$colortext-primary: #696969
+$link-thumbnail-primary: #73acde
+$link-thumbnail-second: #ffb679
+$link-apply: #d67d76
+
+body
+  padding-top: 120px
+  padding-bottom: 15px
+
+.navbar-header
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1000
+  nav
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.navbar-primary
+  background: $background-primary
+  width: 100%
+  box-shadow: 0 0 3px #000
+  z-index: 1001
+
+.navbar-list
+  display: inline
+  margin: 0
+  padding: 0
+  li
+    list-style: none
+    display: inline-block
+
+.link
+  line-height: 50px
+  font-size: 25px
+  padding: 10px
+  margin: 0 20px
+  color: $link-primary
+  &:hover
+    color: $link-primary-hover
+    text-decoration: none
+  &.active
+    color: $link-primary-hover
+
+.navbar-second
+  background: #FFF
+  width: 100%
+  box-shadow: 0 0 2px rgba(0,0,0,0.2)
+  .link
+    line-height: 35px
+    font-family: 'Indie Flower', cursive
+    font-size: 20px
+    font-weight: 600
+    padding: 0 8px
+    margin: 0 25px
+    color: $link-second
+    &:hover
+      color: $link-second-hover
+    &.active
+      color: $link-second-hover
+  h3
+    margin: 0
+    padding: 0
+
+.col-flex
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  
+.item-flex
+  width: 300px
+
+.thumbnail
+  border-radius: 0
+
+.thumbnail-recipe
+  color: $colortext-primary
+  header
+    div:first-child
+      font-weight: 600
+    .link-username-recipe
+      margin: 0
+
+.img-user-thumbnail
+  padding: 0
+
+.thumbnail-recipe
+  section
+    a
+      margin-bottom: 5px
+      &:hover
+        border-color: #ddd
+    .caption
+      padding: 0
+
+.link-text
+  color: $colortext-primary
+  &:hover
+    text-decoration: none
+    color: $colortext-primary
+
+.link-like
+  color: $link-thumbnail-primary
+  &:hover
+    color: $link-thumbnail-second
+    text-decoration: none
+
+.link-thumbnail
+  line-height: 25px
+  font-size: 15px
+  padding: 5px
+  margin: 0 15px
+  color: $link-thumbnail-primary
+  &:hover
+    color: $link-thumbnail-second
+    text-decoration: none
+
+.link-apply
+  color: $link-apply
+
+.btn-show-more
+  border-radius: 0
+  width: 300px
+  background: #6767be
+  border-color: #6767be
+
+.bold-text
+  font-weight: 700
+
+.profile-followers
+  h5
+    margin: 10px 0 0
+  div
+    padding: 0 5px
+    margin: 0
+    div
+      font-size: 12px
+      color: $colortext-primary
+
+.profile-flex
+  display: flex
+
+.img-profile
+  max-width: 100px
+
+.line-profile
+  height: 2px
+  width: 70%
+  margin: 15px auto 25px
+  background: rgba(0,0,0,0.3)
+
+.recipe-list
+  .item-flex
+    width: 150px
+
+.form-search-page
+  line-height: 25px
+  font-size: 15px
+  padding: 5px
+  width: 100%
+
+.search-input
+  background: transparent
+  border-radius: 0
+  width: 70%
+  text-align: center
+  margin: 0 auto
+  padding: 0 10px 0px 24px
+  border: 1px solid rgba(0,0,0,0.1)
+
+.icon-search-input
+  margin: 0 -22px 0 0
+
+.login-brand 
+  h1
+    margin: 0
+
+#login
+  .row-flex
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column 
+    align-items: center
+  .item-row-flex
+    margin: 10px 0
+    width: 300px
+    text-align: center
+  .social-buttons 
+    a
+      border-radius: 0
+    a
+      color: #FFF
+      opacity: 0.9
+      &:hover
+        opacity: 0.8
+    .btn-facebook
+      background: #3b5998  
+    .btn-twitter
+      background: #00aced
+    .btn-google
+      background: #c32f10
+  .not-button
+    margin: 5px 0
+  .remember-me
+    text-align: right
+    margin-top: 10px
+    span
+      margin-left: 5px
+
+
+@media all and (max-width: 650px )
+  body
+    padding-top: 15px
+    padding-bottom: 80px
+  
+  .navbar-header
+    top: inherit
+    bottom: 0
+    nav
+      flex-direction: column-reverse
+  
+  .navbar-second
+    .link
+      line-height: 30px
+      font-size: 18px
+      margin: 0 20px
+
+  .link
+    line-height: 40px
+    font-size: 22px
+    margin: 0 10px
+
+  .search-input
+    width: 90%
+
+@media all and (max-width: 450px)
+  body
+    padding-bottom: 80px
+
+  .link
+    line-height: 35px
+    font-size: 18px
+    margin: 0 1px
+
+  .navbar-second
+    .link
+      margin: 0 10px
+  
+  .login-brand 
+    h1
+      a
+        font-size: 25px
+
+  #login
+    .item-row-flex
+      width: 200px
