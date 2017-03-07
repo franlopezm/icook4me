@@ -1,0 +1,23 @@
+{
+  "name": "icook4me",
+  "description": "Social network where recipes are shared, every day you will eat differently.",
+  "main": "index.js",
+  "authors": [
+    "Francisco López Muñoz <frans.lopez.m@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/FransLopez/icook4me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2"
+  }
+}

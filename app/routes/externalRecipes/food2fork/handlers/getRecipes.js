@@ -16,7 +16,7 @@ module.exports = (req, res) => {
         let jsonRecipes = response
 
         jsonRecipes = jsonRecipes.recipes.map((recipe, i) => {
-          recipe.url_details = '/food2fork/' + recipe.recipe_id
+          recipe.url_details = '/' + recipe.recipe_id
           return recipe
         })
 

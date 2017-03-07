@@ -36,7 +36,7 @@ This JSON serve a array if recipes w/ the form:
         image_url: "http://static.food2fork.com/496652595_50b3c3e3b92634.jpg",
         social_rank: 99.99999999999605,
         publisher_url: "http://thepioneerwoman.com",
-        url_details: "/food2fork/7fcd69"
+        url_details: "/7fcd69"
     },
 
 The property `url_details` can be used to do another request to get the details of the recipe

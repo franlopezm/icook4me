@@ -25,7 +25,7 @@ function getRecipes (req, res) {
             .map(recipe => {
               let idRecipe = recipe.uri.split('#recipe_')[1]
               recipesEdamam[idRecipe] = recipe
-              recipe.details_url = '/edamam/' + idRecipe
+              recipe.details_url = '/' + idRecipe
               return recipe
             })
 
