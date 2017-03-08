@@ -16,8 +16,13 @@ module.exports = (req, res) => {
         let jsonRecipes = response
 
         jsonRecipes = jsonRecipes.recipes.map((recipe, i) => {
-          recipe.url_details = '/' + recipe.recipe_id
-          return recipe
+          let oRecipe = {}
+          oRecipe.title = recipe.title
+          oRecipe.image = recipe.image_url
+          oRecipe.publisher = recipe.publisher
+          oRecipe.source_url = recipe.source_url
+          oRecipe.id_recipe = recipe.recipe_id
+          return oRecipe
         })
 
         cacheRecipes[url] = jsonRecipes

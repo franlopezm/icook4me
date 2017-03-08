@@ -1,0 +1,78 @@
+<div class="col-flex">
+    <article class="item-flex" ng-repeat="recipe in recipes track by $index">
+        <div class="thumbnail row thumbnail-recipe">
+            <header>
+                <div class="col-xs-12 text-center">
+                    <div class="brand-extenal-recipe link-username-recipe">{{recipe.publisher}}</div>
+                </div>
+                <!--
+                <div class="col-xs-3">
+                    <div>1 hour</div>
+                    <div><a href="#" class="link-like">23 <i class="fa fa-cutlery" aria-hidden="true"></i></a></div>
+
+                </div>
+                -->
+                <!--
+                <div class="col-xs-9 text-right">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div>Favorite for: or Shared by:</div>
+                            <div><a href="#" class="link-thumbnail link-username-recipe">Username</a></div>
+                        </div>
+                        <div class="col-xs-4 user-thumbnail-recipe">
+                            <a href="#" class="thumbnail img-responsive">
+                                <img src="/img/noimage-user.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </header>
+            <section class="col-xs-12">
+                <a ng-href="#!/recipe/{{recipe.id_recipe}}" class="thumbnail img-responsive">
+                    <img ng-src="{{!!recipe.image ? recipe.image : '/img/noimage-recipe.jpg'}}" alt="...">
+                </a>
+                <div class="caption">
+                    <a ng-href="#!/recipe/{{recipe.id_recipe}}" class="link-text">
+                        <h4 class="text-center">{{recipe.title}}</h4>
+                    </a>
+                </div>
+            </section>
+            <footer class="col-xs-12">
+                <nav>
+                    <div class="navbar-thumbnail-recipe">
+                        <div class="text-center">
+                            <ul class="navbar-list">
+                                <!--
+                                <li>
+                                    <a class="link link-thumbnail" href="index.html" title="Home">
+                                        <i class="fa fa-commenting" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link link-thumbnail" href="search.html">
+                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                -->
+                                <li>
+                                    <span class="link link-thumbnail link-apply">
+                                        <i class="fa fa-bookmark" aria-hidden="true" ng-click="addBookmark(recipe.id_recipe)"></i>
+                                    </span>
+                                </li>
+                                <!--
+                                <li>
+                                    <a class="link link-thumbnail" href="book.html">
+                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+    </article>
+</div>
+<button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>

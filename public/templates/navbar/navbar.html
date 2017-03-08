@@ -46,6 +46,9 @@
                     <subnavbar ng-switch-when="profile">
                         <ng-include src="'/templates/navbar/subnavbar/profile.html'"></ng-include>
                     </subnavbar>
+                    <subnavbar ng-switch-default>
+                        <ng-include src="'/templates/navbar/subnavbar/back.html'"></ng-include>
+                    </subnavbar>
                 </ul>
             </div>
         </div>

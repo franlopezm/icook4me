@@ -43,6 +43,7 @@ body
   padding: 10px
   margin: 0 20px
   color: $link-primary
+  cursor: pointer
   &:hover
     color: $link-primary-hover
     text-decoration: none
@@ -72,17 +73,19 @@ body
 .col-flex
   display: flex
   flex-wrap: wrap
+  flex-direction: row
   justify-content: space-around
   
 .item-flex
   width: 300px
+  margin: 0 5px
 
 .thumbnail
   border-radius: 0
 
 .thumbnail-recipe
   color: $colortext-primary
-  box-sizing: border-box
+  max-width: 300px
   overflow: hidden
   header
     div
@@ -96,14 +99,20 @@ body
 
 .user-thumbnail-recipe
   padding: 0 5px
+  img
+    max-height: 50px
   a
     margin-bottom: 5px
+    border: none
+    background: transparent
 
 .img-user-thumbnail
   padding: 0
 
 .thumbnail-recipe
   section
+    img
+      max-height: 200px
     a
       margin-bottom: 5px
       &:hover
@@ -132,6 +141,13 @@ body
   &:hover
     color: $link-thumbnail-second
     text-decoration: none
+
+.brand-extenal-recipe
+  line-height: 25px
+  font-size: 15px
+  padding: 5px
+  margin: 0 15px
+  color: $link-thumbnail-primary
 
 .link-apply
   color: $link-apply

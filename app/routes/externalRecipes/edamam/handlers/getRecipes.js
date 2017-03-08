@@ -7,7 +7,7 @@ let cacheRecipesEdamam = {}
 var recipesEdamam = {}
 
 function getRecipes (req, res) {
-  let {q = '', page = 1, limit = 20} = req.query
+  let {q = '', page = 1, limit = 10} = req.query
   page = parseInt(page) - 1
   limit = parseInt(limit)
   let from = (page > 0) ? page * limit : 0
@@ -24,9 +24,14 @@ function getRecipes (req, res) {
             .map(hit => hit.recipe)
             .map(recipe => {
               let idRecipe = recipe.uri.split('#recipe_')[1]
-              recipesEdamam[idRecipe] = recipe
-              recipe.details_url = '/' + idRecipe
-              return recipe
+              let oRecipe = {}
+              oRecipe.title = recipe.label
+              oRecipe.image = recipe.image
+              oRecipe.publisher = recipe.source
+              oRecipe.source_url = recipe.url
+              oRecipe.id_recipe = idRecipe
+              recipesEdamam[idRecipe] = oRecipe
+              return oRecipe
             })
 
         cacheRecipesEdamam[url] = jsonRecipes
