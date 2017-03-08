@@ -1,0 +1,273 @@
+body {
+  padding-top: 120px;
+  padding-bottom: 15px; }
+
+.navbar-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; }
+  .navbar-header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+.navbar-primary {
+  background: #fcfcfc;
+  width: 100%;
+  box-shadow: 0 0 3px #000;
+  z-index: 1001; }
+
+.navbar-list {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+  .navbar-list li {
+    list-style: none;
+    display: inline-block; }
+
+.link {
+  line-height: 50px;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0 20px;
+  color: #3e75a4;
+  cursor: pointer; }
+  .link:hover {
+    color: #f49e57;
+    text-decoration: none; }
+  .link.active {
+    color: #f49e57; }
+
+.navbar-second {
+  background: #FFF;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+  .navbar-second .link {
+    line-height: 35px;
+    font-family: "Indie Flower", cursive;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 8px;
+    margin: 0 25px;
+    color: #7f7f7f; }
+    .navbar-second .link:hover {
+      color: #373737; }
+    .navbar-second .link.active {
+      color: #373737; }
+  .navbar-second h3 {
+    margin: 0;
+    padding: 0; }
+
+.col-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.item-flex {
+  width: 300px;
+  margin: 0 5px; }
+
+.thumbnail {
+  border-radius: 0; }
+
+.thumbnail-recipe {
+  color: #696969;
+  max-width: 300px;
+  overflow: hidden; }
+  .thumbnail-recipe header div {
+    padding: 0 3px;
+    font-size: 0.95em;
+    font-weight: 600; }
+  .thumbnail-recipe header .row {
+    padding: 0 10px; }
+  .thumbnail-recipe header .link-username-recipe {
+    margin: 0; }
+
+.user-thumbnail-recipe {
+  padding: 0 5px; }
+  .user-thumbnail-recipe img {
+    max-height: 50px; }
+  .user-thumbnail-recipe a {
+    margin-bottom: 5px;
+    border: none;
+    background: transparent; }
+
+.img-user-thumbnail {
+  padding: 0; }
+
+.thumbnail-recipe section img {
+  max-height: 200px; }
+.thumbnail-recipe section a {
+  margin-bottom: 5px; }
+  .thumbnail-recipe section a:hover {
+    border-color: #ddd; }
+.thumbnail-recipe section .caption {
+  padding: 0; }
+
+.link-text {
+  color: #696969; }
+  .link-text:hover {
+    text-decoration: none;
+    color: #696969; }
+
+.link-like {
+  color: #73acde; }
+  .link-like:hover {
+    color: #ffb679;
+    text-decoration: none; }
+
+.link-thumbnail {
+  line-height: 25px;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0 15px;
+  color: #73acde; }
+  .link-thumbnail:hover {
+    color: #ffb679;
+    text-decoration: none; }
+
+.brand-extenal-recipe {
+  line-height: 25px;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0 15px;
+  color: #73acde; }
+
+.link-apply {
+  color: #d67d76; }
+
+.btn-show-more {
+  border-radius: 0;
+  width: 300px;
+  background: #6767be;
+  border-color: #6767be; }
+
+.bold-text {
+  font-weight: 700; }
+
+.profile-followers h5 {
+  margin: 10px 0 0; }
+.profile-followers div {
+  padding: 0 5px;
+  margin: 0; }
+  .profile-followers div div {
+    font-size: 12px;
+    color: #696969; }
+
+.profile-flex {
+  display: flex; }
+
+.img-profile {
+  max-width: 100px; }
+
+.line-profile {
+  height: 2px;
+  width: 70%;
+  margin: 15px auto 25px;
+  background: rgba(0, 0, 0, 0.3); }
+
+.recipe-list .item-flex {
+  width: 150px; }
+
+.form-search-page {
+  line-height: 25px;
+  font-size: 15px;
+  padding: 5px;
+  width: 100%; }
+
+.search-input {
+  background: transparent;
+  border-radius: 0;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px 0px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.icon-search-input {
+  margin: 0 -22px 0 0; }
+
+.login-brand h1 {
+  margin: 0; }
+
+#login .row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center; }
+#login .item-row-flex {
+  margin: 10px 0;
+  width: 300px;
+  text-align: center; }
+#login .social-buttons a {
+  border-radius: 0; }
+#login .social-buttons a {
+  color: #FFF;
+  opacity: 0.9; }
+  #login .social-buttons a:hover {
+    opacity: 0.8; }
+#login .social-buttons .btn-facebook {
+  background: #3b5998; }
+#login .social-buttons .btn-twitter {
+  background: #00aced; }
+#login .social-buttons .btn-google {
+  background: #c32f10; }
+#login .not-button {
+  margin: 5px 0; }
+#login .remember-me {
+  text-align: right;
+  margin-top: 10px; }
+  #login .remember-me span {
+    margin-left: 5px; }
+
+@media all and (max-width: 650px) {
+  body {
+    padding-top: 15px;
+    padding-bottom: 80px; }
+
+  .navbar-header {
+    top: inherit;
+    bottom: 0; }
+    .navbar-header nav {
+      flex-direction: column-reverse; }
+
+  .navbar-second .link {
+    line-height: 30px;
+    font-size: 18px;
+    margin: 0 20px; }
+
+  .link {
+    line-height: 40px;
+    font-size: 22px;
+    margin: 0 10px; }
+
+  .search-input {
+    width: 90%; } }
+@media all and (max-width: 450px) {
+  body {
+    padding-bottom: 80px; }
+
+  .btn-show-more {
+    width: 200px; }
+
+  .link {
+    line-height: 35px;
+    font-size: 18px;
+    margin: 0 1px; }
+
+  .navbar-second .link {
+    margin: 0 10px; }
+
+  .item-flex {
+    width: 260px; }
+
+  .login-brand h1 a {
+    font-size: 25px; }
+
+  #login .item-row-flex {
+    width: 200px; } }
+
+/*# sourceMappingURL=style.css.map */
