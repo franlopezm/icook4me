@@ -15,10 +15,12 @@
 </head>
 
 <body>
-    <ng-include src="'/templates/navbar.html'"></ng-include>
+    <ng-include src="'/templates/navbar/navbar.html'"></ng-include>
+
     <main class="container">
       <ng-view></ng-view>
     </main>
+    
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/js/index.js"></script>

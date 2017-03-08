@@ -82,11 +82,22 @@ body
 
 .thumbnail-recipe
   color: $colortext-primary
+  box-sizing: border-box
+  overflow: hidden
   header
-    div:first-child
+    div
+      padding: 0 3px
+      font-size: 0.95em
       font-weight: 600
+    .row
+      padding: 0 10px
     .link-username-recipe
       margin: 0
+
+.user-thumbnail-recipe
+  padding: 0 5px
+  a
+    margin-bottom: 5px
 
 .img-user-thumbnail
   padding: 0
@@ -243,6 +254,9 @@ body
 @media all and (max-width: 450px)
   body
     padding-bottom: 80px
+  
+  .btn-show-more
+    width: 200px
 
   .link
     line-height: 35px
@@ -252,6 +266,9 @@ body
   .navbar-second
     .link
       margin: 0 10px
+  
+  .item-flex
+    width: 260px
   
   .login-brand 
     h1
