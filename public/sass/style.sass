@@ -53,6 +53,8 @@ body
     text-decoration: none
   &.active
     color: $link-primary-hover
+  &:focus
+    text-decoration: none
 
 .navbar-second
   background: $background-subnavbar
@@ -154,6 +156,10 @@ body
   &:hover
     color: $link-thumbnail-second
     text-decoration: none
+  &:focus
+    text-decoration: none
+  i
+    font-size: 18px
 
 .external-recipe
   .caption
@@ -164,11 +170,18 @@ body
     font-weight: 600
     padding: 5px
     color: $link-thumbnail-primary
+    &:focus
+      text-decoration: none
+    &:hover
+      color: $link-thumbnail-second
+      text-decoration: none
 
 .link-publisher
   color: $link-second
   &:hover
     color: $link-second-hover
+  &:focus
+    text-decoration: none
 
 .link-apply
   color: $link-apply
