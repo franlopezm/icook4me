@@ -20,7 +20,7 @@ module.exports = (req, res) => {
           oRecipe.title = recipe.title
           oRecipe.image = recipe.image_url
           oRecipe.publisher = recipe.publisher
-          oRecipe.source_url = recipe.source_url
+          oRecipe.url = recipe.source_url
           oRecipe.id_recipe = recipe.recipe_id
           return oRecipe
         })

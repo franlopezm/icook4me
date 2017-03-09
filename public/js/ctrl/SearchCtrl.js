@@ -13,15 +13,14 @@
     }
 
     $scope.$on('searchRecipes', function (event, query) {
-      $scope.recipes = []
+      $rootScope.recipes = []
       ExternalRecipesFact.searchFood2fork(query)
       .then(recipes => {
-        $scope.recipes.unshift(...recipes)
+        $rootScope.recipes.unshift(...recipes)
       })
       ExternalRecipesFact.edamam(query)
       .then(recipes => {
-        $scope.recipes.unshift(...recipes)
-        console.log($scope.recipes)
+        $rootScope.recipes.unshift(...recipes)
       })
     })
   }

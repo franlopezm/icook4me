@@ -29,11 +29,11 @@
                 -->
             </header>
             <section class="col-xs-12">
-                <a ng-href="#!/recipe/{{recipe.id_recipe}}" class="thumbnail img-responsive">
+                <a ng-href="{{recipe.url}}" target="_black" class="thumbnail img-responsive">
                     <img ng-src="{{!!recipe.image ? recipe.image : '/img/noimage-recipe.jpg'}}" alt="...">
                 </a>
                 <div class="caption">
-                    <a ng-href="#!/recipe/{{recipe.id_recipe}}" class="link-text">
+                    <a ng-href="{{recipe.url}}" target="_black" class="link-text">
                         <h4 class="text-center">{{recipe.title}}</h4>
                     </a>
                 </div>

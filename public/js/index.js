@@ -16,6 +16,9 @@ angular
 .controller('ProfileCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'profile'
 })
+.controller('LoginCtrl', function ($scope, $rootScope) {
+  $rootScope.section = 'login'
+})
 
 .run(function ($rootScope, $location) {
   let history = []
@@ -27,5 +30,6 @@ angular
   $rootScope.back = function () {
     let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
     $location.path(prevUrl)
+    history = []
   }
 })

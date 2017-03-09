@@ -22,9 +22,13 @@ function configRoute ($routeProvider) {
       templateUrl: '/templates/profile.html',
       controller: 'ProfileCtrl'
     })
+    .when('/login', {
+      templateUrl: '/templates/login.html',
+      controller: 'LoginCtrl'
+    })
     .when('/recipe/:id', {
       templateUrl: '/templates/recipedetails.html',
       controller: 'RecipeDetailsCtrl'
     })
-    .otherwise('/')
+    .otherwise('/login')
 }

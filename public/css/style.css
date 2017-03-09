@@ -99,10 +99,13 @@ body {
   padding: 0; }
 
 .thumbnail-recipe section img {
-  max-height: 200px; }
+  max-height: 150px; }
 .thumbnail-recipe section a {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  outline-color: #ddd; }
   .thumbnail-recipe section a:hover {
+    border-color: #ddd; }
+  .thumbnail-recipe section a:focus {
     border-color: #ddd; }
 .thumbnail-recipe section .caption {
   padding: 0; }

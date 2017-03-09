@@ -28,7 +28,7 @@ function getRecipes (req, res) {
               oRecipe.title = recipe.label
               oRecipe.image = recipe.image
               oRecipe.publisher = recipe.source
-              oRecipe.source_url = recipe.url
+              oRecipe.url = recipe.url
               oRecipe.id_recipe = idRecipe
               recipesEdamam[idRecipe] = oRecipe
               return oRecipe

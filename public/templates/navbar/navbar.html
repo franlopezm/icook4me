@@ -4,8 +4,8 @@
             <div class="container text-center">
                 <ul class="navbar-list">
                     <li>
-                        <a class="link {{section === 'home' ? 'active' : ''}}"active" href="#!" title="Home">
-                            <i class="fa fa-home" aria-hidden="true"></i>
+                        <a class="link {{section === 'home' ? 'active' : ''}}" href="#!" title="Home">
+                            <i class="fa fa-home " aria-hidden="true "></i>
                         </a>
                     </li>
                     <li>
@@ -13,11 +13,13 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <!--<li>
-                            <a class="link" href="#!/add">
-                                <i class="fa fa-plus-square" aria-hidden="true"></i>
-                            </a>
-                        </li>-->
+                    <!--
+                    <li>
+                        <a class="link " href="#!/add ">
+                            <i class="fa fa-plus-square " aria-hidden="true "></i>
+                        </a>
+                    </li>
+                    -->
                     <li>
                         <a class="link {{section === 'bookrecipes' ? 'active' : ''}}" href="#!/bookrecipes" title="Book Recipes">
                             <i class="fa fa-book" aria-hidden="true"></i>
@@ -33,7 +35,7 @@
         </div>
         <div class="navbar-second text-center">
             <div class="container text-center" ng-switch="section">
-                <ul class="navbar-list" ng-switch="section">
+                <ul class="navbar-list">
                     <subnavbar ng-switch-when="home">
                         <ng-include src="'/templates/navbar/subnavbar/home.html'"></ng-include>
                     </subnavbar>
@@ -54,3 +56,4 @@
         </div>
     </nav>
 </header>
+
