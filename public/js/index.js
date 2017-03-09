@@ -6,12 +6,14 @@ angular
 
 .controller('HomeCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'home'
+  $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
 })
 .controller('RecipeDetailsCtrl', function ($scope, $rootScope) {
   $rootScope.section = ''
 })
 .controller('BookRecipesCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'bookrecipes'
+  $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
 })
 .controller('ProfileCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'profile'
@@ -31,5 +33,23 @@ angular
     let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
     $location.path(prevUrl)
     history = []
+  }
+})
+
+.directive('errSrc', function () {
+  return {
+    link: function (scope, element, attrs) {
+      element.bind('error', function () {
+        if (attrs.src !== attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc)
+        }
+      })
+
+      attrs.$observe('ngSrc', function (value) {
+        if (!value && attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc)
+        }
+      })
+    }
   }
 })

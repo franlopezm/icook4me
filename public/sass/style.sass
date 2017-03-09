@@ -1,11 +1,15 @@
-$background-primary: #fcfcfc
-$link-primary: #3e75a4
+//$background-primary: #fcfcfc
+$background-navbar: #404040
+//$background-subnavbar: #FFFFFF
+$background-subnavbar: #f5f5f5
+//$link-primary: #3e75a4
+$link-primary: #ffffff
 $link-primary-hover: #f49e57
 $link-second: #7f7f7f
 $link-second-hover: #373737
 $colortext-primary: #696969
-$link-thumbnail-primary: #73acde
-$link-thumbnail-second: #ffb679
+$link-thumbnail-primary: #4a86bb
+$link-thumbnail-second: #ff9d4b
 $link-apply: #d67d76
 
 body
@@ -24,7 +28,7 @@ body
     align-items: center
 
 .navbar-primary
-  background: $background-primary
+  background: $background-navbar
   width: 100%
   box-shadow: 0 0 3px #000
   z-index: 1001
@@ -51,13 +55,13 @@ body
     color: $link-primary-hover
 
 .navbar-second
-  background: #FFF
+  background: $background-subnavbar
   width: 100%
-  box-shadow: 0 0 2px rgba(0,0,0,0.2)
+  box-shadow: 0 0 3px rgba(0,0,0,0.2)
   .link
-    line-height: 35px
+    line-height: 40px
     font-family: 'Indie Flower', cursive
-    font-size: 20px
+    font-size: 22px
     font-weight: 600
     padding: 0 8px
     margin: 0 25px
@@ -69,6 +73,9 @@ body
   h3
     margin: 0
     padding: 0
+  .brand-nav
+    .link
+      font-size: 26px
 
 .col-flex
   display: flex
@@ -97,6 +104,9 @@ body
     .link-username-recipe
       margin: 0
 
+.app-recipe
+  box-shadow: 0 0 2px #87accc
+
 .user-thumbnail-recipe
   padding: 0 5px
   img
@@ -120,7 +130,6 @@ body
         border-color: #ddd
       &:focus
         border-color: #ddd
-
     .caption
       padding: 0
 
@@ -146,12 +155,20 @@ body
     color: $link-thumbnail-second
     text-decoration: none
 
-.brand-extenal-recipe
-  line-height: 25px
-  font-size: 15px
-  padding: 5px
-  margin: 0 15px
-  color: $link-thumbnail-primary
+.external-recipe
+  .caption
+    margin: 10px 5px
+  .brand-extenal-recipe
+    line-height: 25px
+    font-size: 15px
+    font-weight: 600
+    padding: 5px
+    color: $link-thumbnail-primary
+
+.link-publisher
+  color: $link-second
+  &:hover
+    color: $link-second-hover
 
 .link-apply
   color: $link-apply
@@ -198,16 +215,20 @@ body
   width: 100%
 
 .search-input
-  background: transparent
+  background: #FFFFFF
+  line-height: 30px
   border-radius: 0
   width: 70%
   text-align: center
   margin: 0 auto
   padding: 0 10px 0px 24px
-  border: 1px solid rgba(0,0,0,0.1)
+  border: 1px solid $link-thumbnail-primary
 
 .icon-search-input
-  margin: 0 -22px 0 0
+  position: absolute
+  font-size: 19px
+  padding: 5px 8px
+  background: transparent
 
 .login-brand 
   h1
@@ -259,9 +280,12 @@ body
   
   .navbar-second
     .link
-      line-height: 30px
+      line-height: 35px
       font-size: 18px
       margin: 0 20px
+    .brand-nav
+      .link
+        font-size: 20px
 
   .link
     line-height: 40px
@@ -285,7 +309,7 @@ body
 
   .navbar-second
     .link
-      margin: 0 10px
+      margin: 0 8px
   
   .item-flex
     width: 260px

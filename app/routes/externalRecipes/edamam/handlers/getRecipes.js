@@ -24,10 +24,12 @@ function getRecipes (req, res) {
             .map(hit => hit.recipe)
             .map(recipe => {
               let idRecipe = recipe.uri.split('#recipe_')[1]
+              let urlsite = recipe.url.split('/')[2]
               let oRecipe = {}
               oRecipe.title = recipe.label
               oRecipe.image = recipe.image
               oRecipe.publisher = recipe.source
+              oRecipe.publisher_url = urlsite
               oRecipe.url = recipe.url
               oRecipe.id_recipe = idRecipe
               recipesEdamam[idRecipe] = oRecipe

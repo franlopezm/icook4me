@@ -16,10 +16,12 @@ module.exports = (req, res) => {
         let jsonRecipes = response
 
         jsonRecipes = jsonRecipes.recipes.map((recipe, i) => {
+          let urlsite = recipe.publisher_url.split('/')[2]
           let oRecipe = {}
           oRecipe.title = recipe.title
           oRecipe.image = recipe.image_url
           oRecipe.publisher = recipe.publisher
+          oRecipe.publisher_url = urlsite
           oRecipe.url = recipe.source_url
           oRecipe.id_recipe = recipe.recipe_id
           return oRecipe
