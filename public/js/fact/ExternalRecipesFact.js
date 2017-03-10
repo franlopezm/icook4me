@@ -12,14 +12,17 @@
     }
 
   // Helper functions
-    function searchFood2fork (searchQuery) {
+    function searchFood2fork (searchQuery, numPage = 1) {
       let query = searchQuery
-      return $http.get(`/external/food2fork?q=${query}&page=1`)
+      let page = numPage
+      return $http.get(`/external/food2fork?q=${query}&page=${page}`)
                 .then(({data}) => data)
     }
-    function edamam (searchQuery) {
+    function edamam (searchQuery, numPage = 1) {
       let query = searchQuery
-      return $http.get(`/external/edamam?q=${query}&page=1`)
+      let page = numPage
+      let limit = 20
+      return $http.get(`/external/edamam?q=${query}&page=${page}&limit=${limit}`)
                 .then(({data}) => data)
     }
   }

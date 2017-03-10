@@ -7,21 +7,48 @@
 
   function SearchCtrl ($scope, $rootScope, ExternalRecipesFact) {
     $rootScope.section = 'search'
+    let querySearch = ''
 
     $scope.addBookmark = (id) => {
       console.log(id)
     }
 
     $scope.$on('searchRecipes', function (event, query) {
-      $rootScope.recipes = []
-      ExternalRecipesFact.searchFood2fork(query)
+      $rootScope.recipesSearch = []
+      querySearch = query
+      ExternalRecipesFact.searchFood2fork(querySearch)
       .then(recipes => {
-        $rootScope.recipes.unshift(...recipes)
+        $rootScope.recipesSearch.unshift(...recipes)
       })
-      ExternalRecipesFact.edamam(query)
+      ExternalRecipesFact.edamam(querySearch)
       .then(recipes => {
-        $rootScope.recipes.unshift(...recipes)
+        $rootScope.recipesSearch.unshift(...recipes)
       })
+      console.log($rootScope.recipesSearch)
+      $scope.hasMoreItemsToShow = hasMoreItemsToShow
     })
+
+    // Pagination functionality
+    var pagesShown = 1
+    var pageSize = 15
+    $scope.paginationLimit = function () {
+      return pageSize * pagesShown
+    }
+    function hasMoreItemsToShow (num) {
+      return pagesShown < (num / pageSize)
+    }
+    $scope.showMoreItems = function () {
+      let page = pagesShown + 1
+      ExternalRecipesFact.searchFood2fork(querySearch, page)
+        .then(recipes => {
+          $rootScope.recipesSearch.push(...recipes)
+        })
+      ExternalRecipesFact.edamam(querySearch, page)
+        .then(recipes => {
+          $rootScope.recipesSearch.push(...recipes)
+        })
+      console.log($rootScope.recipesSearch)
+      pagesShown = page
+    }
   }
 })()

@@ -1,5 +1,5 @@
 <div class="col-flex">
-    <article class="item-flex" ng-repeat="recipe in recipes">
+    <article class="item-flex" ng-repeat="recipe in recipesSearch | limitTo: paginationLimit()">
         <div ng-if="recipe.publisher" class="thumbnail row thumbnail-recipe">
             <section class="col-xs-12 external-recipe">
                 <div class="caption">
@@ -102,4 +102,4 @@
         </div>
     </article>
 </div>
-<button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
+<button ng-show="hasMoreItemsToShow(recipesSearch.length)" ng-click="showMoreItems()" type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
