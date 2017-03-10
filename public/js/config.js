@@ -10,6 +10,10 @@ function configRoute ($routeProvider) {
       controller: 'HomeCtrl'
 //      controllerAs: 'vm'
     })
+    .when('/add', {
+      templateUrl: '/templates/add_recipe.html',
+      controller: 'AddRecipeCtrl'
+    })
     .when('/search', {
       templateUrl: '/templates/search.html',
       controller: 'SearchCtrl'

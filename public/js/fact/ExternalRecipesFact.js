@@ -8,17 +8,31 @@
   function ExternalRecipesFact ($http) {
     return {
       searchFood2fork,
-      edamam
+      searchEdamam,
+      allRecipes
     }
 
   // Helper functions
+    function allRecipes (searchQuery, numPage) {
+      let recipes = []
+      searchFood2fork(searchQuery, numPage)
+        .then(data => {
+          recipes.push(...data)
+        })
+      searchEdamam(searchQuery, numPage)
+        .then(data => {
+          recipes.push(...data)
+        })
+      return recipes
+    }
+
     function searchFood2fork (searchQuery, numPage = 1) {
       let query = searchQuery
       let page = numPage
       return $http.get(`/external/food2fork?q=${query}&page=${page}`)
                 .then(({data}) => data)
     }
-    function edamam (searchQuery, numPage = 1) {
+    function searchEdamam (searchQuery, numPage = 1) {
       let query = searchQuery
       let page = numPage
       let limit = 20

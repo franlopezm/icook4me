@@ -8,29 +8,22 @@
   function SearchCtrl ($scope, $rootScope, ExternalRecipesFact) {
     $rootScope.section = 'search'
     let querySearch = ''
+    // pagination functionality
+    let pagesShown = 1
+    let pageSize = 18
 
     $scope.addBookmark = (id) => {
       console.log(id)
     }
 
     $scope.$on('searchRecipes', function (event, query) {
-      $rootScope.recipesSearch = []
+      pagesShown = 1
       querySearch = query
-      ExternalRecipesFact.searchFood2fork(querySearch)
-      .then(recipes => {
-        $rootScope.recipesSearch.unshift(...recipes)
-      })
-      ExternalRecipesFact.edamam(querySearch)
-      .then(recipes => {
-        $rootScope.recipesSearch.unshift(...recipes)
-      })
-      console.log($rootScope.recipesSearch)
+      $rootScope.recipesSearch = ExternalRecipesFact.allRecipes(querySearch)
       $scope.hasMoreItemsToShow = hasMoreItemsToShow
     })
 
     // Pagination functionality
-    var pagesShown = 1
-    var pageSize = 15
     $scope.paginationLimit = function () {
       return pageSize * pagesShown
     }
@@ -43,11 +36,10 @@
         .then(recipes => {
           $rootScope.recipesSearch.push(...recipes)
         })
-      ExternalRecipesFact.edamam(querySearch, page)
+      ExternalRecipesFact.searchEdamam(querySearch, page)
         .then(recipes => {
           $rootScope.recipesSearch.push(...recipes)
         })
-      console.log($rootScope.recipesSearch)
       pagesShown = page
     }
   }

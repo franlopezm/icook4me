@@ -282,7 +282,7 @@ body {
     width: 90%; } }
 @media all and (max-width: 450px) {
   body {
-    padding-bottom: 80px; }
+    padding-bottom: 100px; }
 
   .btn-show-more {
     width: 200px; }

@@ -21,6 +21,9 @@ angular
 .controller('LoginCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'login'
 })
+.controller('AddRecipeCtrl', function ($scope, $rootScope) {
+  $rootScope.section = 'add'
+})
 
 .run(function ($rootScope, $location) {
   let history = []
