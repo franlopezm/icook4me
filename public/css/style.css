@@ -260,7 +260,9 @@ body {
   border: none;
   outline: 0;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-  background: rgba(243, 243, 243, 0.3); }
+  background: rgba(243, 243, 243, 0.4); }
+  .fullscreen-recipe input:focus {
+    background: #FFFFFF; }
 .fullscreen-recipe input.title-recipe {
   width: 100%;
   text-align: center;
@@ -284,9 +286,13 @@ body {
   .fullscreen-recipe .fullscreen-recipe-ingredients h3 {
     text-decoration: underline;
     margin-bottom: 10px; }
+  .fullscreen-recipe .fullscreen-recipe-preparation li,
+  .fullscreen-recipe .fullscreen-recipe-ingredients li {
+    list-style: none; }
   .fullscreen-recipe .fullscreen-recipe-preparation input,
   .fullscreen-recipe .fullscreen-recipe-ingredients input {
-    width: 80%; }
+    width: 80%;
+    display: inline-block; }
   .fullscreen-recipe .fullscreen-recipe-preparation i,
   .fullscreen-recipe .fullscreen-recipe-ingredients i {
     font-size: 18px;

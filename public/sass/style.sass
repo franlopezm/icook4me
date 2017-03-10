@@ -285,7 +285,9 @@ body
     border: none
     outline: 0
     box-shadow: 0 1px 0 rgba(0,0,0,0.2)
-    background: rgba(243,243,243,0.3)
+    background: rgba(243,243,243,0.4)
+    &:focus
+      background: #FFFFFF
   input.title-recipe
     width: 100%
     text-align: center
@@ -308,8 +310,11 @@ body
     h3
       text-decoration: underline
       margin-bottom: 10px
+    li
+      list-style: none
     input
       width: 80%
+      display: inline-block
     i 
       font-size: 18px
       padding: 2px 1%
@@ -321,9 +326,6 @@ body
         color: $link-thumbnail-second
     button
       margin-top: 20px
-
-
-
 
 @media all and (max-width: 650px )
   body

@@ -23,6 +23,12 @@ angular
 })
 .controller('AddRecipeCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'add'
+
+  $scope.keyPressOnForm = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault()
+    }
+  }
 })
 
 .run(function ($rootScope, $location) {
