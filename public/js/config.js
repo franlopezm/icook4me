@@ -14,10 +14,6 @@ function configRoute ($routeProvider) {
       templateUrl: '/templates/add_recipe.html',
       controller: 'AddRecipeCtrl'
     })
-    .when('/search', {
-      templateUrl: '/templates/search.html',
-      controller: 'SearchCtrl'
-    })
     .when('/bookrecipes', {
       templateUrl: '/templates/bookrecipes.html',
       controller: 'BookRecipesCtrl'

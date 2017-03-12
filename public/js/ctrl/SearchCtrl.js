@@ -6,14 +6,13 @@
     .controller('SearchCtrl', SearchCtrl)
 
   function SearchCtrl ($scope, $rootScope, ExternalRecipesFact) {
-    $rootScope.section = 'search'
     let querySearch = ''
     // pagination functionality
     let pagesShown = 1
     let pageSize = 18
 
-    $scope.addBookmark = (id) => {
-      console.log(id)
+    if ($rootScope.recipesSearch) {
+      $scope.hasMoreItemsToShow = hasMoreItemsToShow
     }
 
     $scope.$on('searchRecipes', function (event, query) {
@@ -22,7 +21,6 @@
       $rootScope.recipesSearch = ExternalRecipesFact.allRecipes(querySearch)
       $scope.hasMoreItemsToShow = hasMoreItemsToShow
     })
-
     // Pagination functionality
     $scope.paginationLimit = function () {
       return pageSize * pagesShown

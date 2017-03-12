@@ -1,57 +1,31 @@
 <header class="navbar-header">
-    <nav>
-        <div class="navbar-primary">
-            <div class="container text-center">
-                <ul class="navbar-list">
-                    <li>
-                        <a class="link {{section === 'home' ? 'active' : ''}}" href="#!" title="Home">
-                            <i class="fa fa-home " aria-hidden="true "></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link {{section === 'search' ? 'active' : ''}}" href="#!/search" title="Search">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link {{section === 'add' ? 'active' : ''}}" href="#!/add ">
-                            <i class="fa fa-plus-square " aria-hidden="true "></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link {{section === 'bookrecipes' ? 'active' : ''}}" href="#!/bookrecipes" title="Book Recipes">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link {{section === 'profile' ? 'active' : ''}}" href="#!/profile" title="user Profile">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="navbar-second text-center">
-            <div class="container text-center" ng-switch="section">
-                <ul class="navbar-list">
-                    <subnavbar ng-switch-when="home">
-                        <ng-include src="'/templates/navbar/subnavbar/home.html'"></ng-include>
-                    </subnavbar>
-                    <subnavbar ng-switch-when="search">
-                        <ng-include src="'/templates/navbar/subnavbar/search.html'"></ng-include>
-                    </subnavbar>
-                    <subnavbar ng-switch-when="bookrecipes">
-                        <ng-include src="'/templates/navbar/subnavbar/bookrecipes.html'"></ng-include>
-                    </subnavbar>
-                    <subnavbar ng-switch-when="profile">
-                        <ng-include src="'/templates/navbar/subnavbar/profile.html'"></ng-include>
-                    </subnavbar>
-                    <subnavbar ng-switch-default>
-                        <ng-include src="'/templates/navbar/subnavbar/back.html'"></ng-include>
-                    </subnavbar>
-                </ul>
-            </div>
-        </div>
+    <nav class="items-nav navbar-primary">
+        <ul class="navbar-list">
+            <li>
+                <h1 class="brand-nav">
+                    <a class="link {{section === 'home' ? 'active' : ''}}" href="#!" title="Inicio">iCook4me</a>
+                </h1>
+            </li>
+            <!-- <li>
+                <a class="link {{section === 'search' ? 'active' : ''}}" href="#!/search" title="Search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </li> -->
+            <li>
+                <a class="link {{section === 'add' ? 'active' : ''}}" href="#!/add ">
+                    <i class="fa fa-plus-square " aria-hidden="true "></i>
+                </a>
+            </li>
+            <li>
+                <a class="link {{section === 'bookrecipes' ? 'active' : ''}}" href="#!/bookrecipes" title="Book Recipes">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="link {{section === 'profile' ? 'active' : ''}}" href="#!/profile" title="user Profile">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>
-

@@ -3,11 +3,6 @@ angular
   .module('iCook4meApp', [
     'ngRoute'
   ])
-
-.controller('HomeCtrl', function ($scope, $rootScope) {
-  $rootScope.section = 'home'
-  $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
-})
 .controller('RecipeDetailsCtrl', function ($scope, $rootScope) {
   $rootScope.section = ''
 })

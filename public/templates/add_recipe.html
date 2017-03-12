@@ -1,4 +1,17 @@
-<form action="" ng-keypress="keyPressOnForm($event)" method="POST" class="form-inline" role="form" ng-submit="">
+<section class="navbar-header navbar-second">
+    <div class="items-nav">
+        <ul class="navbar-list nav-button">
+            <li>
+                <button type="submit" form="form-add-recipe" class="btn btn-primary">Guardar</button>
+            </li>
+            <li>
+                <button type="submit" form="form-add-recipe" class="btn btn-success">Publicar</button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<form id="form-add-recipe" action="" ng-keypress="keyPressOnForm($event)" method="POST" class="form-inline" role="form" ng-submit="">
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
             <input type="text" class="form-control title-recipe" placeholder="Nombre de la receta..." autofocus>
@@ -28,9 +41,5 @@
                 <button type="button" class="btn btn-info">Añadir paso</button>
             </ol>
         </section>
-        <footer class="col-xs-12 text-right">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="submit" class="btn btn-success">Publicar</button>
-        </footer>
     </article>
 </form>

@@ -2,36 +2,10 @@ body {
   padding-top: 120px;
   padding-bottom: 15px; }
 
-.navbar-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; }
-  .navbar-header nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-
-.navbar-primary {
-  background: #404040;
-  width: 100%;
-  box-shadow: 0 0 3px #000;
-  z-index: 1001; }
-
-.navbar-list {
-  display: inline;
-  margin: 0;
-  padding: 0; }
-  .navbar-list li {
-    list-style: none;
-    display: inline-block; }
-
+/* 1. link rules */
 .link {
-  line-height: 50px;
-  font-size: 25px;
-  padding: 10px;
-  margin: 0 20px;
+  padding: 5px;
+  margin: 0 5px;
   color: #ffffff;
   cursor: pointer; }
   .link:hover {
@@ -42,28 +16,108 @@ body {
   .link:focus {
     text-decoration: none; }
 
+.link-second {
+  color: #5d5d5d; }
+  .link-second:hover {
+    color: #2a81ce;
+    text-decoration: none; }
+  .link-second.active {
+    color: #2a81ce; }
+  .link-second:focus {
+    text-decoration: none; }
+
+/* 2. Navbar rules */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001; }
+  .navbar-header .items-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+
+.navbar-primary {
+  background: #404040;
+  width: 100%;
+  box-shadow: 0 0 4px #000; }
+  .navbar-primary .link {
+    line-height: 51px;
+    font-size: 25px;
+    padding: 10px;
+    margin: 0 20px; }
+  .navbar-primary .brand-nav {
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    padding: 0; }
+    .navbar-primary .brand-nav .link {
+      padding: 0;
+      font-size: 36px; }
+
 .navbar-second {
   background: #f5f5f5;
-  width: 100%;
+  top: 51px;
+  left: 0;
+  z-index: 999;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
   .navbar-second .link {
     line-height: 40px;
-    font-family: "Indie Flower", cursive;
     font-size: 22px;
-    font-weight: 600;
-    padding: 0 8px;
-    margin: 0 25px;
-    color: #7f7f7f; }
-    .navbar-second .link:hover {
-      color: #373737; }
-    .navbar-second .link.active {
-      color: #373737; }
+    padding: 8px;
+    margin: 0 25px; }
   .navbar-second h3 {
     margin: 0;
     padding: 0; }
-  .navbar-second .brand-nav .link {
-    font-size: 26px; }
+    .navbar-second h3 .link {
+      font-size: 22px; }
 
+.navbar-list {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+  .navbar-list li {
+    list-style: none;
+    display: inline-block; }
+
+/* nav form search rules */
+.nav-form-search {
+  width: 100%;
+  text-align: center; }
+
+.form-search {
+  line-height: 25px;
+  font-size: 15px;
+  padding: 5px;
+  width: 100%; }
+
+.form-arrow {
+  width: 83%; }
+
+.search-input {
+  background: #FFFFFF;
+  line-height: 30px;
+  border-radius: 0;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px 0px 24px;
+  border: 1px solid #4a86bb; }
+
+.icon-search-input {
+  position: absolute;
+  font-size: 19px;
+  padding: 5px 8px;
+  background: transparent; }
+
+.nav-button li {
+  line-height: 40px; }
+.nav-button button {
+  border-radius: 0;
+  padding: 6px 15px;
+  margin: -2px 20px 0; }
+
+/* 3. Recipes grid */
 .col-flex {
   display: flex;
   flex-wrap: wrap;
@@ -74,10 +128,13 @@ body {
   width: 300px;
   margin: 0 5px; }
 
+/* 4. Recipes thumbnail */
 .thumbnail {
   border-radius: 0; }
 
 .thumbnail-recipe {
+  margin-right: 0;
+  margin-left: 0;
   color: #696969;
   max-width: 300px;
   overflow: hidden; }
@@ -158,20 +215,25 @@ body {
     text-decoration: none; }
 
 .link-publisher {
-  color: #7f7f7f; }
+  color: #5d5d5d; }
   .link-publisher:hover {
-    color: #373737; }
+    color: #2a81ce; }
   .link-publisher:focus {
     text-decoration: none; }
 
 .link-apply {
   color: #d67d76; }
 
+/* Btn Show more rules */
 .btn-show-more {
   border-radius: 0;
-  width: 300px;
-  background: #6767be;
-  border-color: #6767be; }
+  width: 80%;
+  background: #5d5d5d;
+  border-color: #5d5d5d; }
+  .btn-show-more:hover {
+    background: #2a81ce; }
+  .btn-show-more:focus {
+    background: #2a81ce; }
 
 .bold-text {
   font-weight: 700; }
@@ -200,28 +262,7 @@ body {
 .recipe-list .item-flex {
   width: 150px; }
 
-.form-search-page {
-  line-height: 25px;
-  font-size: 15px;
-  padding: 5px;
-  width: 100%; }
-
-.search-input {
-  background: #FFFFFF;
-  line-height: 30px;
-  border-radius: 0;
-  width: 70%;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0 10px 0px 24px;
-  border: 1px solid #4a86bb; }
-
-.icon-search-input {
-  position: absolute;
-  font-size: 19px;
-  padding: 5px 8px;
-  background: transparent; }
-
+/* login rules */
 .login-brand h1 {
   margin: 0; }
 
@@ -308,7 +349,8 @@ body {
   .fullscreen-recipe .fullscreen-recipe-ingredients button {
     margin-top: 20px; }
 
-@media all and (max-width: 650px) {
+/* Media Querys */
+@media all and (max-width: 600px) {
   body {
     padding-top: 15px;
     padding-bottom: 100px; }
@@ -316,29 +358,43 @@ body {
   .navbar-header {
     top: inherit;
     bottom: 0; }
-    .navbar-header nav {
-      flex-direction: column-reverse; }
 
-  .navbar-second .link {
-    line-height: 35px;
-    font-size: 18px;
-    margin: 0 20px; }
-  .navbar-second .brand-nav .link {
-    font-size: 20px; }
-
-  .link {
+  .navbar-primary .link {
     line-height: 40px;
-    font-size: 22px;
-    margin: 0 10px; }
+    font-size: 20px;
+    padding: 8px;
+    margin: 0 15px; }
+  .navbar-primary h1 {
+    font-size: 30px; }
+  .navbar-primary .brand-nav .link {
+    font-size: 30px; }
+
+  .navbar-second {
+    top: inherit;
+    bottom: 40px; }
+    .navbar-second .link {
+      line-height: 36px;
+      font-size: 20px;
+      margin: 0 20px; }
+    .navbar-second h3 .link {
+      font-size: 20px; }
 
   .search-input {
     width: 90%; } }
 @media all and (max-width: 450px) {
-  body {
-    padding-bottom: 90px; }
+  .navbar-primary .link {
+    font-size: 19px;
+    padding: 6px;
+    margin: 0 5px; }
+  .navbar-primary h1 {
+    font-size: 25px; }
+  .navbar-primary .brand-nav .link {
+    font-size: 25px; }
 
-  .btn-show-more {
-    width: 200px; }
+  .navbar-second .link {
+    font-size: 18px; }
+  .navbar-second h3 .link {
+    font-size: 18px; }
 
   .link {
     line-height: 35px;
@@ -350,9 +406,6 @@ body {
 
   .item-flex {
     width: 260px; }
-
-  .login-brand h1 a {
-    font-size: 25px; }
 
   #login .item-row-flex {
     width: 200px; } }
