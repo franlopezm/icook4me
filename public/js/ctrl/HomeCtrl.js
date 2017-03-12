@@ -7,14 +7,13 @@
 
   function HomeCtrl ($scope, $rootScope) {
     $rootScope.section = 'home'
-
     $scope.searchRecipes = function (e) {
       e.preventDefault()
       $rootScope.$broadcast('searchRecipes', $scope.query)
-      $scope.showSearch = true
+      $rootScope.showSearch = true
     }
     $scope.returnPage = () => {
-      $scope.showSearch = !$scope.showSearch
+      $rootScope.showSearch = !$rootScope.showSearch
     }
     $scope.addBookmark = (id) => {
       console.log(id)

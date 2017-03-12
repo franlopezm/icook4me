@@ -5,7 +5,7 @@
     .module('iCook4meApp')
     .controller('SearchCtrl', SearchCtrl)
 
-  function SearchCtrl ($scope, $rootScope, ExternalRecipesFact) {
+  function SearchCtrl ($scope, $rootScope, ExternalRecipesFact, $location, $anchorScroll) {
     let querySearch = ''
     // pagination functionality
     let pagesShown = 1
@@ -20,6 +20,8 @@
       querySearch = query
       $rootScope.recipesSearch = ExternalRecipesFact.allRecipes(querySearch)
       $scope.hasMoreItemsToShow = hasMoreItemsToShow
+      $location.hash('navbar-primary')
+      $anchorScroll()
     })
     // Pagination functionality
     $scope.paginationLimit = function () {
