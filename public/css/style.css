@@ -56,7 +56,7 @@ body {
       font-size: 36px; }
 
 .navbar-second {
-  background: #f5f5f5;
+  background: #e6e6e6;
   top: 51px;
   left: 0;
   z-index: 999;
@@ -126,7 +126,15 @@ body {
 
 .item-flex {
   width: 300px;
-  margin: 0 5px; }
+  margin: 0 5px;
+  color: #484848; }
+
+.title-section {
+  text-align: center;
+  margin: 0 auto 20px; }
+  .title-section span {
+    color: #ff5917;
+    font-weight: 600; }
 
 /* 4. Recipes thumbnail */
 .thumbnail {
@@ -222,7 +230,7 @@ body {
     text-decoration: none; }
 
 .link-apply {
-  color: #d67d76; }
+  color: #d45e55; }
 
 /* Btn Show more rules */
 .btn-show-more {
@@ -298,9 +306,7 @@ body {
 
 .fullscreen-recipe input {
   border-radius: 0;
-  border: none;
   outline: 0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   background: rgba(243, 243, 243, 0.4); }
   .fullscreen-recipe input:focus {
     background: #FFFFFF; }
@@ -319,20 +325,21 @@ body {
     margin-bottom: 20px; }
   .fullscreen-recipe .fullscreen-recipe-img input {
     background: transparent;
-    box-shadow: none; }
+    box-shadow: none;
+    width: 100%; }
 .fullscreen-recipe .fullscreen-recipe-preparation,
 .fullscreen-recipe .fullscreen-recipe-ingredients {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  /*li
+   * list-style: none */ }
   .fullscreen-recipe .fullscreen-recipe-preparation h3,
   .fullscreen-recipe .fullscreen-recipe-ingredients h3 {
     text-decoration: underline;
     margin-bottom: 10px; }
-  .fullscreen-recipe .fullscreen-recipe-preparation li,
-  .fullscreen-recipe .fullscreen-recipe-ingredients li {
-    list-style: none; }
   .fullscreen-recipe .fullscreen-recipe-preparation input,
   .fullscreen-recipe .fullscreen-recipe-ingredients input {
-    width: 80%;
+    width: calc(100% - 80px);
+    margin-right: 0;
     display: inline-block; }
   .fullscreen-recipe .fullscreen-recipe-preparation i,
   .fullscreen-recipe .fullscreen-recipe-ingredients i {
@@ -347,7 +354,8 @@ body {
       color: #ff9d4b; }
   .fullscreen-recipe .fullscreen-recipe-preparation button,
   .fullscreen-recipe .fullscreen-recipe-ingredients button {
-    margin-top: 20px; }
+    display: inline;
+    width: 67px; }
 
 /* Media Querys */
 @media all and (max-width: 600px) {
@@ -406,6 +414,9 @@ body {
 
   .item-flex {
     width: 260px; }
+
+  .title-section {
+    font-size: 20px; }
 
   #login .item-row-flex {
     width: 200px; } }

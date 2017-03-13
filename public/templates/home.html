@@ -23,6 +23,7 @@
     </div>
 </section>
 <section ng-hide="showSearch">
+    <h3 class="title-section">Recetas de usuarios seguidos</h3>
     <div class="col-flex">
         <article class="item-flex" ng-repeat="r in repeat">
             <div class="thumbnail row thumbnail-recipe app-recipe">
@@ -96,9 +97,10 @@
     <button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
 </section>
 <section ng-show="showSearch" ng-controller="SearchCtrl">
+    <h3 class="title-section">Resultados para el termino "<span>{{foodSearch}}</span>"</h3>
     <div class="col-flex">
         <article class="item-flex" ng-repeat="recipe in recipesSearch | limitTo: paginationLimit()">
-            <div ng-if="recipe.publisher" class="thumbnail row thumbnail-recipe">
+            <div ng-if="recipe.id_recipe_ext !== ''" class="thumbnail row thumbnail-recipe">
                 <section class="col-xs-12 external-recipe">
                     <div class="caption">
                         <div class="text-center">
@@ -118,7 +120,7 @@
                                 <ul class="navbar-list">
                                     <li>
                                         <span class="link link-thumbnail link-apply">
-                                        <i class="fa fa-book" aria-hidden="true" ng-click="addBookmark(recipe.id_recipe)"></i>
+                                        <i class="fa fa-book" aria-hidden="true" ng-click="addBookmark(recipe.id_recipe_ext)"></i>
                                     </span>
                                     </li>
                                 </ul>

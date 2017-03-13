@@ -2,19 +2,19 @@
     <div class="items-nav">
         <ul class="navbar-list nav-button">
             <li>
-                <button type="submit" form="form-add-recipe" class="btn btn-primary">Guardar</button>
+                <button type="submit" form="form-add-recipe" name="save" class="btn btn-primary" ng-click="saveRecipe($event)">Guardar</button>
             </li>
             <li>
-                <button type="submit" form="form-add-recipe" class="btn btn-success">Publicar</button>
+                <button type="submit" form="form-add-recipe" name="publish" class="btn btn-success">Publicar</button>
             </li>
         </ul>
     </div>
 </section>
 
-<form id="form-add-recipe" action="" ng-keypress="keyPressOnForm($event)" method="POST" class="form-inline" role="form" ng-submit="">
+<form id="form-add-recipe" action="" ng-keypress="keyPressOnForm($event)" method="POST" class="form-inline" role="form" ng-submit="addRecipe($event)">
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
-            <input type="text" class="form-control title-recipe" placeholder="Nombre de la receta..." autofocus>
+            <input type="text" class="form-control title-recipe" ng-model="title" placeholder="Nombre de la receta..." autofocus>
         </header>
         <section class="col-xs-12 col-sm-4 col-md-5 text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
@@ -22,23 +22,23 @@
         </section>
         <section class="col-xs-12 col-sm-8 col-md-7 fullscreen-recipe-ingredients">
             <h3>Ingredientes:</h3>
+            <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="keyPressAdd($event)" ng-model="ingredient">
+            <button name="btn_addingredient" type="button" ng-click="addIngredient()" class="btn btn-info">Añadir</button>
             <ul>
-                <li>
-                    <input type="text" class="form-control" placeholder="Añadir ingrediente">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                <li ng-repeat="ingredient in ingredients track by $index">
+                    {{ingredient}}
+                    <i name="btn_removeingredient" class="fa fa-times" aria-hidden="true" ng-click="removeIngredient($index)"></i>
                 </li>
-                <button type="button" class="btn btn-info">Añadir ingrediente</button>
             </ul>
         </section>
         <section class="col-xs-12 fullscreen-recipe-preparation">
             <h3>Preparación:</h3>
-            <mierda></mierda>
+            <input ng-keypress="keyPressAdd($event)" name="preparation" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="step" >
+            <button type="button" class="btn btn-info" ng-click="addStep()">Añadir</button>
             <ol>
-                <li>
-                    <input type="text" class="form-control" placeholder="Paso 1">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                <li ng-repeat="step in preparation track by $index">     {{step}}
+                    <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="removeStep($index)"></i>
                 </li>
-                <button type="button" class="btn btn-info">Añadir paso</button>
             </ol>
         </section>
     </article>

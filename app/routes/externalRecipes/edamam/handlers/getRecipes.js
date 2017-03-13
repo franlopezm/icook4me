@@ -31,7 +31,7 @@ function getRecipes (req, res) {
               oRecipe.publisher = recipe.source
               oRecipe.publisher_url = urlsite
               oRecipe.url = recipe.url
-              oRecipe.id_recipe = idRecipe
+              oRecipe.id_recipe_ext = idRecipe
               recipesEdamam[idRecipe] = oRecipe
               return oRecipe
             })
