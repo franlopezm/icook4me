@@ -10,7 +10,7 @@
                 <form action="" method="POST" class="form-inline" role="form" ng-submit="searchRecipes($event)">
                     <div>
                         <i class="fa fa-search icon-search-input" aria-hidden="true"></i>
-                        <input type="text" class="search-input" placeholder="Pollo a la sidra" ng-model="query">
+                        <input type="text" class="search-input" placeholder="Pollo a la sidra" ng-value="foodSearch ? foodSearch : ''" ng-model="query">
                     </div>
                 </form>
             </li>
@@ -201,5 +201,11 @@
             </div>
         </article>
     </div>
+    <!--<div ng-show="recipesSearch.length === 0">
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>No se han encontrado resultados</strong>
+        </div>
+    </div>-->
     <button ng-show="hasMoreItemsToShow(recipesSearch.length)" ng-click="showMoreItems()" type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
 </section>

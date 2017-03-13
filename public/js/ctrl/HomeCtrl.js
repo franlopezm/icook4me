@@ -9,6 +9,7 @@
     $rootScope.section = 'home'
     $scope.searchRecipes = function (e) {
       e.preventDefault()
+      $rootScope.foodSearch = $scope.query
       $rootScope.$broadcast('searchRecipes', $scope.query)
       $rootScope.showSearch = true
     }
