@@ -16,11 +16,16 @@
         <header class="col-xs-12">
             <input type="text" class="form-control title-recipe" ng-model="title" placeholder="Nombre de la receta..." autofocus>
         </header>
-        <section class="col-xs-12 col-sm-4 col-md-5 text-center fullscreen-recipe-img">
+        <section class="col-xs-12text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
             <input type="file" class="form-control">
         </section>
-        <section class="col-xs-12 col-sm-8 col-md-7 fullscreen-recipe-ingredients">
+        <section class="col-xs-12 fullscreen-recipe-description">
+            <h3>Description:</h3>
+            <textarea class="form-control" ng-model="description" placeholder="Escribe una pequeña descripción para la receta.">
+            </textarea>
+        </section>
+        <section class="col-xs-12 fullscreen-recipe-ingredients">
             <h3>Ingredientes:</h3>
             <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="keyPressAdd($event)" ng-model="ingredient">
             <button name="btn_addingredient" type="button" ng-click="addIngredient()" class="btn btn-info">Añadir</button>
@@ -38,6 +43,7 @@
             <ol>
                 <li ng-repeat="step in preparation track by $index">     {{step}}
                     <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="removeStep($index)"></i>
+                    <div class="line-step"></div>
                 </li>
             </ol>
         </section>

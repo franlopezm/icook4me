@@ -11,6 +11,7 @@
       image: 'http://www.recetasderechupete.com/wp-content/uploads/2015/07/TORTILLA-002-525x360.jpg',
       title: 'Tortilla de patatas',
       publisher: 'recetas de rechupete',
+      description: 'Mi tortilla desde siempre ha sido, y será, con cebolla, os advierto porque sé que no a todo el mundo le gusta. Si no la queréis sólo tenéis que seguir la receta sin ella. A todos aquellos que me habéis pedido la receta por mail, y la mayoría sois de fuera de España, os recomiendo el toque dulce que le da la cebolla. La primera prueba que sea con ella, la siguiente a vuestra elección.',
       ingredients: [
         '8 huevos camperos o 10 huevos normales.',
         '1 kg de patatas gallegas',

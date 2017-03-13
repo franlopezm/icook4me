@@ -304,10 +304,12 @@ body {
   #login .remember-me span {
     margin-left: 5px; }
 
+.fullscreen-recipe textarea,
 .fullscreen-recipe input {
   border-radius: 0;
   outline: 0;
   background: rgba(243, 243, 243, 0.4); }
+  .fullscreen-recipe textarea:focus,
   .fullscreen-recipe input:focus {
     background: #FFFFFF; }
 .fullscreen-recipe input.title-recipe {
@@ -327,20 +329,51 @@ body {
     background: transparent;
     box-shadow: none;
     width: 100%; }
+.fullscreen-recipe .fullscreen-recipe-description,
 .fullscreen-recipe .fullscreen-recipe-preparation,
 .fullscreen-recipe .fullscreen-recipe-ingredients {
-  margin-bottom: 30px;
-  /*li
-   * list-style: none */ }
+  margin-bottom: 20px; }
+  .fullscreen-recipe .fullscreen-recipe-description h3,
   .fullscreen-recipe .fullscreen-recipe-preparation h3,
   .fullscreen-recipe .fullscreen-recipe-ingredients h3 {
-    text-decoration: underline;
-    margin-bottom: 10px; }
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    max-width: 70%;
+    margin-bottom: 15px; }
+  .fullscreen-recipe .fullscreen-recipe-description input,
   .fullscreen-recipe .fullscreen-recipe-preparation input,
   .fullscreen-recipe .fullscreen-recipe-ingredients input {
     width: calc(100% - 80px);
     margin-right: 0;
+    margin-bottom: 10px;
     display: inline-block; }
+  .fullscreen-recipe .fullscreen-recipe-description textarea,
+  .fullscreen-recipe .fullscreen-recipe-preparation textarea,
+  .fullscreen-recipe .fullscreen-recipe-ingredients textarea {
+    width: 100%;
+    min-height: 60px; }
+  .fullscreen-recipe .fullscreen-recipe-description li,
+  .fullscreen-recipe .fullscreen-recipe-preparation li,
+  .fullscreen-recipe .fullscreen-recipe-ingredients li {
+    font-size: 1.1em; }
+  .fullscreen-recipe .fullscreen-recipe-description ol,
+  .fullscreen-recipe .fullscreen-recipe-preparation ol,
+  .fullscreen-recipe .fullscreen-recipe-ingredients ol {
+    list-style: none;
+    text-align: justify;
+    margin-left: -20px; }
+    .fullscreen-recipe .fullscreen-recipe-description ol li,
+    .fullscreen-recipe .fullscreen-recipe-preparation ol li,
+    .fullscreen-recipe .fullscreen-recipe-ingredients ol li {
+      padding: 5px 0; }
+      .fullscreen-recipe .fullscreen-recipe-description ol li .line-step,
+      .fullscreen-recipe .fullscreen-recipe-preparation ol li .line-step,
+      .fullscreen-recipe .fullscreen-recipe-ingredients ol li .line-step {
+        width: 40%;
+        margin: 10px auto;
+        height: 1px;
+        box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
+  .fullscreen-recipe .fullscreen-recipe-description i,
   .fullscreen-recipe .fullscreen-recipe-preparation i,
   .fullscreen-recipe .fullscreen-recipe-ingredients i {
     font-size: 18px;
@@ -349,13 +382,16 @@ body {
     cursor: pointer;
     line-height: 25px;
     color: #4a86bb; }
+    .fullscreen-recipe .fullscreen-recipe-description i:hover,
     .fullscreen-recipe .fullscreen-recipe-preparation i:hover,
     .fullscreen-recipe .fullscreen-recipe-ingredients i:hover {
       color: #ff9d4b; }
+  .fullscreen-recipe .fullscreen-recipe-description button,
   .fullscreen-recipe .fullscreen-recipe-preparation button,
   .fullscreen-recipe .fullscreen-recipe-ingredients button {
     display: inline;
-    width: 67px; }
+    width: 67px;
+    margin-bottom: 10px; }
 
 .show-recipe h2 {
   text-align: center;
@@ -375,30 +411,47 @@ body {
       margin: 0 4px; }
       .show-recipe .fullscreen-recipe-img .recipeinfo .link-username-recipe::first-letter {
         text-transform: uppercase; }
-.show-recipe .fullscreen-recipe-preparation h3,
-.show-recipe .fullscreen-recipe-ingredients h3 {
-  text-decoration: none;
-  border-bottom: 1px solid #000;
-  max-width: 70%;
-  margin-bottom: 15px; }
-.show-recipe .fullscreen-recipe-preparation li,
-.show-recipe .fullscreen-recipe-ingredients li {
-  padding: 3px 0;
-  font-size: 1.1em; }
-.show-recipe .fullscreen-recipe-preparation ol,
-.show-recipe .fullscreen-recipe-ingredients ol {
-  list-style: none;
-  text-align: justify;
-  margin-left: -20px; }
-  .show-recipe .fullscreen-recipe-preparation ol li,
-  .show-recipe .fullscreen-recipe-ingredients ol li {
-    padding: 5px 0; }
-    .show-recipe .fullscreen-recipe-preparation ol li .line-step,
-    .show-recipe .fullscreen-recipe-ingredients ol li .line-step {
-      width: 40%;
-      margin: 10px auto;
-      height: 1px;
-      box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
+.show-recipe .fullscreen-recipe-description,
+.show-recipe .fullscreen-recipe-preparation,
+.show-recipe .fullscreen-recipe-ingredients {
+  margin-bottom: 20px; }
+  .show-recipe .fullscreen-recipe-description h3,
+  .show-recipe .fullscreen-recipe-preparation h3,
+  .show-recipe .fullscreen-recipe-ingredients h3 {
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    max-width: 70%;
+    margin-bottom: 15px; }
+  .show-recipe .fullscreen-recipe-description p,
+  .show-recipe .fullscreen-recipe-preparation p,
+  .show-recipe .fullscreen-recipe-ingredients p {
+    font-size: 1.1em;
+    padding: 3px 0;
+    text-align: justify;
+    font-weight: 600;
+    color: #696969; }
+  .show-recipe .fullscreen-recipe-description li,
+  .show-recipe .fullscreen-recipe-preparation li,
+  .show-recipe .fullscreen-recipe-ingredients li {
+    padding: 3px 0;
+    font-size: 1.1em; }
+  .show-recipe .fullscreen-recipe-description ol,
+  .show-recipe .fullscreen-recipe-preparation ol,
+  .show-recipe .fullscreen-recipe-ingredients ol {
+    list-style: none;
+    text-align: justify;
+    margin-left: -20px; }
+    .show-recipe .fullscreen-recipe-description ol li,
+    .show-recipe .fullscreen-recipe-preparation ol li,
+    .show-recipe .fullscreen-recipe-ingredients ol li {
+      padding: 5px 0; }
+      .show-recipe .fullscreen-recipe-description ol li .line-step,
+      .show-recipe .fullscreen-recipe-preparation ol li .line-step,
+      .show-recipe .fullscreen-recipe-ingredients ol li .line-step {
+        width: 40%;
+        margin: 10px auto;
+        height: 1px;
+        box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
 
 /* Media Querys */
 @media all and (max-width: 600px) {
