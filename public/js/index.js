@@ -1,8 +1,10 @@
 /* eslint no-undef: "off" */
 angular
   .module('iCook4meApp', [
-    'ngRoute'
+    'ngRoute',
+    'infinite-scroll'
   ])
+
 .controller('BookRecipesCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'bookrecipes'
   $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
@@ -45,3 +47,36 @@ angular
     }
   }
 })
+
+.directive('recipeExternal', function () {
+  return {
+    restrict: 'E',
+    scope: {
+      recipe: '=',
+      addBookmark: '&'
+    },
+    templateUrl: '/templates/components/recipe_external.html'
+  }
+})
+
+.directive('recipeInternal', function () {
+  return {
+    restrict: 'E',
+    scope: {
+      recipe: '=',
+      addBookmark: '&'
+    },
+    templateUrl: '/templates/components/recipe_internal.html'
+  }
+})
+.directive('paginationButton', function () {
+  return {
+    restrict: 'E',
+    scope: {
+      hasMore: '&',
+      showMore: '&'
+    },
+    templateUrl: '/templates/components/btn_show_more.html'
+  }
+})
+

@@ -14,7 +14,6 @@
     if ($rootScope.recipesSearch) {
       $scope.hasMoreItemsToShow = hasMoreItemsToShow
     }
-
     $scope.$on('searchRecipes', function (event, query) {
       pagesShown = 1
       querySearch = query
