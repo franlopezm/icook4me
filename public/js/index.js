@@ -3,9 +3,6 @@ angular
   .module('iCook4meApp', [
     'ngRoute'
   ])
-.controller('RecipeDetailsCtrl', function ($scope, $rootScope) {
-  $rootScope.section = ''
-})
 .controller('BookRecipesCtrl', function ($scope, $rootScope) {
   $rootScope.section = 'bookrecipes'
   $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]

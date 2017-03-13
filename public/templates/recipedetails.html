@@ -1,1 +1,80 @@
-hola
+<section class="navbar-header navbar-second">
+    <div class="items-nav">
+        <ul class="navbar-list">
+            <li>
+                <a class="link link-second" title="Go Back" ng-click="back()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="link link-second" href="search.html">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="link link-second" href="add.html">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="link link-second" href="book.html">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<article class="row fullscreen-recipe show-recipe">
+    <header class="col-xs-12">
+        <h2>
+          {{recipe[0].title}}
+        </h2>
+    </header>
+    <section class="col-xs-12 text-center fullscreen-recipe-img">
+        <img class="img-responsive center-block" ng-src="{{recipe[0].image}}" alt="{{recipe[0].title}}">
+        <div class="recipeinfo">
+            <div class="text-center">
+                <ul class="navbar-list">
+                    <li>
+                        <a class="link link-thumbnail" href="index.html" title="Home">
+                            <i class="fa fa-commenting" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link link-thumbnail" href="search.html">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link link-thumbnail link-apply" href="add.html">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link link-thumbnail" href="book.html">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Autor: <a href="#" class="link-thumbnail link-username-recipe">{{recipe[0].publisher}}</a></p>
+        </div>
+    </section>
+    <section class="col-xs-12 fullscreen-recipe-ingredients">
+        <h3>Ingredientes:</h3>
+        <ul>
+            <li ng-repeat="ingredient in recipe[0].ingredients track by $index">
+                {{ingredient}}
+            </li>
+        </ul>
+    </section>
+    <section class="col-xs-12 fullscreen-recipe-preparation">
+        <h3>Preparación:</h3>
+        <ol>
+            <li ng-repeat="step in recipe[0].preparation track by $index">
+                {{step}}
+                <div class="line-step"></div>
+            </li>
+        </ol>
+    </section>
+</article>

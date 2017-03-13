@@ -11,7 +11,7 @@ function configRoute ($routeProvider) {
 //      controllerAs: 'vm'
     })
     .when('/add', {
-      templateUrl: '/templates/add_recipe.html',
+      templateUrl: '/templates/addrecipe.html',
       controller: 'AddRecipeCtrl'
     })
     .when('/bookrecipes', {

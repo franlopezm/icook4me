@@ -373,6 +373,47 @@ body
     button
       display: inline
       width: 67px
+  
+.show-recipe
+  h2
+    text-align: center
+    font-weight: bold
+    margin: 0 auto 30px
+  .fullscreen-recipe-img
+    margin-bottom: 0
+    img
+      max-height: 350px
+      border: 10px solid #eaeaea
+      margin-bottom: 10px
+    .recipeinfo
+      text-align: left
+      font-weight: 600
+      .link-username-recipe
+        display: inline-block
+        margin: 0 4px
+        &::first-letter
+          text-transform: uppercase
+  .fullscreen-recipe-preparation,
+  .fullscreen-recipe-ingredients
+    h3
+      text-decoration: none
+      border-bottom: 1px solid #000
+      max-width: 70%
+      margin-bottom: 15px
+    li
+      padding: 3px 0
+      font-size: 1.1em
+    ol
+      list-style: none
+      text-align: justify
+      margin-left: -20px
+      li
+        padding: 5px 0
+        .line-step
+          width: 40%
+          margin: 10px auto
+          height: 1px
+          box-shadow: 0 1px rgba(0,0,0,0.4)
 
 /* Media Querys */
 @media all and (max-width: 600px )
