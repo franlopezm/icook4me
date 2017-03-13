@@ -69,14 +69,3 @@ angular
     templateUrl: '/templates/components/recipe_internal.html'
   }
 })
-.directive('paginationButton', function () {
-  return {
-    restrict: 'E',
-    scope: {
-      hasMore: '&',
-      showMore: '&'
-    },
-    templateUrl: '/templates/components/btn_show_more.html'
-  }
-})
-

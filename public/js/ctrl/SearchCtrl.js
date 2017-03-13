@@ -11,14 +11,10 @@
     let pagesShown = 1
     let pageSize = 18
 
-    if ($rootScope.recipesSearch) {
-      $scope.hasMoreItemsToShow = hasMoreItemsToShow
-    }
     $scope.$on('searchRecipes', function (event, query) {
       pagesShown = 1
       querySearch = query
       $rootScope.recipesSearch = ExternalRecipesFact.allRecipes(querySearch)
-      $scope.hasMoreItemsToShow = hasMoreItemsToShow
       $location.hash('navbar-primary')
       $anchorScroll()
     })
@@ -26,8 +22,8 @@
     $scope.paginationLimit = function () {
       return pageSize * pagesShown
     }
-    function hasMoreItemsToShow (num) {
-      return pagesShown < (num / pageSize)
+    $scope.hasMoreItemsToShow = (num) => {
+      return pagesShown > (num / pageSize)
     }
     $scope.showMoreItems = function () {
       let page = pagesShown + 1

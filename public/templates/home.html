@@ -33,7 +33,7 @@
 </section>
 <section ng-show="showSearch" ng-controller="SearchCtrl">
     <h3 class="title-section">Resultados para el termino "<span>{{foodSearch}}</span>"</h3>
-    <div class="col-flex">
+    <div ng-if="showSearch" class="col-flex" infinite-scroll="showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="hasMoreItemsToShow(recipesSearch.length)">
         <article class="item-flex" ng-repeat="recipe in recipesSearch | limitTo: paginationLimit()">
             
             <recipe-external ng-if="recipe.id_recipe_ext !== ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-external>
@@ -41,11 +41,9 @@
             <recipe-internal ng-if="recipe.id_recipe_ext === ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-internal>
         </article>
     </div>
-    <!--<div ng-show="recipesSearch.length === 0">
+    <div ng-show="recipesSearch.length === 0">
         <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <strong>No se han encontrado resultados</strong>
         </div>
-    </div>-->
-    <pagination-button has-more=hasMoreItemsToShow(recipesSearch.length) show-more=showMoreItems() ></pagination-button>    
+    </div>
 </section>
