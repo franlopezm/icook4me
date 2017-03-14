@@ -5,7 +5,7 @@
     .module('iCook4meApp')
     .controller('SearchRecipeCtrl', SearchRecipeCtrl)
 
-  function SearchRecipeCtrl ($scope, $q, $rootScope, $routeParams, ExternalRecipesFact, $location) {
+  function SearchRecipeCtrl ($scope, $q, $rootScope, $routeParams, ExternalRecipesFact, $location, $anchorScroll) {
     $rootScope.section = 'home'
     let {query} = $routeParams
     $rootScope.queryFood = query
@@ -22,6 +22,8 @@
       if (recipes.length === 0) {
         $scope.showNoResult = true
       }
+      $location.hash('navbar-primary')
+      $anchorScroll()
       $scope.aRecipes.push(...recipes)
     })
 
