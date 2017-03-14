@@ -11,10 +11,24 @@ body {
   .link:hover {
     color: #f49e57;
     text-decoration: none; }
+    .link:hover .text-nav {
+      display: block;
+      position: absolute;
+      margin-top: -6px;
+      margin-left: -10px;
+      background: #404040;
+      padding: 9px 11px;
+      line-height: initial;
+      color: #fff; }
   .link.active {
     color: #f49e57; }
   .link:focus {
     text-decoration: none; }
+  .link .text-nav {
+    display: none; }
+
+.text-nav {
+  font-size: 12px; }
 
 .link-second {
   color: #5d5d5d; }
@@ -324,7 +338,9 @@ body {
 .fullscreen-recipe .fullscreen-recipe-img {
   margin-bottom: 30px; }
   .fullscreen-recipe .fullscreen-recipe-img img {
-    margin-bottom: 20px; }
+    max-height: 350px;
+    border: 10px solid #eaeaea;
+    margin-bottom: 10px; }
   .fullscreen-recipe .fullscreen-recipe-img input {
     background: transparent;
     box-shadow: none;
@@ -351,7 +367,7 @@ body {
   .fullscreen-recipe .fullscreen-recipe-preparation textarea,
   .fullscreen-recipe .fullscreen-recipe-ingredients textarea {
     width: 100%;
-    min-height: 60px; }
+    min-height: 80px; }
   .fullscreen-recipe .fullscreen-recipe-description li,
   .fullscreen-recipe .fullscreen-recipe-preparation li,
   .fullscreen-recipe .fullscreen-recipe-ingredients li {
@@ -419,7 +435,7 @@ body {
   .show-recipe .fullscreen-recipe-preparation h3,
   .show-recipe .fullscreen-recipe-ingredients h3 {
     text-decoration: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #eaaa74;
     max-width: 70%;
     margin-bottom: 15px; }
   .show-recipe .fullscreen-recipe-description p,
@@ -468,6 +484,9 @@ body {
     font-size: 20px;
     padding: 8px;
     margin: 0 15px; }
+    .navbar-primary .link:hover .text-nav {
+      margin-top: -66px;
+      margin-left: -28px; }
   .navbar-primary h1 {
     font-size: 30px; }
   .navbar-primary .brand-nav .link {

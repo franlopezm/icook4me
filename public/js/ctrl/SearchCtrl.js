@@ -9,7 +9,7 @@
     let querySearch = ''
     // pagination functionality
     let pagesShown = 1
-    let pageSize = 18
+    let pageSize = 12
 
     $scope.$on('searchRecipes', function (event, query) {
       pagesShown = 1

@@ -22,10 +22,24 @@ body
   &:hover
     color: $link-primary-hover
     text-decoration: none
+    .text-nav
+      display: block
+      position: absolute
+      margin-top: -6px
+      margin-left: -10px
+      background: $background-navbar
+      padding: 9px 11px
+      line-height: initial
+      color: #fff
   &.active
     color: $link-primary-hover
   &:focus
     text-decoration: none
+  .text-nav
+    display: none
+
+.text-nav
+  font-size: 12px
 
 .link-second
   color: $link-second
@@ -345,7 +359,9 @@ body
   .fullscreen-recipe-img
     margin-bottom: 30px
     img
-      margin-bottom: 20px
+      max-height: 350px
+      border: 10px solid #eaeaea
+      margin-bottom: 10px
     input
       background: transparent
       box-shadow: none
@@ -366,7 +382,7 @@ body
       display: inline-block
     textarea
       width: 100%
-      min-height: 60px
+      min-height: 80px
     li
       font-size: 1.1em
     ol
@@ -419,7 +435,7 @@ body
     margin-bottom: 20px
     h3
       text-decoration: none
-      border-bottom: 1px solid #000
+      border-bottom: 1px solid #eaaa74
       max-width: 70%
       margin-bottom: 15px
     p
@@ -459,6 +475,10 @@ body
       font-size: 20px
       padding: 8px
       margin: 0 15px
+      &:hover
+        .text-nav
+          margin-top: -66px
+          margin-left: -28px
     h1
       font-size: 30px
     .brand-nav

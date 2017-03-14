@@ -11,7 +11,8 @@
     </div>
 </section>
 
-<form id="form-add-recipe" action="" ng-keypress="keyPressOnForm($event)" method="POST" class="form-inline" role="form" ng-submit="addRecipe($event)">
+<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="addRecipe($event)">
+    <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
             <input type="text" class="form-control title-recipe" ng-model="title" placeholder="Nombre de la receta..." autofocus>

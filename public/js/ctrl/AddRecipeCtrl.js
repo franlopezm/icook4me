@@ -10,12 +10,6 @@
     $scope.ingredients = []
     $scope.preparation = []
 
-    $scope.keyPressOnForm = (e) => {
-      if (e.keyCode === 13) {
-        e.preventDefault()
-      }
-    }
-
     $scope.saveRecipe = (e) => {
       e.preventDefault()
       console.log($scope.title)
@@ -30,8 +24,6 @@
     $scope.keyPressAdd = (e) => {
       if (e.keyCode === 13) {
         if (e.target.name === 'ingredient') $scope.addIngredient()
-      }
-      if (e.keyCode === 10) {
         if (e.target.name === 'preparation') $scope.addStep()
       }
     }
