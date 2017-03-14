@@ -1,28 +1,18 @@
 <section class="navbar-header navbar-second">
     <div class="items-nav">
         <ul class="navbar-list nav-form-search">
-            <li ng-show="showSearch">
-                <a class="link link-second" title="Volver a inicio" ng-click="returnPage()">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
+            <li class="form-search {{ queryFood ? 'form-arrow' : ''}}">
+                <search-recipes></search-recipes>
             </li>
-            <li class="form-search {{ showSearch || (recipesSearch.length > 0 && showSearch === false) ? 'form-arrow' : ''}}">
-                <form action="" method="POST" class="form-inline" role="form" ng-submit="searchRecipes($event)">
-                    <div>
-                        <i class="fa fa-search icon-search-input" aria-hidden="true"></i>
-                        <input type="text" class="search-input" placeholder="Pollo a la sidra" ng-value="foodSearch ? foodSearch : ''" ng-model="query">
-                    </div>
-                </form>
-            </li>
-            <li ng-show="recipesSearch.length > 0 && showSearch === false">
-                <a class="link link-second" title="Volver a la Búsqueda" ng-click="returnPage()">
+            <li ng-show="queryFood">
+                <a class="link link-second" title="Volver a la Búsqueda" ng-href="#!/search/{{queryFood}}">
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </li>
         </ul>
     </div>
 </section>
-<section ng-hide="showSearch">
+<section>
     <h3 class="title-section">Recetas de usuarios seguidos</h3>
     <div class="col-flex">
         <article class="item-flex" ng-repeat="recipe in repeat">
@@ -30,20 +20,4 @@
         </article>
     </div>
     <button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
-</section>
-<section ng-show="showSearch" ng-controller="SearchCtrl">
-    <h3 class="title-section">Resultados para el termino "<span>{{foodSearch}}</span>"</h3>
-    <div ng-if="showSearch" class="col-flex" infinite-scroll="showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="hasMoreItemsToShow(recipesSearch.length)">
-        <article class="item-flex" ng-repeat="recipe in recipesSearch | limitTo: paginationLimit()">
-            
-            <recipe-external ng-if="recipe.id_recipe_ext !== ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-external>
-
-            <recipe-internal ng-if="recipe.id_recipe_ext === ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-internal>
-        </article>
-    </div>
-    <div ng-show="recipesSearch.length === 0">
-        <div class="alert alert-danger">
-            <strong>No se han encontrado resultados</strong>
-        </div>
-    </div>
 </section>

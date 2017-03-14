@@ -10,3 +10,9 @@ oRecipe.publisher
 oRecipe.publisher_url
 oRecipe.url
 oRecipe.id_recipe_ext
+
+
+
+# Variables globales
+$rootScope.queryFood
+$rootScope.section

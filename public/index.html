@@ -16,7 +16,7 @@
 
 <body>
     <ng-include ng-if="section !== 'login'" src="'/templates/navbar/navbar.html'"></ng-include>
-    <ng-include ng-if="section === 'login'" src="'/templates/navbar/nav_login.html'"></ng-include>
+    <ng-include ng-if="section === 'login'" src="'/templates/navbar/navlogin.html'"></ng-include>
     
     <main class="container">
         <ng-view></ng-view>
@@ -27,8 +27,8 @@
     <script src='/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
     <script src="/js/index.js"></script>
     <script src="/js/fact/ExternalRecipesFact.js"></script>
-    <script src="/js/ctrl/SearchCtrl.js"></script>
     <script src="/js/ctrl/HomeCtrl.js"></script>
+    <script src="/js/ctrl/SearchRecipeCtrl.js"></script>
     <script src="/js/ctrl/AddRecipeCtrl.js"></script>
     <script src="/js/ctrl/RecipeDetailsCtrl.js"></script>
     <script src="/js/config.js"></script>

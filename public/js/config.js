@@ -18,17 +18,21 @@ function configRoute ($routeProvider) {
       templateUrl: '/templates/bookrecipes.html',
       controller: 'BookRecipesCtrl'
     })
-    .when('/profile', {
-      templateUrl: '/templates/profile.html',
-      controller: 'ProfileCtrl'
-    })
     .when('/login', {
       templateUrl: '/templates/login.html',
       controller: 'LoginCtrl'
     })
+    .when('/profile', {
+      templateUrl: '/templates/profile.html',
+      controller: 'ProfileCtrl'
+    })
     .when('/recipe/:id', {
       templateUrl: '/templates/recipedetails.html',
       controller: 'RecipeDetailsCtrl'
+    })
+    .when('/search/:query', {
+      templateUrl: '/templates/searchrecipe.html',
+      controller: 'SearchRecipeCtrl'
     })
     .otherwise('/login')
 }

@@ -69,3 +69,16 @@ angular
     templateUrl: '/templates/components/recipe_internal.html'
   }
 })
+
+.directive('searchRecipes', function () {
+  return {
+    restrict: 'E',
+    controller: function ($scope, $location) {
+      $scope.searchRecipes = function (e) {
+        e.preventDefault()
+        $location.url('/search/' + $scope.query)
+      }
+    },
+    templateUrl: '/templates/components/form_search_recipes.html'
+  }
+})
