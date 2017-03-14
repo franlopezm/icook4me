@@ -20,9 +20,14 @@
             <recipe-internal ng-if="recipe.id_recipe_ext === ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-internal>
         </article>
     </div>
-    <div ng-show="aRecipes.length === 0">
+    <div ng-hide="showNoResult">
+        <div class="alert alert-info">
+            <strong>Buscando...</strong>
+        </div>
+    </div>
+    <div ng-show="showNoResult">
         <div class="alert alert-danger">
-            <strong>No se han encontrado resultados</strong>
+            <strong>No se han encontrado resultados.</strong>
         </div>
     </div>
 </section>

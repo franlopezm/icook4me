@@ -13,13 +13,13 @@
     }
 
   // Helper functions
-    function allRecipes (searchQuery, numPage) {
+    function allRecipes (searchQuery) {
       let recipes = []
-      searchFood2fork(searchQuery, numPage)
+      searchFood2fork(searchQuery)
         .then(data => {
           recipes.push(...data)
         })
-      searchEdamam(searchQuery, numPage)
+      searchEdamam(searchQuery)
         .then(data => {
           recipes.push(...data)
         })
@@ -35,7 +35,7 @@
     function searchEdamam (searchQuery, numPage = 1) {
       let query = searchQuery
       let page = numPage
-      let limit = 20
+      let limit = 30
       return $http.get(`/external/edamam?q=${query}&page=${page}&limit=${limit}`)
                 .then(({data}) => data)
     }

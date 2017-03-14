@@ -3,12 +3,15 @@
   'use strict'
   angular
     .module('iCook4meApp')
-    .component('formSearchRecipes', {
-      templateUrl: '/js/components/form_search_recipes/form_search_recipes.html',
-      controller: FormSearchRecipesCtrl
+    .directive('formSearchRecipes', function () {
+      return {
+        restrict: 'E',
+        controller: FormSearchRecipesCtrl,
+        templateUrl: '/js/components/form_search_recipes/form_search_recipes.html'
+      }
     })
 
-  function FormSearchRecipesCtrl ($scope, $location) {
+  function FormSearchRecipesCtrl ($scope, $rootScope, $location) {
     $scope.searchRecipes = function (e) {
       e.preventDefault()
       $location.url('/search/' + $scope.query)
