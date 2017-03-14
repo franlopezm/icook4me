@@ -1,6 +1,6 @@
-<form action="" method="POST" class="form-inline" role="form" ng-submit="searchRecipes($event)">
+<form action="" method="POST" class="form-inline" role="form" ng-submit="vm.searchRecipes($event)">
     <div>
         <i class="fa fa-search icon-search-input" aria-hidden="true"></i>
-        <input type="text" class="search-input" placeholder="Pollo a la sidra" ng-init="query= queryFood ? queryFood : ''" ng-value="queryFood ? queryFood : ''" ng-model="query">
+        <input type="text" class="search-input" placeholder="Pollo a la sidra" ng-init="vm.query= $root.queryFood ? $root.queryFood : ''" ng-value="vm.query ? vm.query : ''" ng-model="vm.query">
     </div>
 </form>

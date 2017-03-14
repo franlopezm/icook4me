@@ -8,24 +8,10 @@
   function ExternalRecipesFact ($http) {
     return {
       searchFood2fork,
-      searchEdamam,
-      allRecipes
+      searchEdamam
     }
 
   // Helper functions
-    function allRecipes (searchQuery) {
-      let recipes = []
-      searchFood2fork(searchQuery)
-        .then(data => {
-          recipes.push(...data)
-        })
-      searchEdamam(searchQuery)
-        .then(data => {
-          recipes.push(...data)
-        })
-      return recipes
-    }
-
     function searchFood2fork (searchQuery, numPage = 1) {
       let query = searchQuery
       let page = numPage
