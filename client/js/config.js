@@ -3,7 +3,7 @@ angular
     .module('iCook4meApp')
     .config(configRoute)
 
-function configRoute ($routeProvider) {
+function configRoute ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: '/templates/home.html',
@@ -35,4 +35,5 @@ function configRoute ($routeProvider) {
       controller: 'SearchRecipeCtrl'
     })
     .otherwise('/login')
+  $locationProvider.html5Mode(true)
 }
