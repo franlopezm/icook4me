@@ -1,6 +1,6 @@
 const getJSON = require('get-json')
 
-const apiKeyFood2Fork = process.env.FOOD2FORK_API_KEY || require('./../../../../../api').apiKeyFood2Fork
+const apiKeyFood2Fork = process.env.FOOD2FORK_API_KEY
 
 let cacheRecipes = {}
 

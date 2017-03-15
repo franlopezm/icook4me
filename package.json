@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/FransLopez/icook4me#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "bower": "^1.8.0",
-    "cheerio": "^0.22.0",
+    "dotenv": "^4.0.0",
     "express": "^4.15.2",
-    "get-json": "0.0.3",
-    "request": "^2.80.0"
+    "get-json": "0.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

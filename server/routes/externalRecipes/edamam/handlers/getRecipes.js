@@ -1,7 +1,7 @@
 const getJSON = require('get-json')
 
-const apiKeyEdamam = process.env.EDAMAM_API_KEY || require('./../../../../../api').apiKeyEdamam
-const appIdEdamam = process.env.EDAMAM_APP_ID || require('./../../../../../api').idEdamam
+const apiKeyEdamam = process.env.EDAMAM_API_KEY
+const appIdEdamam = process.env.EDAMAM_APP_ID
 
 let cacheRecipesEdamam = {}
 var recipesEdamam = {}

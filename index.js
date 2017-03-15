@@ -1,15 +1,12 @@
-const express = require('express')
-const path = require('path')
-const app = express()
+const fs = require('fs')
+const thereisDotEnv = fs.existsSync('.env')
+if (thereisDotEnv) require('dotenv').config()
 
-const routes = require('./server/routes')
-const PORT = process.env.PORT || 3000
-const publicFolder = path.join(__dirname, 'client')
+const app = require('./server')
+// const db = require('./server/db')
 
-app
-  .use(express.static(publicFolder))
-  .use(routes)
-  .get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/client/index.html'))
-  })
-  .listen(PORT, () => console.log(`Magic happens on Port ${PORT}...`))
+// const dbURI = process.env.DB_URI
+const PORT = process.env.PORT
+
+// db.open(dbURI)
+app.listen(PORT, () => console.log(`Magic happens on Port ${PORT}...`))
