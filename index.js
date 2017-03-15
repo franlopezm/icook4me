@@ -9,4 +9,7 @@
     app
   .use(express.static(publicFolder))
   .use(routes)
+  .get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, '/client/index.html'))
+  })
   .listen(PORT, () => console.log(`Magic happens on Port ${PORT}...`))
