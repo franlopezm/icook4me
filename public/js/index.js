@@ -2,7 +2,8 @@
 angular
   .module('iCook4meApp', [
     'ngRoute',
-    'infinite-scroll'
+    'infinite-scroll',
+    'formSearchRecipes'
   ])
 
 .controller('BookRecipesCtrl', function ($scope, $rootScope) {

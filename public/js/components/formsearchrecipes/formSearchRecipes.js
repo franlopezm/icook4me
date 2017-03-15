@@ -2,11 +2,11 @@
 (function () {
   'use strict'
   angular
-    .module('iCook4meApp')
+    .module('formSearchRecipes', [])
     .component('formSearchRecipes', {
       controller: FormSearchRecipesCtrl,
       controllerAs: 'vm',
-      templateUrl: '/js/components/form_search_recipes/form_search_recipes.html'
+      templateUrl: '/js/components/formsearchrecipes/formsearchrecipes.html'
     })
 
   function FormSearchRecipesCtrl ($location) {
