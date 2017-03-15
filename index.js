@@ -2,9 +2,9 @@
     const path = require('path')
     const app = express()
 
-    const routes = require('./app/routes')
+    const routes = require('./server/routes')
     const PORT = process.env.PORT || 3000
-    const publicFolder = path.join(__dirname, 'public')
+    const publicFolder = path.join(__dirname, 'client')
 
     app
   .use(express.static(publicFolder))
