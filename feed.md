@@ -16,3 +16,4 @@ oRecipe.id_recipe_ext
 # Variables globales
 $rootScope.queryFood
 $rootScope.section
+$rootScope.loggedUser

@@ -2,6 +2,7 @@
 angular
   .module('iCook4meApp', [
     'ngRoute',
+    'angular-jwt',
     'infinite-scroll',
     'formSearchRecipes'
   ])
@@ -10,11 +11,12 @@ angular
   $rootScope.section = 'bookrecipes'
   $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
 })
-.controller('ProfileCtrl', function ($scope, $rootScope) {
+.controller('ProfileCtrl', function ($scope, $rootScope, $location, AuthFact) {
   $rootScope.section = 'profile'
-})
-.controller('LoginCtrl', function ($scope, $rootScope) {
-  $rootScope.section = 'login'
+  $scope.logout = function () {
+    AuthFact.logout()
+    $location.path('/login')
+  }
 })
 
 .run(function ($rootScope, $location) {

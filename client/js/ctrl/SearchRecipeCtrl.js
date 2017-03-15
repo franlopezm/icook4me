@@ -5,7 +5,7 @@
     .module('iCook4meApp')
     .controller('SearchRecipeCtrl', SearchRecipeCtrl)
 
-  function SearchRecipeCtrl ($scope, $q, $rootScope, $routeParams, ExternalRecipesFact, $location, $anchorScroll) {
+  function SearchRecipeCtrl ($scope, $q, auth, $rootScope, $routeParams, ProxyRecipesFact, $location, $anchorScroll) {
     $rootScope.section = 'home'
     let {query} = $routeParams
     $rootScope.queryFood = query
@@ -15,8 +15,8 @@
     let pageSize = 12
 
     $q.all([
-      ExternalRecipesFact.searchFood2fork(query),
-      ExternalRecipesFact.searchEdamam(query)
+      ProxyRecipesFact.searchFood2fork(query),
+      ProxyRecipesFact.searchEdamam(query)
     ]).then(data => {
       let recipes = [...data[0], ...data[1]]
       if (recipes.length === 0) {
@@ -37,11 +37,11 @@
     $scope.showMoreItems = function () {
       $scope.showNoResult = true
       let page = pagesShown + 1
-      ExternalRecipesFact.searchFood2fork(query, page)
+      ProxyRecipesFact.searchFood2fork(query, page)
         .then(recipes => {
           $scope.aRecipes.push(...recipes)
         })
-      ExternalRecipesFact.searchEdamam(query, page)
+      ProxyRecipesFact.searchEdamam(query, page)
         .then(recipes => {
           $scope.aRecipes.push(...recipes)
         })

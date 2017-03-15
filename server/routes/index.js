@@ -1,9 +1,13 @@
 const express = require('express')
 const Router = express.Router()
 
-const externalRecipes = require('./externalRecipes')
+const routesProxy = require('./proxy')
+const routesAuth = require('./auth')
+// const routesApi = require('./api')
 
 Router
-  .use('/external', externalRecipes)
+  .use('/auth', routesAuth)
+  .use('/proxy', routesProxy)
+  // .use('/api', routesApi)
 
 module.exports = Router
