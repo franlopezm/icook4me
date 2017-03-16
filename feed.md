@@ -8,6 +8,7 @@
 7. img en user al logearse
 8. arreglar login y register
 
+9. Menu navbar(icook4me | home | 4me | add | fav | user)
 
 oRecipe.title
 oRecipe.image

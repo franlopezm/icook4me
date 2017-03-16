@@ -5,20 +5,20 @@
     .module('iCook4meApp')
     .controller('AddRecipeCtrl', AddRecipeCtrl)
 
-  function AddRecipeCtrl ($scope, auth, $rootScope) {
+  function AddRecipeCtrl ($scope, $rootScope) {
     $rootScope.section = 'add'
     $scope.ingredients = []
     $scope.preparation = []
 
     $scope.saveRecipe = (e) => {
       e.preventDefault()
-      console.log($scope.title)
+      /* console.log($scope.title)
       console.log($scope.ingredients)
-      console.log($scope.preparation)
+      console.log($scope.preparation) */
     }
     $scope.addRecipe = (e) => {
       e.preventDefault()
-      console.log(e)
+      // console.log(e)
     }
 
     $scope.keyPressAdd = (e) => {
