@@ -14,8 +14,7 @@ body {
   .link.active {
     color: #f49e57; }
   .link:focus {
-    text-decoration: none;
-    color: #ffffff; }
+    text-decoration: none; }
 
 .text-nav {
   font-size: 12px;
