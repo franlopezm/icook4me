@@ -5,7 +5,7 @@
     .module('iCook4meApp')
     .controller('AddRecipeCtrl', AddRecipeCtrl)
 
-  function AddRecipeCtrl ($scope, $rootScope) {
+  function AddRecipeCtrl ($scope, auth, $rootScope) {
     $rootScope.section = 'add'
     $scope.ingredients = []
     $scope.preparation = []

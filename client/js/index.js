@@ -4,34 +4,8 @@ angular
     'ngRoute',
     'angular-jwt',
     'infinite-scroll',
-    'formSearchRecipes'
+    'myComponents'
   ])
-
-.controller('BookRecipesCtrl', function ($scope, $rootScope) {
-  $rootScope.section = 'bookrecipes'
-  $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
-})
-.controller('ProfileCtrl', function ($scope, $rootScope, $location, AuthFact) {
-  $rootScope.section = 'profile'
-  $scope.logout = function () {
-    AuthFact.logout()
-    $location.path('/login')
-  }
-})
-
-.run(function ($rootScope, $location) {
-  let history = []
-
-  $rootScope.$on('$routeChangeSuccess', function () {
-    history.push($location.$$path)
-  })
-
-  $rootScope.back = function () {
-    let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
-    $location.path(prevUrl)
-    history = []
-  }
-})
 
 .directive('errSrc', function () {
   return {

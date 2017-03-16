@@ -3,24 +3,14 @@ angular
   .module('iCook4meApp')
   .config(configProvider)
   .config(configRoute)
-  .run(function ($rootScope, $location, StorageFact, AuthFact) {
-    if (AuthFact.isLoggedIn()) {
-      const token = StorageFact.readToken()
-      AuthFact.setCredentials(token)
-    }
+  .run(runConfig)
 
-    $rootScope.$on('$routeChangeError', function (next, current, previous, rejection) {
-      if (rejection === 'Not Authenticated') {
-        $location.path('/login')
-      }
-    })
-  })
-
+// Handlers functions
 function configProvider ($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor')
 }
 
-function configRoute ($routeProvider, $locationProvider) {
+function configRoute ($routeProvider) {
   $routeProvider
     .when('/login', {
       templateUrl: '/templates/login.html',
@@ -74,5 +64,34 @@ function configRoute ($routeProvider, $locationProvider) {
       }
     })
     .otherwise('/login')
-  $locationProvider.html5Mode(true)
+  /*, $locationProvider
+  $locationProvider.html5Mode(true) */
+}
+
+function runConfig ($rootScope, $location, StorageFact, AuthFact) {
+  /* Authentication autorization */
+  if (AuthFact.isLoggedIn()) {
+    const token = StorageFact.readToken()
+    AuthFact.setCredentials(token)
+  }
+
+  $rootScope.$on('$routeChangeError', function (next, current, previous, rejection) {
+    console.log('hola')
+    if (rejection === 'Not Authenticated') {
+      $location.path('/login')
+    }
+  })
+
+  /* History */
+  let history = []
+
+  $rootScope.$on('$routeChangeSuccess', function () {
+    history.push($location.$$path)
+  })
+
+  $rootScope.back = function () {
+    let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
+    $location.path(prevUrl)
+    history = []
+  }
 }

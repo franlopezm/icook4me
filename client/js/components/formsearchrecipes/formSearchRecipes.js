@@ -2,7 +2,7 @@
 (function () {
   'use strict'
   angular
-    .module('formSearchRecipes', [])
+    .module('myComponents')
     .component('formSearchRecipes', {
       controller: FormSearchRecipesCtrl,
       controllerAs: 'vm',

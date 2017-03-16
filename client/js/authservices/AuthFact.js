@@ -48,7 +48,7 @@
     }
 
     function setCredentials (token) {
-      const tokenPayload = jwtHelper.decodeToken(token)
+      var tokenPayload = jwtHelper.decodeToken(token)
       $rootScope.loggedUser = tokenPayload
     }
   }
