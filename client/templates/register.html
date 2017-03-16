@@ -1,7 +1,7 @@
-<!--<div id="login">
-    <h3 class="text-center">Login</h3>
+<div id="login">
+    <h3 class="text-center">Registrate</h3>
     <div class="row-flex">
-        <div class="item-row-flex social-buttons">
+        <!--<div class="item-row-flex social-buttons">
             <a href="#" class="btn btn-lg btn-block btn-facebook">
                 <i class="fa fa-facebook visible-xs"></i>
                 <span class="hidden-xs">Facebook</span>
@@ -12,63 +12,45 @@
                 <i class="fa fa-twitter visible-xs"></i>
                 <span class="hidden-xs">Twitter</span>
             </a>
-        </div>
+        </div>-->
         <div class="item-row-flex social-buttons">
             <a href="#" class="btn btn-lg btn-block btn-google">
-                <i class="fa fa-google-plus visible-xs"></i>
-                <span class="hidden-xs">Google+</span>
-            </a>
-        </div>
-        <div class="item-row-flex not-button">
-            <label class="remember-me">
-                <input type="checkbox" value="remember-me"><span>Remember Me</span>
-            </label>
-        </div>
-    </div>
-</div>-->
-<div class="omb_login">
-    <h3 class="omb_authTitle"><a href="#!/login">Log In here</a> or Register</h3>
-    <div class="row omb_row-sm-offset-3 omb_socialButtons">
-        <div class="col-xs-4 col-sm-2">
-            <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-                <i class="fa fa-facebook visible-xs"></i>
-                <span class="hidden-xs">Facebook</span>
-            </a>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-            <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-                <i class="fa fa-twitter visible-xs"></i>
-                <span class="hidden-xs">Twitter</span>
-            </a>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-            <a href="#" class="btn btn-lg btn-block omb_btn-google">
-                <i class="fa fa-google-plus visible-xs"></i>
-                <span class="hidden-xs">Google+</span>
+                <i class="fa fa-google visible-xs"></i>
+                <span class="hidden-xs">Google</span>
             </a>
         </div>
     </div>
-    <div class="row omb_row-sm-offset-3 omb_loginOr">
-        <div class="col-xs-12 col-sm-6">
-            <hr class="omb_hrOr">
-            <span class="omb_spanOr">or</span>
+    <div class="omb_login">
+        <div class="row omb_row-sm-offset-3 omb_loginOr">
+            <div class="col-xs-12 col-sm-6">
+                <hr class="omb_hrOr">
+                <span class="omb_spanOr">or</span>
+            </div>
         </div>
-    </div>
-    <div class="row omb_row-sm-offset-3">
-        <div class="col-xs-12 col-sm-6">
-            <form ng-submit="register($event)" class="omb_loginForm" action="" autocomplete="off" method="POST">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input ng-model="username" type="text" class="form-control" name="username" placeholder="Username">
-                </div>
-                <span class="help-block"></span>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input ng-model="password" type="password" class="form-control" name="password" placeholder="Password">
-                </div>
-                <span class="help-block"></span>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-            </form>
+        <div class="row omb_row-sm-offset-3">
+            <div class="col-xs-12 col-sm-6">
+                <form ng-submit="register($event)" class="omb_loginForm" action="" autocomplete="off" method="POST">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input ng-model="name" type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <span class="help-block"></span>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="email" ng-model="username" class="form-control" placeholder="icook4meprueba@gm.com">
+                    </div>
+                    <span class="help-block"></span>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input ng-model="password" type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <span class="help-block"></span>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <div class="new-count">
+            ¿No tienes una cuenta? <a class="link" alt="Crear cuenta nueva" href="#!/register">Crear Cuenta</a>
         </div>
     </div>
 </div>

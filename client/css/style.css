@@ -311,6 +311,15 @@ body {
   margin-top: 10px; }
   #login .remember-me span {
     margin-left: 5px; }
+#login .new-count {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600; }
+  #login .new-count .link {
+    color: #2a81ce; }
+    #login .new-count .link:hover {
+      color: #5d5d5d; }
 
 .fullscreen-recipe textarea,
 .fullscreen-recipe input {

@@ -10,7 +10,9 @@
         margin-left: 25%;
     }
 }
-
+.omb_login button {
+  border-radius: 0;
+}
 .omb_login .omb_authTitle {
     text-align: center;
   line-height: 300%;
