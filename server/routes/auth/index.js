@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const passport = require('../_passport')
+const passport = require(__base + 'config/passport')
 
 const register = require('./handlers/register')
 const login = require('./handlers/login')

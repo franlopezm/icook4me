@@ -22,24 +22,20 @@ body
   &:hover
     color: $link-primary-hover
     text-decoration: none
-    .text-nav
-      display: block
-      position: absolute
-      margin-top: -6px
-      margin-left: -10px
-      background: $background-navbar
-      padding: 9px 11px
-      line-height: initial
-      color: #fff
   &.active
     color: $link-primary-hover
   &:focus
     text-decoration: none
-  .text-nav
-    display: none
+    color: $link-primary
 
 .text-nav
   font-size: 12px
+  margin-left: -10px
+  padding: 9px 11px
+  line-height: initial
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
 
 .link-second
   color: $link-second
@@ -60,8 +56,10 @@ body
   .items-nav
     display: flex
     flex-direction: row
-    justify-content: center
+    justify-content: space-between
     align-items: center
+  .items-nav-second
+    justify-content: center
 
 .navbar-primary
   background: $background-navbar
@@ -70,8 +68,8 @@ body
   .link
     line-height: 51px
     font-size: 25px
-    padding: 10px
-    margin: 0 20px
+    padding: 8px
+    margin: 0 15px
   .brand-nav
     font-family: 'Indie Flower', cursive
     margin: 0
@@ -366,21 +364,44 @@ body
   .fullscreen-recipe-preparation,
   .fullscreen-recipe-ingredients
     margin-bottom: 20px
+    .group-input
+      margin-bottom: 10px
     h3
       text-decoration: none
-      border-bottom: 1px solid #000
+      border-bottom: 2px solid #eaaa74
       max-width: 70%
       margin-bottom: 15px
     input
       width: calc(100% - 80px)
-      margin-right: 0
-      margin-bottom: 10px
       display: inline-block
     textarea
       width: 100%
       min-height: 80px
+    i 
+      font-size: 18px
+      padding: 2px 1%
+      margin: 0 2px
+      cursor: pointer
+      line-height: 25px
+      color: $link-thumbnail-primary
+      &:hover
+        color: $link-thumbnail-hover
     li
       font-size: 1.1em
+    ul
+      margin-left: -30px
+      margin-right: 10px  
+      .list-ingredients
+        display: inline-block
+        list-style: none
+        margin-bottom: 5px
+        margin-right: 10px
+        border-radius: 10px
+        padding: 4px 10px
+        background: #d0d7fb
+        i
+          display: inline
+          padding: 2px 0
     ol
       list-style: none
       text-align: justify
@@ -392,19 +413,9 @@ body
           margin: 10px auto
           height: 1px
           box-shadow: 0 1px rgba(0,0,0,0.4)          
-    i 
-      font-size: 18px
-      padding: 2px 1%
-      margin: 0 2px
-      cursor: pointer
-      line-height: 25px
-      color: $link-thumbnail-primary
-      &:hover
-        color: $link-thumbnail-hover
     button
       display: inline
       width: 67px
-      margin-bottom: 10px
   
 .show-recipe
   h2
@@ -440,6 +451,9 @@ body
       text-align: justify
       font-weight: 600
       color: $colortext-primary
+    ul
+      margin-left: 0px
+      margin-right: 0px  
     li
       padding: 3px 0
       font-size: 1.1em
@@ -454,6 +468,11 @@ body
           margin: 10px auto
           height: 1px
           box-shadow: 0 1px rgba(0,0,0,0.4)
+
+/* Media Querys */
+@media all and (max-width: 700px )
+  .text-nav
+    display: none
 
 /* Media Querys */
 @media all and (max-width: 600px )
@@ -471,10 +490,6 @@ body
       font-size: 20px
       padding: 8px
       margin: 0 15px
-      &:hover
-        .text-nav
-          margin-top: -66px
-          margin-left: -28px
     h1
       font-size: 30px
     .brand-nav

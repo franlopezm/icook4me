@@ -1,4 +1,4 @@
-/* eslint no-undef: "off" */
+  /* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular
@@ -37,14 +37,10 @@
     }
 
     function isLoggedIn () {
-      try {
-        const token = StorageFact.readToken()
-        if (!token) return false
-        const tokenPayload = jwtHelper.decodeToken(token)
-        return !(jwtHelper.isTokenExpired(token))
-      } catch (e) {
-        return $q.reject('Not Authenticated')
-      }
+      const token = StorageFact.readToken()
+      if (!token) return false
+      const tokenPayload = jwtHelper.decodeToken(token)
+      return !(jwtHelper.isTokenExpired(token))
     }
 
     function setCredentials (token) {

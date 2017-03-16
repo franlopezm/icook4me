@@ -3,6 +3,9 @@
 3. edit recipe
 4. login user
 5. Busqueda por rutas
+6. cambiar diseño del login y register
+7. img en user al logearse
+
 
 oRecipe.title
 oRecipe.image

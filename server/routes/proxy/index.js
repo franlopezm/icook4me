@@ -1,6 +1,6 @@
 const express = require('express')
 const Router = express.Router()
-const passport = require('../_passport')
+const passport = require(__base + 'config/passport')
 
 const food2fork = require('./food2fork')
 const edamam = require('./edamam')

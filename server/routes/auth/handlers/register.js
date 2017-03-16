@@ -1,4 +1,4 @@
-const User = require('../../../models/User')
+const User = require(__base + 'models/User')
 
 function register (req, res) {
   const { username, password } = req.body

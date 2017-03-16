@@ -11,24 +11,20 @@ body {
   .link:hover {
     color: #f49e57;
     text-decoration: none; }
-    .link:hover .text-nav {
-      display: block;
-      position: absolute;
-      margin-top: -6px;
-      margin-left: -10px;
-      background: #404040;
-      padding: 9px 11px;
-      line-height: initial;
-      color: #fff; }
   .link.active {
     color: #f49e57; }
   .link:focus {
-    text-decoration: none; }
-  .link .text-nav {
-    display: none; }
+    text-decoration: none;
+    color: #ffffff; }
 
 .text-nav {
-  font-size: 12px; }
+  font-size: 12px;
+  margin-left: -10px;
+  padding: 9px 11px;
+  line-height: initial;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 .link-second {
   color: #5d5d5d; }
@@ -49,8 +45,10 @@ body {
   .navbar-header .items-nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center; }
+  .navbar-header .items-nav-second {
+    justify-content: center; }
 
 .navbar-primary {
   background: #404040;
@@ -59,8 +57,8 @@ body {
   .navbar-primary .link {
     line-height: 51px;
     font-size: 25px;
-    padding: 10px;
-    margin: 0 20px; }
+    padding: 8px;
+    margin: 0 15px; }
   .navbar-primary .brand-nav {
     font-family: "Indie Flower", cursive;
     margin: 0;
@@ -346,29 +344,64 @@ body {
 .fullscreen-recipe .fullscreen-recipe-preparation,
 .fullscreen-recipe .fullscreen-recipe-ingredients {
   margin-bottom: 20px; }
+  .fullscreen-recipe .fullscreen-recipe-description .group-input,
+  .fullscreen-recipe .fullscreen-recipe-preparation .group-input,
+  .fullscreen-recipe .fullscreen-recipe-ingredients .group-input {
+    margin-bottom: 10px; }
   .fullscreen-recipe .fullscreen-recipe-description h3,
   .fullscreen-recipe .fullscreen-recipe-preparation h3,
   .fullscreen-recipe .fullscreen-recipe-ingredients h3 {
     text-decoration: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #eaaa74;
     max-width: 70%;
     margin-bottom: 15px; }
   .fullscreen-recipe .fullscreen-recipe-description input,
   .fullscreen-recipe .fullscreen-recipe-preparation input,
   .fullscreen-recipe .fullscreen-recipe-ingredients input {
     width: calc(100% - 80px);
-    margin-right: 0;
-    margin-bottom: 10px;
     display: inline-block; }
   .fullscreen-recipe .fullscreen-recipe-description textarea,
   .fullscreen-recipe .fullscreen-recipe-preparation textarea,
   .fullscreen-recipe .fullscreen-recipe-ingredients textarea {
     width: 100%;
     min-height: 80px; }
+  .fullscreen-recipe .fullscreen-recipe-description i,
+  .fullscreen-recipe .fullscreen-recipe-preparation i,
+  .fullscreen-recipe .fullscreen-recipe-ingredients i {
+    font-size: 18px;
+    padding: 2px 1%;
+    margin: 0 2px;
+    cursor: pointer;
+    line-height: 25px;
+    color: #4a86bb; }
+    .fullscreen-recipe .fullscreen-recipe-description i:hover,
+    .fullscreen-recipe .fullscreen-recipe-preparation i:hover,
+    .fullscreen-recipe .fullscreen-recipe-ingredients i:hover {
+      color: #ff9d4b; }
   .fullscreen-recipe .fullscreen-recipe-description li,
   .fullscreen-recipe .fullscreen-recipe-preparation li,
   .fullscreen-recipe .fullscreen-recipe-ingredients li {
     font-size: 1.1em; }
+  .fullscreen-recipe .fullscreen-recipe-description ul,
+  .fullscreen-recipe .fullscreen-recipe-preparation ul,
+  .fullscreen-recipe .fullscreen-recipe-ingredients ul {
+    margin-left: -30px;
+    margin-right: 10px; }
+    .fullscreen-recipe .fullscreen-recipe-description ul .list-ingredients,
+    .fullscreen-recipe .fullscreen-recipe-preparation ul .list-ingredients,
+    .fullscreen-recipe .fullscreen-recipe-ingredients ul .list-ingredients {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      border-radius: 10px;
+      padding: 4px 10px;
+      background: #d0d7fb; }
+      .fullscreen-recipe .fullscreen-recipe-description ul .list-ingredients i,
+      .fullscreen-recipe .fullscreen-recipe-preparation ul .list-ingredients i,
+      .fullscreen-recipe .fullscreen-recipe-ingredients ul .list-ingredients i {
+        display: inline;
+        padding: 2px 0; }
   .fullscreen-recipe .fullscreen-recipe-description ol,
   .fullscreen-recipe .fullscreen-recipe-preparation ol,
   .fullscreen-recipe .fullscreen-recipe-ingredients ol {
@@ -386,25 +419,11 @@ body {
         margin: 10px auto;
         height: 1px;
         box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
-  .fullscreen-recipe .fullscreen-recipe-description i,
-  .fullscreen-recipe .fullscreen-recipe-preparation i,
-  .fullscreen-recipe .fullscreen-recipe-ingredients i {
-    font-size: 18px;
-    padding: 2px 1%;
-    margin: 0 2px;
-    cursor: pointer;
-    line-height: 25px;
-    color: #4a86bb; }
-    .fullscreen-recipe .fullscreen-recipe-description i:hover,
-    .fullscreen-recipe .fullscreen-recipe-preparation i:hover,
-    .fullscreen-recipe .fullscreen-recipe-ingredients i:hover {
-      color: #ff9d4b; }
   .fullscreen-recipe .fullscreen-recipe-description button,
   .fullscreen-recipe .fullscreen-recipe-preparation button,
   .fullscreen-recipe .fullscreen-recipe-ingredients button {
     display: inline;
-    width: 67px;
-    margin-bottom: 10px; }
+    width: 67px; }
 
 .show-recipe h2 {
   text-align: center;
@@ -443,6 +462,11 @@ body {
     text-align: justify;
     font-weight: 600;
     color: #696969; }
+  .show-recipe .fullscreen-recipe-description ul,
+  .show-recipe .fullscreen-recipe-preparation ul,
+  .show-recipe .fullscreen-recipe-ingredients ul {
+    margin-left: 0px;
+    margin-right: 0px; }
   .show-recipe .fullscreen-recipe-description li,
   .show-recipe .fullscreen-recipe-preparation li,
   .show-recipe .fullscreen-recipe-ingredients li {
@@ -467,6 +491,10 @@ body {
         box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
 
 /* Media Querys */
+@media all and (max-width: 700px) {
+  .text-nav {
+    display: none; } }
+/* Media Querys */
 @media all and (max-width: 600px) {
   body {
     padding-top: 15px;
@@ -481,9 +509,6 @@ body {
     font-size: 20px;
     padding: 8px;
     margin: 0 15px; }
-    .navbar-primary .link:hover .text-nav {
-      margin-top: -66px;
-      margin-left: -28px; }
   .navbar-primary h1 {
     font-size: 30px; }
   .navbar-primary .brand-nav .link {
