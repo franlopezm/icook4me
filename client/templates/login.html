@@ -1,4 +1,5 @@
 <div id="login">
+    <h3 class="text-center">Iniciar sesión</h3>
     <div class="row-flex">
         <!--<div class="item-row-flex social-buttons">
             <a href="#" class="btn btn-lg btn-block btn-facebook">
@@ -36,15 +37,15 @@
                 <form class="omb_loginForm" action="" autocomplete="off" method="POST" ng-submit="login($event)">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="email" ng-model="username" class="form-control" placeholder="icook4meprueba@gm.com">
+                        <input type="email" required ng-model="username" class="form-control" placeholder="icook4meprueba@gm.com">
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input type="password" ng-model="password" class="form-control" placeholder="Password">
+                        <input type="password" required ng-model="password" class="form-control" placeholder="Password">
                     </div>
                     <span class="help-block"></span>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
                 </form>
             </div>
         </div>

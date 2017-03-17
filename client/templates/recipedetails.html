@@ -27,11 +27,11 @@
 <article class="row fullscreen-recipe show-recipe">
     <header class="col-xs-12">
         <h2>
-          {{recipe[0].title}}
+          {{recipe.title}}
         </h2>
     </header>
     <section class="col-xs-12 text-center fullscreen-recipe-img">
-        <img class="img-responsive center-block" ng-src="{{recipe[0].image}}" alt="{{recipe[0].title}}">
+        <img class="img-responsive center-block" ng-src="/img/{{recipe.image}}" alt="{{recipe.title}}">
         <div class="recipeinfo">
             <div class="text-center">
                 <ul class="navbar-list">
@@ -57,17 +57,17 @@
                     </li>
                 </ul>
             </div>
-            <p>Autor: <a href="#" class="link-thumbnail link-username-recipe">{{recipe[0].publisher}}</a></p>
+            <p>Autor: <a href="#!/profile/{{recipe.autor.id}}" class="link-thumbnail link-username-recipe">{{recipe.autor.name}}</a></p>
         </div>
     </section>
     <section class="col-xs-12 fullscreen-recipe-description">
         <h3>Description:</h3>
-        <p>{{recipe[0].description}}</p>
+        <p>{{recipe.description}}</p>
     </section>
     <section class="col-xs-12 fullscreen-recipe-ingredients">
         <h3>Ingredientes:</h3>
         <ul>
-            <li ng-repeat="ingredient in recipe[0].ingredients track by $index">
+            <li ng-repeat="ingredient in recipe.ingredients track by $index">
                 {{ingredient}}
             </li>
         </ul>
@@ -75,7 +75,7 @@
     <section class="col-xs-12 fullscreen-recipe-preparation">
         <h3>Preparación:</h3>
         <ol>
-            <li ng-repeat="step in recipe[0].preparation track by $index">
+            <li ng-repeat="step in recipe.steps track by $index">
                 {{step}}
                 <div class="line-step"></div>
             </li>

@@ -1,16 +1,21 @@
 <section class="navbar-header navbar-second">
     <div class="items-nav items-nav-second">
         <ul class="navbar-list nav-button">
+            <!--<li>
+                <button type="button" class="btn btn-primary" ng-click="saveRecipe($event)">Guardar</button>
+            </li>-->
             <li>
-                <button type="submit" form="form-add-recipe" name="save" class="btn btn-primary" ng-click="saveRecipe($event)">Guardar</button>
-            </li>
-            <li>
-                <button type="submit" form="form-add-recipe" name="publish" class="btn btn-success">Publicar</button>
+                <button type="button" class="btn btn-success" ng-click="addRecipe($event)">Publicar</button>
             </li>
         </ul>
     </div>
 </section>
-<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="addRecipe($event)">
+<div class="messages" ng-show="showMessage">
+    <div class="alert alert-info">
+        <strong>Guardando...</strong>
+    </div>
+</div>
+<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="submitRecipe($event)">
     <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
@@ -29,7 +34,7 @@
             <h3>Ingredientes:</h3>
             <div class="group-input">
                 <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="keyPressAdd($event)" ng-model="ingredient">
-                <button name="btn_addingredient" type="button" ng-click="addIngredient()" class="btn btn-info">Añadir</button>
+                <button type="button" ng-click="addIngredient()" class="btn btn-info">Añadir</button>
             </div>
             <ul>
                 <li ng-repeat="ingredient in ingredients track by $index" class="list-ingredients">
@@ -41,11 +46,11 @@
         <section class="col-xs-12 fullscreen-recipe-preparation">
             <h3>Preparación:</h3>
             <div class="group-input">
-                <input ng-keypress="keyPressAdd($event)" name="preparation" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="step">
+                <input ng-keypress="keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="step">
                 <button type="button" class="btn btn-info" ng-click="addStep()">Añadir</button>
             </div>
             <ol>
-                <li ng-repeat="step in preparation track by $index">
+                <li ng-repeat="step in steps track by $index">
                     <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="removeStep($index)"></i> {{step}}
                     <div class="line-step"></div>
                 </li>

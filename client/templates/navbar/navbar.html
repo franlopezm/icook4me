@@ -23,8 +23,8 @@
         </ul>
         <ul class="navbar-list">
             <li>
-                <a class="link {{section === 'profile' ? 'active' : ''}}" href="#!/profile" title="Perfil de usuario">
-                    <span class="text-nav">Username...</span>
+                <a class="link {{section === 'profile' ? 'active' : ''}}" href="#!/profile" title="Perfil de {{loggedUser.name}}">
+                    <span class="text-nav">{{loggedUser.name.substr(0,10)}}...</span>
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
             </li>

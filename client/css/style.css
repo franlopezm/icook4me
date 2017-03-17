@@ -147,6 +147,20 @@ body {
     color: #ff5917;
     font-weight: 600; }
 
+/* Menssage */
+.messages {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0;
+  background: rgba(250, 250, 250, 0.6);
+  z-index: 1010; }
+  .messages .alert-info {
+    width: 90%;
+    margin: 20% auto;
+    text-align: center; }
+
 /* 4. Recipes thumbnail */
 .thumbnail {
   border-radius: 0; }
