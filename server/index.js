@@ -11,6 +11,6 @@ app
   .use(bodyParser.json())
 
   .use(routes)
-  // .get('/*', (req, res) => res.sendFile(path.join(__dirname, '../client/index.html')))
+  .get('/*', (req, res) => res.sendFile(path.join(__dirname, '../client/index.html')))
 
 module.exports = app

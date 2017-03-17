@@ -9,7 +9,7 @@ function configProvider ($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor')
 }
 
-function configRoute ($routeProvider) {
+function configRoute ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/login', {
       templateUrl: '/templates/login.html',
@@ -51,6 +51,5 @@ function configRoute ($routeProvider) {
       secure: true
     })
     .otherwise('/')
-  /*, $locationProvider
-  $locationProvider.html5Mode(true) */
+  $locationProvider.html5Mode(true)
 }
