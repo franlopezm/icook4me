@@ -7,11 +7,11 @@ const User = new mongoose.Schema({
   name: {type: String, required: true},
   image: String,
   description: String,
-  like: [{type: ObjectId, ref: 'Recipe'}],
+  likes: [{type: ObjectId, ref: 'Recipe'}],
   bookmarks: [{type: ObjectId, ref: 'Recipe'}],
   followers: [{type: ObjectId, ref: 'User'}],
   following: [{type: ObjectId, ref: 'User'}],
-  recipe: [{type: ObjectId, ref: 'Recipe'}]
+  recipes: [{type: ObjectId, ref: 'Recipe'}]
 })
 
 User.plugin(passportLocalMongoose)

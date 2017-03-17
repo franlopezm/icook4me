@@ -10,7 +10,7 @@ const Recipe = new mongoose.Schema({
   ingredients: [String],
   steps: [String],
   createdAt: {type: Number, default: Date.now},
-  updatedAt: Number,
+  updatedAt: {type: Number, default: Date.now},
   autor: {
     name: {type: String, require: true},
     id: String,
@@ -18,7 +18,7 @@ const Recipe = new mongoose.Schema({
     url: String
   },
   urlExternal: String,
-  like: [{type: ObjectId, ref: 'User'}]
+  likes: [{type: ObjectId, ref: 'User'}]
 }, {collection})
 
 module.exports = mongoose.model('Recipe', Recipe)
