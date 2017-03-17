@@ -5,7 +5,7 @@
     .module('iCook4meApp')
     .factory('AuthFact', AuthFact)
 
-  function AuthFact ($http, $q, $rootScope, $location, StorageFact, jwtHelper) {
+  function AuthFact ($http, $q, $rootScope, $location, StorageFact, jwtHelper, ApiUsersFact) {
     return {
       login,
       register,
@@ -46,6 +46,11 @@
     function setCredentials (token) {
       var tokenPayload = jwtHelper.decodeToken(token)
       $rootScope.loggedUser = tokenPayload
+      $q.all([ApiUsersFact.getUser()])
+        .then(([{data}]) => {
+          $rootScope.loggedUser.name = data.name
+          $rootScope.loggedUser.image = data.image
+        })
     }
   }
 })()

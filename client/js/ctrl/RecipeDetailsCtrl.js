@@ -5,9 +5,16 @@
     .module('iCook4meApp')
     .controller('RecipeDetailsCtrl', RecipeDetailsCtrl)
 
-  function RecipeDetailsCtrl ($scope, $rootScope) {
-    $rootScope = ''
-    $scope.recipe = [{
+  function RecipeDetailsCtrl ($scope, $rootScope, $routeParams, $location, $anchorScroll, ApiRecipesFact) {
+    $rootScope.section = ''
+    const id = $routeParams.id
+    $location.hash('top')
+    $anchorScroll()
+
+    ApiRecipesFact.getAllRecipe(id)
+      .then(({data}) => $scope.recipe = data)
+
+    /* $scope.recipe = [{
       image: 'http://www.recetasderechupete.com/wp-content/uploads/2015/07/TORTILLA-002-525x360.jpg',
       title: 'Tortilla de patatas',
       publisher: 'recetas de rechupete',
@@ -32,6 +39,6 @@
         'Emplead el método más cómodo y que más fácil os sea para que no se os desparrame, con cuidado. No desesperéis si no os sale, en ese caso tendréis una tortilla más cuajada, pero igual de rica.'
       ],
       id: 'asdfasldfjasldfj'
-    }]
+    }] */
   }
 })()

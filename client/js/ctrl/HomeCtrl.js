@@ -7,7 +7,7 @@
 
   function HomeCtrl ($scope, $rootScope, $location) {
     $rootScope.section = 'home'
-
+    // console.log($rootScope.loggedUser)
     $scope.addBookmark = (id) => {
       console.log(id)
     }
