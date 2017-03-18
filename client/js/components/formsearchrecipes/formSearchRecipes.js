@@ -4,16 +4,18 @@
   angular
     .module('myComponents')
     .component('formSearchRecipes', {
+      bindings: {
+        value: '='
+      },
       controller: FormSearchRecipesCtrl,
-      controllerAs: 'vm',
       templateUrl: '/js/components/formsearchrecipes/formsearchrecipes.html'
     })
 
   function FormSearchRecipesCtrl ($location) {
-    let vm = this
-    vm.searchRecipes = function (e) {
+    let ctrl = this
+    ctrl.searchRecipes = function (e) {
       e.preventDefault()
-      $location.url('/search/' + vm.query)
+      $location.url('/search/' + ctrl.query)
     }
   }
 })()
