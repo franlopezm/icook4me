@@ -9,7 +9,7 @@
                 </div>
             </div>
             <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black" class="thumbnail img-responsive">
-                <img ng-src="{{$ctrl.recipe.image}}" err-SRC="/img/noimage-recipe.jpg" alt="{{$ctrl.recipe.title}}">
+                <recipe-img recipe="$ctrl.recipe"></recipe-img>
             </a>
         </section>
         <footer class="col-xs-12">
