@@ -1,0 +1,138 @@
+#form-add-recipe
+  margin-top: -40px
+
+.fullscreen-recipe
+  textarea,
+  input
+    border-radius: 0
+    outline: 0
+    background: rgba(243,243,243,0.4)
+    &:focus
+      background: #FFFFFF
+  input.title-recipe
+    width: 100%
+    text-align: center
+    color: $link-thumbnail-primary
+    font-size: 1.4em
+    font-weight: 600
+    margin-bottom: 50px
+  button
+    border-radius: 0
+  .fullscreen-recipe-img
+    margin-bottom: 30px
+    img
+      max-height: 350px
+      border: 10px solid #eaeaea
+      margin-bottom: 10px
+    input
+      background: transparent
+      box-shadow: none
+      width: 100%
+  .fullscreen-recipe-description,
+  .fullscreen-recipe-preparation,
+  .fullscreen-recipe-ingredients
+    margin-bottom: 20px
+    .group-input
+      margin-bottom: 10px
+    h3
+      text-decoration: none
+      border-bottom: 2px solid #eaaa74
+      max-width: 70%
+      margin-bottom: 15px
+    input
+      width: calc(100% - 80px)
+      display: inline-block
+    textarea
+      width: 100%
+      min-height: 80px
+    i 
+      font-size: 18px
+      padding: 2px 1%
+      margin: 0 2px
+      cursor: pointer
+      line-height: 25px
+      color: $link-thumbnail-primary
+      &:hover
+        color: $link-thumbnail-hover
+    li
+      font-size: 1.1em
+    ul
+      margin-left: -30px
+      margin-right: 10px  
+      .list-ingredients
+        display: inline-block
+        list-style: none
+        margin-bottom: 5px
+        margin-right: 10px
+        border-radius: 10px
+        padding: 4px 10px
+        background: #d0d7fb
+        i
+          display: inline
+          padding: 2px 0
+    ol
+      list-style: none
+      text-align: justify
+      margin-left: -20px
+      li
+        padding: 5px 0
+        .line-step
+          width: 40%
+          margin: 10px auto
+          height: 1px
+          box-shadow: 0 1px rgba(0,0,0,0.4)          
+    button
+      display: inline
+      width: 67px
+  
+.show-recipe
+  h2
+    text-align: center
+    font-weight: bold
+    margin: 0 auto 30px
+  .fullscreen-recipe-img
+    margin-bottom: 0
+    img
+      max-height: 350px
+      border: 10px solid #eaeaea
+      margin-bottom: 10px
+    .recipeinfo
+      text-align: left
+      font-weight: 600
+      .link-username-recipe
+        display: inline-block
+        margin: 0 4px
+        &::first-letter
+          text-transform: uppercase
+  .fullscreen-recipe-description,
+  .fullscreen-recipe-preparation,
+  .fullscreen-recipe-ingredients
+    margin-bottom: 20px
+    h3
+      text-decoration: none
+      border-bottom: 1px solid #eaaa74
+      max-width: 70%
+      margin-bottom: 15px
+    p
+      font-size: 1.1em
+      padding: 3px 0
+      text-align: justify
+      font-weight: 600
+      color: $colortext-primary
+    ul
+      margin-left: 0px
+      margin-right: 0px  
+    li
+      padding: 3px 0
+      font-size: 1.1em
+    ol
+      list-style: none
+      text-align: justify
+      margin-left: -20px
+      li
+        padding: 5px 0
+        .line-step
+          width: 40%
+          margin: 10px auto
+          height: 1px
+          box-shadow: 0 1px rgba(0,0,0,0.4)

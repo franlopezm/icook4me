@@ -5,12 +5,13 @@
     .module('iCook4meApp')
     .controller('RecipeDetailsCtrl', RecipeDetailsCtrl)
 
-  function RecipeDetailsCtrl ($scope, $rootScope, $routeParams, $location, $anchorScroll, ApiRecipesFact) {
+  function RecipeDetailsCtrl ($rootScope, $routeParams, ApiRecipesFact) {
     $rootScope.section = ''
+    let vm = this
     const id = $routeParams.id
 
     ApiRecipesFact.getAllRecipe(id)
-      .then(({data}) => $scope.recipe = data)
+      .then(({data}) => vm.recipe = data)
 
     /* $scope.recipe = [{
       image: 'http://www.recetasderechupete.com/wp-content/uploads/2015/07/TORTILLA-002-525x360.jpg',

@@ -13,11 +13,13 @@ function configRoute ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/login', {
       templateUrl: '/templates/login.html',
-      controller: 'LoginCtrl'
+      controller: 'LoginCtrl',
+      controllerAs: 'vm'
     })
     .when('/register', {
       templateUrl: '/templates/register.html',
-      controller: 'RegisterCtrl'
+      controller: 'RegisterCtrl',
+      controllerAs: 'vm'
     })
     .when('/', {
       templateUrl: '/templates/home.html',
@@ -27,6 +29,12 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/add', {
       templateUrl: '/templates/addrecipe.html',
       controller: 'AddRecipeCtrl',
+      secure: true
+    })
+    .when('/edit/:id', {
+      templateUrl: '/templates/editrecipe.html',
+      controller: 'EditRecipeCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .when('/bookrecipes', {
@@ -40,7 +48,7 @@ function configRoute ($routeProvider, $locationProvider) {
       controllerAs: 'vm',
       secure: true
     })
-    .when('/profile-edit/:id', {
+    .when('/profile-edit/', {
       templateUrl: '/templates/profile-edit.html',
       controller: 'ProfileEditCtrl',
       controllerAs: 'vm',
@@ -49,6 +57,7 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/recipe/:id', {
       templateUrl: '/templates/recipedetails.html',
       controller: 'RecipeDetailsCtrl',
+      controllerAs: 'vm',
       secure: true
     })
 

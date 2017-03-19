@@ -13,9 +13,6 @@
       e.preventDefault()
     }
 
-    $scope.saveRecipe = (e) => {
-    }
-
     $scope.addRecipe = (e) => {
       let title = $scope.title
       let description = $scope.description || ''

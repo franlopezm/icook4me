@@ -3,11 +3,11 @@ const Router = express.Router()
 
 const getById = require('./handlers/getById')
 const getAllById = require('./handlers/getAllById')
-const updateUser = require('./handlers/updateUser')
+const updateById = require('./handlers/updateById')
 
 Router
   .get('/:id', getById)
   .get('/all/:id', getAllById)
-  .put('/:id', updateUser)
+  .put('/:id', updateById)
 
 module.exports = Router

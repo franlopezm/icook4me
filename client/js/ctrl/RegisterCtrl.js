@@ -1,24 +1,24 @@
-/* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular
     .module('iCook4meApp')
     .controller('RegisterCtrl', RegisterCtrl)
 
-  function RegisterCtrl ($scope, $rootScope, AuthFact) {
+  function RegisterCtrl ($rootScope, AuthFact) {
     $rootScope.section = 'login'
-    $scope.register = function (e) {
+    let vm = this
+    vm.register = function (e) {
       e.preventDefault()
-      const username = $scope.username
-      const password = $scope.password
+      const username = vm.username
+      const password = vm.password
       const name = 'iCook4me' + Math.floor(Math.random() * 100000)
       AuthFact.register({ username, password, name })
     }
-    $scope.$on('msgExistUser', function (event, boolean) {
-      $scope.msg = boolean
+    $rootScope.$on('msgExistUser', function (event, boolean) {
+      vm.msg = boolean
     })
-    $scope.showMsg = () => {
-      $scope.msg = false
+    vm.showMsg = () => {
+      vm.msg = false
     }
   }
 })()

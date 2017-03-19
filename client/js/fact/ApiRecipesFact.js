@@ -8,6 +8,7 @@
     return {
       addRecipe,
       getAllRecipe,
+      updateRecipe,
       searchRecipes
     }
 
@@ -20,6 +21,11 @@
 
     function getAllRecipe (id) {
       return $http.get('/api/recipe/all/' + id)
+                .then(data => data)
+    }
+
+    function updateRecipe (id, title, image, description, ingredients, steps) {
+      return $http.put(`/api/recipe/${id}`, {title, image, description, ingredients, steps})
                 .then(data => data)
     }
 
