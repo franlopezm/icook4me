@@ -40,6 +40,12 @@ function configRoute ($routeProvider, $locationProvider) {
       controllerAs: 'vm',
       secure: true
     })
+    .when('/profile-edit/:id', {
+      templateUrl: '/templates/profile-edit.html',
+      controller: 'ProfileEditCtrl',
+      controllerAs: 'vm',
+      secure: true
+    })
     .when('/recipe/:id', {
       templateUrl: '/templates/recipedetails.html',
       controller: 'RecipeDetailsCtrl',

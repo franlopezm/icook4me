@@ -6,6 +6,7 @@ module.exports = (req, res) => {
   Recipe
     .findById(id)
     .populate('likes')
+    .populate('autor', 'name image url')
     .then(recipe => res.json(recipe))
     .catch(err => { throw err })
 }

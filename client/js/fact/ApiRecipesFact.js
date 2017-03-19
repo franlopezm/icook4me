@@ -13,11 +13,7 @@
 
   // Helper functions
     function addRecipe (title, image, description, ingredients, steps) {
-      const autor = {
-        name: $rootScope.loggedUser.name,
-        id: $rootScope.loggedUser.id,
-        image: $rootScope.loggedUser.image
-      }
+      const autor = $rootScope.loggedUser.id
       return $http.post('/api/recipe', {title, image, description, ingredients, steps, autor})
                 .then(data => data)
     }

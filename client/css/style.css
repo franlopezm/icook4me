@@ -510,41 +510,51 @@ body {
         height: 1px;
         box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
 
-#profile {
+.profile {
   margin-top: -40px; }
-  #profile .img-user-thumbnail span {
+  .profile .img-user-thumbnail span {
     margin-bottom: 0px; }
-  #profile .user-info {
+  .profile .user-info {
     margin-top: 10px; }
-  #profile .button-profile {
+    .profile .user-info h5:first-letter {
+      text-transform: uppercase; }
+  .profile .button-profile {
     display: flex;
     flex-direction: row;
-    margin-top: 10px; }
-    #profile .button-profile .btn {
+    margin-bottom: 20px; }
+    .profile .button-profile .btn {
       border-radius: 0;
       font-weight: 600;
       margin-right: 10px; }
-  #profile .title-section {
+  .profile .title-section {
     max-width: 80%;
     margin-top: 30px;
     padding: 10px 0 5px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  #profile .recipe-list .item-flex {
+  .profile .recipe-list .item-flex {
     width: 150px; }
-    #profile .recipe-list .item-flex section h4 {
+    .profile .recipe-list .item-flex section h4 {
       font-size: 12px;
       font-weight: 600; }
-    #profile .recipe-list .item-flex .link-text {
+    .profile .recipe-list .item-flex .link-text {
       color: #4a86bb; }
-      #profile .recipe-list .item-flex .link-text:hover {
+      .profile .recipe-list .item-flex .link-text:hover {
         color: #ff9d4b; }
 
-/* Media Querys */
+.profile-edit .title-section {
+  max-width: 80%;
+  margin-top: 0px;
+  border: none; }
+.profile-edit .img-input {
+  max-width: 300px;
+  margin: 0 auto; }
+.profile-edit label input {
+  margin-top: 5px; }
+
 @media all and (max-width: 700px) {
   .text-nav {
     display: none; } }
-/* Media Querys */
 @media all and (max-width: 600px) {
   body {
     padding-top: 15px;
@@ -575,7 +585,11 @@ body {
       font-size: 20px; }
 
   .search-input {
-    width: 90%; } }
+    width: 90%; }
+
+  #profile {
+    margin-top: 0px;
+    margin-bottom: -40px; } }
 @media all and (max-width: 450px) {
   .navbar-primary .link {
     font-size: 19px;

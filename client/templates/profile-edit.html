@@ -1,0 +1,25 @@
+<section class="profile profile-edit">
+    <h3 class="title-section">Edite su información de perfil</h3>
+    <article class="row fullscreen-recipe" ng-if="vm.userData">
+        <section class="col-xs-12 text-center fullscreen-recipe-img">
+            <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
+            <input type="file" class="form-control img-input">
+        </section>
+        <header class="col-xs-12">
+            <label> Nombre de perfil:
+                <input type="text" class="form-control" ng-init="vm.name=vm.userData.name" value="vm.name" ng-model="vm.name" placeholder="Nombre de perfil..." autofocus>
+            </label>
+        </header>
+        <section class="col-xs-12 fullscreen-recipe-description">
+            <h3>Description:</h3>
+            <textarea class="form-control" ng-init="vm.description=vm.userData.description" ng-model="vm.description" placeholder="Escriba una pequeña descripción para su perfil.">
+            {{vm.description}}
+            </textarea>
+        </section>
+    </article>
+    <div class="col-xs-12 button-profile">
+        <div class="center-block">
+            <a class="btn btn-success" ng-click="vm.saveUser()" role="button">Guardar</a>
+        </div>
+    </div>
+</section>
