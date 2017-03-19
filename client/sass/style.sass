@@ -1,144 +1,11 @@
-$background-navbar: #404040
-$background-subnavbar: #e6e6e6
-$link-primary: #ffffff
-$link-primary-hover: #f49e57
-$link-second: #5d5d5d
-$link-second-hover: #2a81ce
-$colortext-primary: #696969
-$link-thumbnail-primary: #4a86bb
-$link-thumbnail-hover: #ff9d4b
-$link-apply: #d45e55
-
 body
   padding-top: 120px
   padding-bottom: 15px
 
-/* 1. link rules */
-.link
-  padding: 5px
-  margin: 0 5px
-  color: $link-primary
-  cursor: pointer
-  &:hover
-    color: $link-primary-hover
-    text-decoration: none
-  &.active
-    color: $link-primary-hover
-  &:focus
-    text-decoration: none
 
-.text-nav
-  font-size: 12px
-  margin-left: -10px
-  padding: 9px 11px
-  line-height: initial
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
-
-.link-second
-  color: $link-second
-  &:hover
-    color: $link-second-hover
-    text-decoration: none
-  &.active
-    color: $link-second-hover
-  &:focus
-    text-decoration: none  
-
-/* 2. Navbar rules */
-.navbar-header
-  position: fixed
-  top: 0
-  width: 100%
-  z-index: 1001
-  .items-nav
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-  .items-nav-second
-    justify-content: center
-
-.navbar-primary
-  background: $background-navbar
-  width: 100%
-  box-shadow: 0 0 4px #000
-  .link
-    line-height: 51px
-    font-size: 25px
-    padding: 8px
-    margin: 0 15px
-  .brand-nav
-    font-family: 'Indie Flower', cursive
-    margin: 0
-    padding: 0
-    .link
-      padding: 0
-      font-size: 36px
-
-.navbar-second
-  background: $background-subnavbar
-  top: 51px
-  left: 0
-  z-index: 999
-  box-shadow: 0 0 3px rgba(0,0,0,0.2)
-  .link
-    line-height: 40px
-    font-size: 22px
-    padding: 8px
-    margin: 0 25px
-  h3
-    margin: 0
-    padding: 0
-    .link
-      font-size: 22px
-
-.navbar-list
-  display: inline
-  margin: 0
-  padding: 0
-  li
-    list-style: none
-    display: inline-block
-
-/* nav form search rules */
-.nav-form-search
-  width: 100%
-  text-align: center
-
-.form-search
-  line-height: 25px
-  font-size: 15px
-  padding: 5px
-  width: 100%
-
-.form-arrow
-  width: 83%
-
-.search-input
-  background: #FFFFFF
-  line-height: 30px
-  border-radius: 0
-  width: 90%
-  text-align: center
-  margin: 0 auto
-  padding: 0 10px 0px 24px
-  border: 1px solid $link-thumbnail-primary
-
-.icon-search-input
-  position: absolute
-  font-size: 19px
-  padding: 5px 8px
-  background: transparent
-
-.nav-button
-  li
-    line-height: 40px
-  button
-    border-radius: 0
-    padding: 6px 15px
-    margin: -2px 20px 0
+@import '_var.sass'
+@import '_link.sass'
+@import '_navbar.sass'
 
 /* 3. Recipes grid*/
 .col-flex
@@ -215,10 +82,13 @@ body
     a
       margin-bottom: 5px
       outline-color: #ddd
+      text-align: center
       &:hover
         border-color: #ddd
       &:focus
         border-color: #ddd
+      p
+        text-align: justify
     .caption
       padding: 0
 
@@ -308,10 +178,6 @@ body
   width: 70%
   margin: 15px auto 25px
   background: rgba(0,0,0,0.3)
-
-.recipe-list
-  .item-flex
-    width: 150px
 
 /* login rules */
 #login
@@ -490,7 +356,7 @@ body
           margin: 10px auto
           height: 1px
           box-shadow: 0 1px rgba(0,0,0,0.4)
-
+@import '_profile.sass'
 /* Media Querys */
 @media all and (max-width: 700px )
   .text-nav

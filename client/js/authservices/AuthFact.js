@@ -28,7 +28,13 @@
     function register (credentials) {
       const url = '/auth/register'
       return $http.post(url, credentials)
-        .then($location.path('/login'))
+        .then(({data}) => {
+          if (!data.success) {
+            $rootScope.$broadcast('msgExistUser', true)
+          } else {
+            $location.path('/login')
+          }
+        })
     }
 
     function logout () {

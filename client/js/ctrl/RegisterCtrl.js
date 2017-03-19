@@ -11,7 +11,14 @@
       e.preventDefault()
       const username = $scope.username
       const password = $scope.password
-      AuthFact.register({ username, password })
+      const name = 'iCook4me' + Math.floor(Math.random() * 100000)
+      AuthFact.register({ username, password, name })
+    }
+    $scope.$on('msgExistUser', function (event, boolean) {
+      $scope.msg = boolean
+    })
+    $scope.showMsg = () => {
+      $scope.msg = false
     }
   }
 })()

@@ -37,6 +37,7 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/profile', {
       templateUrl: '/templates/profile.html',
       controller: 'ProfileCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .when('/recipe/:id', {

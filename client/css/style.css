@@ -2,7 +2,6 @@ body {
   padding-top: 120px;
   padding-bottom: 15px; }
 
-/* 1. link rules */
 .link {
   padding: 5px;
   margin: 0 5px;
@@ -16,15 +15,6 @@ body {
   .link:focus {
     text-decoration: none; }
 
-.text-nav {
-  font-size: 12px;
-  margin-left: -10px;
-  padding: 9px 11px;
-  line-height: initial;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
 .link-second {
   color: #5d5d5d; }
   .link-second:hover {
@@ -35,7 +25,6 @@ body {
   .link-second:focus {
     text-decoration: none; }
 
-/* 2. Navbar rules */
 .navbar-header {
   position: fixed;
   top: 0;
@@ -128,6 +117,15 @@ body {
   padding: 6px 15px;
   margin: -2px 20px 0; }
 
+.text-nav {
+  font-size: 12px;
+  margin-left: -10px;
+  padding: 9px 11px;
+  line-height: initial;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
 /* 3. Recipes grid */
 .col-flex {
   display: flex;
@@ -199,11 +197,14 @@ body {
   max-height: 150px; }
 .thumbnail-recipe section a {
   margin-bottom: 5px;
-  outline-color: #ddd; }
+  outline-color: #ddd;
+  text-align: center; }
   .thumbnail-recipe section a:hover {
     border-color: #ddd; }
   .thumbnail-recipe section a:focus {
     border-color: #ddd; }
+  .thumbnail-recipe section a p {
+    text-align: justify; }
 .thumbnail-recipe section .caption {
   padding: 0; }
 
@@ -291,9 +292,6 @@ body {
   width: 70%;
   margin: 15px auto 25px;
   background: rgba(0, 0, 0, 0.3); }
-
-.recipe-list .item-flex {
-  width: 150px; }
 
 /* login rules */
 #login .row-flex {
@@ -511,6 +509,36 @@ body {
         margin: 10px auto;
         height: 1px;
         box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
+
+#profile {
+  margin-top: -40px; }
+  #profile .img-user-thumbnail span {
+    margin-bottom: 0px; }
+  #profile .user-info {
+    margin-top: 10px; }
+  #profile .button-profile {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px; }
+    #profile .button-profile .btn {
+      border-radius: 0;
+      font-weight: 600;
+      margin-right: 10px; }
+  #profile .title-section {
+    max-width: 80%;
+    margin-top: 30px;
+    padding: 10px 0 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  #profile .recipe-list .item-flex {
+    width: 150px; }
+    #profile .recipe-list .item-flex section h4 {
+      font-size: 12px;
+      font-weight: 600; }
+    #profile .recipe-list .item-flex .link-text {
+      color: #4a86bb; }
+      #profile .recipe-list .item-flex .link-text:hover {
+        color: #ff9d4b; }
 
 /* Media Querys */
 @media all and (max-width: 700px) {

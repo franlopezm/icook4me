@@ -1,4 +1,3 @@
-0. Datos usuario en rootscope.loggedUser name, id, imagen
 1. show more
 2. add recipe
 3. edit recipe
@@ -9,13 +8,6 @@
 8. arreglar login y register
 
 9. Menu navbar(icook4me | home | 4me | add | fav | user)
-
-oRecipe.title
-oRecipe.image
-oRecipe.publisher
-oRecipe.publisher_url
-oRecipe.url
-oRecipe.id_recipe_ext
 
 
 

@@ -8,8 +8,6 @@
   function RecipeDetailsCtrl ($scope, $rootScope, $routeParams, $location, $anchorScroll, ApiRecipesFact) {
     $rootScope.section = ''
     const id = $routeParams.id
-    $location.hash('top')
-    $anchorScroll()
 
     ApiRecipesFact.getAllRecipe(id)
       .then(({data}) => $scope.recipe = data)

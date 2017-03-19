@@ -1,4 +1,9 @@
 <div id="login">
+    <div ng-show="msg" ng-click="showMsg()">
+        <div class="alert alert-info">
+            <strong>Ya existe un usuario registrado con ese correo</strong>
+        </div>
+    </div>
     <h3 class="text-center">Registrate</h3>
     <div class="row-flex">
         <!--<div class="item-row-flex social-buttons">

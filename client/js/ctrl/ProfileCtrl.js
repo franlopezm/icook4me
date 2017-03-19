@@ -1,15 +1,18 @@
-/* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular
     .module('iCook4meApp')
     .controller('ProfileCtrl', ProfileCtrl)
 
-  function ProfileCtrl ($scope, $rootScope, $location, AuthFact) {
+  function ProfileCtrl ($rootScope, $location, AuthFact, ApiUsersFact) {
+    let vm = this
     $rootScope.section = 'profile'
-    $scope.logout = function () {
+    vm.logout = function () {
       AuthFact.logout()
       $location.path('/login')
     }
+
+    ApiUsersFact.getUserPopulate($rootScope.loggedUser.id)
+      .then(data => vm.userData = data)
   }
 })()

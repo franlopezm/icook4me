@@ -1,116 +1,69 @@
-<section class="navbar-header navbar-second">
-    <div class="items-nav items-nav-second">
-        <ul class="navbar-list">
-            <li>
-                <h3 class="brand-nav"><a class="link link-second" href="#!/profile">Username</a></h3>
-            </li>
-            <li>
-                <a class="link link-second" href="#!/adduser">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a class="link link-second" href="#!/messages">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a class="link link-second" ng-click="logout()">
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
-<div class="row">
-    <div class="col-xs-12 profile-flex">
-        <div class="img-user-thumbnail img-profile">
-            <a href="#" class="thumbnail img-responsive">
-                <img src="http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif" alt="...">
-            </a>
-        </div>
-        <div class="profile-followers">
-            <div class="row">
-                <div class="col-xs-4 text-center">
-                    <h5 class="bold-text">10</h5>
-                    <div>
-                        Recipes
+<section id="profile">
+    <div class="row">
+        <div class="col-xs-12 profile-flex">
+            <div class="img-user-thumbnail img-profile">
+                <span class="thumbnail img-responsive">
+                    <img src="http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif" alt="...">
+                </span>
+            </div>
+            <div class="profile-followers">
+                <div class="row">
+                    <div class="col-xs-4 text-center">
+                        <h5 class="bold-text">{{vm.userData.recipes.length}}</h5>
+                        <div>
+                            Recipes
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-4 text-center">
-                    <h5 class="bold-text">10</h5>
-                    <div>
-                        Following
+                    <div class="col-xs-4 text-center">
+                        <!-- <h5 class="bold-text">10</h5>
+                        <div>
+                            Following
+                        </div> -->
                     </div>
-                </div>
-                <div class="col-xs-4 text-center">
-                    <h5 class="bold-text">10</h5>
-                    <div>
-                        Followers
+                    <div class="col-xs-4 text-center">
+                        <!-- <h5 class="bold-text">10</h5>
+                        <div>
+                            Followers
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-8">
-        <h4 class="bold-text">Name user</h4>
-        <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit provident perspiciatis sit quos neque, officiis doloribus assumenda illum animi repellendus aut totam odio minus ipsum distinctio rem non praesentium enim.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit provident perspiciatis sit quos neque, officiis doloribus assumenda illum animi repellendus aut totam odio minus ipsum distinctio rem non praesentium enim.</p>
+        <div class="col-xs-12 col-sm-8 user-info">
+            <h5 class="bold-text">{{vm.userData.name}}</h5>
+            <div ng-if="vm.userData.description">
+                <p>{{vm.userData.description}}</p>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-        <h4 class="bold-text">tag more used</h4>
-        <div>
-            <a href="#" class="link-thumbnail">#tagname1</a>
-        </div>
-    </div>
-    <div class="col-xs-12">
-        <div class="line-profile"></div>
-    </div>
-</div>
-<div class="col-flex recipe-list">
-    <article class="item-flex">
-        <div class="thumbnail row thumbnail-recipe">
-            <section class="col-xs-12">
-                <a href="#" class="thumbnail img-responsive">
-                    <img src="http://cdn.blendtec.com/images/RecipeImage/00/22/09/554d31ee40084f83bf527d0eac1f004b/crepes_main_620x320.jpg" alt="...">
+        <div class="col-xs-12 button-profile">
+            <div>
+                <a class="btn btn-default" ng-click="vm.logout()">
+                    <i class="fa fa-power-off aria-hidden="true"></i>
+                    Salir
                 </a>
-                <div class="caption">
-                    <a href="#" class="link-text">
-                        <h4 class="text-center">Title recipe</h4>
-                    </a>
-                </div>
-            </section>
+            </div>
+            <div>
+                <a class="btn btn-default" href="#" role="button">Editar Perfil</a>
+            </div>
         </div>
-    </article>
-    <article class="item-flex">
-        <div class="thumbnail row thumbnail-recipe">
-            <section class="col-xs-12">
-                <a href="#" class="thumbnail img-responsive">
-                    <img src="http://cdn.blendtec.com/images/RecipeImage/00/22/09/554d31ee40084f83bf527d0eac1f004b/crepes_main_620x320.jpg" alt="...">
-                </a>
-                <div class="caption">
-                    <a href="#" class="link-text">
-                        <h4 class="text-center">Title recipe</h4>
-                    </a>
-                </div>
-            </section>
+        <div class="col-xs-12">
+            <h3 class="title-section">Mis recetas</h3>
         </div>
-    </article>
-    <article class="item-flex">
-        <div class="thumbnail row thumbnail-recipe">
-            <section class="col-xs-12">
-                <a href="#" class="thumbnail img-responsive">
-                    <img src="http://cdn.blendtec.com/images/RecipeImage/00/22/09/554d31ee40084f83bf527d0eac1f004b/crepes_main_620x320.jpg" alt="...">
-                </a>
-                <div class="caption">
-                    <a href="#" class="link-text">
-                        <h4 class="text-center">Title recipe</h4>
+    </div>
+    <div class="col-flex recipe-list">
+        <article class="item-flex" ng-repeat="recipe in vm.userData.recipes">
+            <div class="thumbnail row thumbnail-recipe">
+                <section class="col-xs-12">
+                    <a href="/recipe/{{recipe._id}}" class="thumbnail img-responsive">
+                        <recipe-img recipe="recipe"></recipe-img>
                     </a>
-                </div>
-            </section>
-        </div>
-    </article>
-</div>
-<button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
+                    <div class="caption">
+                        <a href="/recipe/{{recipe._id}}" class="link-text">
+                            <h4 class="text-center">{{recipe.title}}</h4>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </div>
+</section>

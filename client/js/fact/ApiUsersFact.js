@@ -6,7 +6,8 @@
 
   function ApiUsersFact ($http, $rootScope) {
     return {
-      getUser
+      getUser,
+      getUserPopulate
     }
 
   // Helper functions
@@ -14,6 +15,11 @@
       let userId = $rootScope.loggedUser.id
       return $http.get(`/api/user/${userId}`)
                 .then((data) => data)
+    }
+    function getUserPopulate (id) {
+      const url = `/api/user/all/${id}`
+      return $http.get(url)
+                .then(({data}) => data)
     }
   }
 })()
