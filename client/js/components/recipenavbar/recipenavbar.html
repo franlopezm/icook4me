@@ -1,0 +1,33 @@
+<nav>
+    <div class="navbar-thumbnail-recipe">
+        <div class="text-center">
+            <ul class="navbar-list">
+                <!--<li>
+                    <a class="link link-thumbnail" href="index.html" title="Home">
+                        <i class="fa fa-commenting" aria-hidden="true"></i>
+                    </a>
+                </li>-->
+                <li ng-if="!$ctrl.recipe.id || $ctrl.recipe.urlExternal">
+                    <a class="link link-thumbnail link-apply" title="Añadir a favoritos" ng-click="$ctrl.addBookmarkExternal($ctrl.recipe.title, $ctrl.recipe.image, $ctrl.recipe.autor, $ctrl.recipe.urlExternal)">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="$ctrl.recipe.id">
+                    <a class="link link-thumbnail" title="Me gusta" ng-click="$ctrl.addLike($ctrl.recipe.id)">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="$ctrl.recipe.id">
+                    <a class="link link-thumbnail link-apply" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe.id)">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="$ctrl.recipe.autor.id === $root.loggedUser.id">
+                    <a class="link link-thumbnail" title="Editar receta" href="book.html">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

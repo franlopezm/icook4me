@@ -7,7 +7,8 @@
   function ApiRecipesFact ($http, $rootScope) {
     return {
       addRecipe,
-      getAllRecipe
+      getAllRecipe,
+      searchRecipes
     }
 
   // Helper functions
@@ -24,6 +25,17 @@
     function getAllRecipe (id) {
       return $http.get('/api/recipe/all/' + id)
                 .then(data => data)
+    }
+
+    function searchRecipes (query) {
+      return $http.get('/api/recipes/search/' + query)
+                .then(({data}) => data.map(recipe => {
+                  if (recipe.likes.indexOf($rootScope.loggedUser) !== -1) {
+                    return recipe.likes = 1
+                  } else {
+                    return recipe.likes = 0
+                  }
+                }))
     }
   }
 })()

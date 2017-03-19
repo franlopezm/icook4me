@@ -1,12 +1,12 @@
 const getJSON = require('get-json')
+const getUrl = require('url')
 
 const apiKeyEdamam = process.env.EDAMAM_API_KEY
 const appIdEdamam = process.env.EDAMAM_APP_ID
 
 let cacheRecipesEdamam = {}
-var recipesEdamam = {}
 
-function getRecipes (req, res) {
+module.exports = (req, res) => {
   let {q = '', page = 1, limit = 10} = req.query
   page = parseInt(page) - 1
   limit = parseInt(limit)
@@ -23,16 +23,15 @@ function getRecipes (req, res) {
         jsonRecipes = jsonRecipes.hits
             .map(hit => hit.recipe)
             .map(recipe => {
-              let idRecipe = recipe.uri.split('#recipe_')[1]
-              let urlsite = recipe.url.split('/')[2]
+              let urlsite = getUrl.parse(recipe.url).hostname
               let oRecipe = {}
               oRecipe.title = recipe.label
               oRecipe.image = recipe.image
-              oRecipe.publisher = recipe.source
-              oRecipe.publisher_url = urlsite
-              oRecipe.url = recipe.url
-              oRecipe.id_recipe_ext = idRecipe
-              recipesEdamam[idRecipe] = oRecipe
+              oRecipe.autor = {
+                name: recipe.source,
+                url: urlsite
+              }
+              oRecipe.urlExternal = recipe.url
               return oRecipe
             })
 
@@ -44,6 +43,3 @@ function getRecipes (req, res) {
     })
   }
 }
-
-module.exports.getRecipes = getRecipes
-module.exports.recipesEdamam = recipesEdamam

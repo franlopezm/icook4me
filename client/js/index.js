@@ -24,26 +24,3 @@ angular
     }
   }
 })
-
-.directive('recipeExternal', function () {
-  return {
-    restrict: 'E',
-    scope: {
-      recipe: '=',
-      addBookmark: '&'
-    },
-    templateUrl: '/templates/components/recipe_external.html'
-  }
-})
-
-.directive('recipeInternal', function () {
-  return {
-    restrict: 'E',
-    scope: {
-      recipe: '=',
-      addBookmark: '&'
-    },
-    templateUrl: '/templates/components/recipe_internal.html'
-  }
-})
-

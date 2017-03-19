@@ -16,8 +16,8 @@
     <h3 class="title-section">Resultados para el termino "<span>{{queryFood}}</span>"</h3>
     <div class="col-flex" infinite-scroll="showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="hasMoreItemsToShow(aRecipes.length)">
         <article class="item-flex" ng-repeat="recipe in aRecipes | limitTo: paginationLimit()">
-            <recipe-external ng-if="recipe.id_recipe_ext !== ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-external>
-            <recipe-internal ng-if="recipe.id_recipe_ext === ''" recipe=recipe add-bookmark=addBookmark(recipe.id_recipe_ext)></recipe-internal>
+            <recipe-external ng-if="recipe.urlExternal" recipe=recipe></recipe-external>
+            <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
         </article>
     </div>
     <div ng-hide="showNoResult">

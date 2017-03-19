@@ -11,6 +11,6 @@
     $scope.addBookmark = (id) => {
       console.log(id)
     }
-    $scope.repeat = [{}, {}, {}, {}, {}, {}, {}]
+    $scope.repeat = [{id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}]
   }
 })()

@@ -1,4 +1,5 @@
 const getJSON = require('get-json')
+const getUrl = require('url')
 
 const apiKeyFood2Fork = process.env.FOOD2FORK_API_KEY
 
@@ -16,14 +17,15 @@ module.exports = (req, res) => {
         let jsonRecipes = response
 
         jsonRecipes = jsonRecipes.recipes.map((recipe, i) => {
-          let urlsite = recipe.publisher_url.split('/')[2]
           let oRecipe = {}
+          let urlsite = getUrl.parse(recipe.publisher_url).hostname
           oRecipe.title = recipe.title
           oRecipe.image = recipe.image_url
-          oRecipe.publisher = recipe.publisher
-          oRecipe.publisher_url = urlsite
-          oRecipe.url = recipe.source_url
-          oRecipe.id_recipe_ext = recipe.recipe_id
+          oRecipe.autor = {
+            name: recipe.publisher,
+            url: urlsite
+          }
+          oRecipe.urlExternal = recipe.source_url
           return oRecipe
         })
 

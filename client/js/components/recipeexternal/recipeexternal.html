@@ -1,0 +1,25 @@
+<article class="item-flex">
+    <div class="thumbnail row thumbnail-recipe">
+        <section class="col-xs-12 external-recipe">
+            <div class="caption">
+                <div class="text-center">
+                    <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black" class="link-thumbnail brand-extenal-recipe">
+                        {{$ctrl.recipe.title}}
+                        </a>
+                </div>
+            </div>
+            <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black" class="thumbnail img-responsive">
+                <img ng-src="{{$ctrl.recipe.image}}" err-SRC="/img/noimage-recipe.jpg" alt="{{$ctrl.recipe.title}}">
+            </a>
+        </section>
+        <footer class="col-xs-12">
+            <recipe-navbar recipe="$ctrl.recipe"></recipe-navbar>
+            <header>
+                <div class="col-xs-12 text-center">
+                    <div>Puedes encontrar más recetas en:</div>
+                    <div><a ng-href="http://{{$ctrl.recipe.autor.url}}" target="_blank" class="link-text link-username-recipe link-publisher">{{$ctrl.recipe.autor.name}}</a></div>
+                </div>
+            </header>
+        </footer>
+    </div>
+</article>
