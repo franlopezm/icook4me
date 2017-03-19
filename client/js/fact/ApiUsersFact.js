@@ -31,6 +31,8 @@
       return $http.put(url, userObj)
                 .then(({data}) => {
                   if (data.success) {
+                    $rootScope.loggedUser.name = name
+                    $rootScope.loggedUser.image = image
                     $location.path('/profile/')
                   }
                 })

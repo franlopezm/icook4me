@@ -1,15 +1,3 @@
-<section class="navbar-header navbar-second">
-    <div class="items-nav items-nav-second">
-        <ul class="navbar-list nav-button">
-            <!--<li>
-                <button type="button" class="btn btn-primary" ng-click="saveRecipe($event)">Guardar</button>
-            </li>-->
-            <li>
-                <button type="button" class="btn btn-success" ng-click="addRecipe($event)">Publicar</button>
-            </li>
-        </ul>
-    </div>
-</section>
 <div class="messages" ng-show="showMessage">
     <div class="alert alert-info">
         <strong>Guardando...</strong>
@@ -19,7 +7,7 @@
     <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
-            <input type="text" class="form-control title-recipe" ng-model="title" placeholder="Nombre de la receta..." autofocus>
+            <input type="text" class="form-control title-recipe" ng-init="title=''" ng-model="title" placeholder="Nombre de la receta..." autofocus>
         </header>
         <section class="col-xs-12text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
@@ -58,3 +46,10 @@
         </section>
     </article>
 </form>
+<div class="items-nav items-nav-second text-center">
+    <ul class="navbar-list nav-button">
+        <li>
+            <button type="button" class="btn btn-success" ng-click="addRecipe($event)">Publicar</button>
+        </li>
+    </ul>
+</div>
