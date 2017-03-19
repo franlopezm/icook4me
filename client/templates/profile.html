@@ -8,7 +8,7 @@
                 </a>
             </div>
             <div>
-                <a class="btn btn-default" href="/profile-edit/{{loggedUser.id}}" role="button">Editar Perfil</a>
+                <a class="btn btn-default" href="/profile-edit" role="button">Editar Perfil</a>
             </div>
         </div>
         <div class="col-xs-12 profile-flex">
@@ -46,7 +46,7 @@
                 <p>{{vm.userData.description}}</p>
             </div>
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-12" ng-if="vm.userData.recipes.length > 0">
             <h3 class="title-section">Mis recetas</h3>
         </div>
     </div>
