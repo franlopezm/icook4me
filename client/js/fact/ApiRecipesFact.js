@@ -9,7 +9,9 @@
       addRecipe,
       getAllRecipe,
       updateRecipe,
-      searchRecipes
+      getAllPopAutor,
+      searchRecipes,
+      like
     }
 
   // Helper functions
@@ -29,6 +31,24 @@
                 .then(data => data)
     }
 
+    function getAllPopAutor () {
+      return $http.get('/api/recipes/autorpop')
+                .then(({data}) => {
+                  data = data.map(elem => {
+                    elem.like = (elem.likes.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+                    elem.bookmark = ($rootScope.loggedUser.bookmarks.indexOf(elem._id) !== -1) ? 1 : 0
+                    return elem
+                  })
+                  return data
+                })
+    }
+
+    function like (id, like) {
+      const url = `/api/recipe/like/${id}`
+      const userId = $rootScope.loggedUser.id
+      return $http.put(url, {userId, like})
+                .then(({data}) => data)
+    }
     function searchRecipes (query) {
       return $http.get('/api/recipes/search/' + query)
                 .then(({data}) => data.map(recipe => {

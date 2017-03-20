@@ -56,6 +56,7 @@
         .then(([{data}]) => {
           $rootScope.loggedUser.name = data.name
           $rootScope.loggedUser.image = data.image
+          $rootScope.loggedUser.bookmarks = data.bookmarks
         })
     }
   }

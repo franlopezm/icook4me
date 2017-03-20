@@ -24,6 +24,7 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/', {
       templateUrl: '/templates/home.html',
       controller: 'HomeCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .when('/add', {

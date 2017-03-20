@@ -1,16 +1,27 @@
-/* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular
     .module('iCook4meApp')
     .controller('HomeCtrl', HomeCtrl)
 
-  function HomeCtrl ($scope, $rootScope, $location) {
+  function HomeCtrl ($rootScope, ApiRecipesFact) {
     $rootScope.section = 'home'
-    // console.log($rootScope.loggedUser)
-    $scope.addBookmark = (id) => {
-      console.log(id)
+    let vm = this
+    ApiRecipesFact.getAllPopAutor()
+      .then(data => vm.recipes = data)
+
+    vm.showMoreItems = function () {
+      vm.showNoResult = true
+      let page = pagesShown + 1
+      ProxyRecipesFact.searchFood2fork(query, page)
+        .then(recipes => {
+          vm.aRecipes.push(...recipes)
+        })
+      ProxyRecipesFact.searchEdamam(query, page)
+        .then(recipes => {
+          vm.aRecipes.push(...recipes)
+        })
+      pagesShown = page
     }
-    $scope.repeat = [{id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}, {id: 0}]
   }
 })()

@@ -13,10 +13,10 @@
     </div>
 </section>
 <section>
-    <h3 class="title-section">Recetas de usuarios seguidos</h3>
+    <h3 class="title-section">Últimas recetas de los usuarios</h3>
     <div class="col-flex">
-        <article class="item-flex" ng-repeat="recipe in repeat">
-            <recipe-internal recipe=recipe></recipe-internal>
+        <article class="item-flex" ng-repeat="recipe in vm.recipes | orderBy:'-createdAt'">
+            <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
         </article>
     </div>
     <button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>

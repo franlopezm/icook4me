@@ -8,7 +8,8 @@
     return {
       getUser,
       getUserPopulate,
-      updateUser
+      updateUser,
+      bookmark
     }
 
   // Helper functions
@@ -36,6 +37,13 @@
                     $location.path('/profile/')
                   }
                 })
+    }
+
+    function bookmark (recipeId, bookmark) {
+      const id = $rootScope.loggedUser.id
+      const url = `/api/user/bookmark/${id}`
+      return $http.put(url, {recipeId, bookmark})
+                .then(({data}) => data)
     }
   }
 })()

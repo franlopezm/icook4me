@@ -13,11 +13,23 @@
             </a>
         </section>
         <footer class="col-xs-12">
-            <recipe-navbar recipe="$ctrl.recipe"></recipe-navbar>
+            <nav>
+                <div class="navbar-thumbnail-recipe">
+                    <div class="text-center">
+                        <ul class="navbar-list">
+                            <li>
+                                <a class="link link-thumbnail link-apply" title="Añadir a favoritos" ng-click="$ctrl.addBookmarkExternal($ctrl.recipe.title, $ctrl.recipe.image, $ctrl.recipe.publisher, $ctrl.recipe.urlExternal)">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <header>
                 <div class="col-xs-12 text-center">
                     <div>Puedes encontrar más recetas en:</div>
-                    <div><a ng-href="http://{{$ctrl.recipe.autor.url}}" target="_blank" class="link-text link-username-recipe link-publisher">{{$ctrl.recipe.autor.name}}</a></div>
+                    <div><a ng-href="http://{{$ctrl.recipe.publisher.url}}" target="_blank" class="link-text link-username-recipe link-publisher">{{$ctrl.recipe.publisher.name}}</a></div>
                 </div>
             </header>
         </footer>
