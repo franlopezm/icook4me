@@ -10,7 +10,7 @@
     const id = $routeParams.id
 
     ApiRecipesFact.getAllRecipe(id)
-      .then(({data}) => {
+      .then(data => {
         if (data.autor._id === $rootScope.loggedUser.id) {
           vm.title = data.title
           vm.description = data.description

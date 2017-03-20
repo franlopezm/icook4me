@@ -2,7 +2,7 @@
     <h3 class="title-section">Edite su información de perfil</h3>
     <article class="row fullscreen-recipe" ng-if="vm.userData">
         <section class="col-xs-12 text-center fullscreen-recipe-img">
-            <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
+            <img class="img-responsive center-block" src="{{vm.userData.image}}" err-src="/img/noimage-user.jpg" alt="{{vm.userData.name}}">
             <input type="file" class="form-control img-input">
         </section>
         <header class="col-xs-12">

@@ -23,7 +23,14 @@
     function getUserPopulate (id) {
       const url = `/api/user/all/${id}`
       return $http.get(url)
-                .then(({data}) => data)
+                .then(({data}) => {
+                  data.recipes = data.recipes.map(elem => {
+                    elem.like = (elem.likes.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+                    elem.bookmark = (elem.bookmarks.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+                    return elem
+                  })
+                  return data
+                })
     }
 
     function updateUser (name, image, description) {

@@ -1,10 +1,8 @@
-/* eslint no-undef: "off" */
 angular
   .module('iCook4meApp')
   .config(configProvider)
   .config(configRoute)
 
-// Handlers functions
 function configProvider ($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor')
 }
@@ -47,6 +45,12 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/profile', {
       templateUrl: '/templates/profile.html',
       controller: 'ProfileCtrl',
+      controllerAs: 'vm',
+      secure: true
+    })
+    .when('/profile/:id', {
+      templateUrl: '/templates/profile-user.html',
+      controller: 'ProfileUserCtrl',
       controllerAs: 'vm',
       secure: true
     })

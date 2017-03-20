@@ -6,13 +6,13 @@
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 </a>
             </li>
-            <li>
-                <a class="link link-second" href="search.html">
+            <li ng-if="vm.recipe">
+                <a ng-init="vm.like = vm.recipe.like" class="link link-second {{vm.like === 0 ? '' : 'link-apply'}}" title="Me gusta" ng-click="vm.addLike(vm.recipe._id)">
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </a>
             </li>
-            <li>
-                <a class="link link-second" href="add.html">
+            <li ng-if="vm.recipe">
+                <a ng-init="vm.bookmark = vm.recipe.bookmark" class="link link-second {{vm.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="vm.addBookmark(vm.recipe._id)">
                     <i class="fa fa-book" aria-hidden="true"></i>
                 </a>
             </li>

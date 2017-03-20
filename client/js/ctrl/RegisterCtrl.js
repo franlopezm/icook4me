@@ -12,7 +12,8 @@
       const username = vm.username
       const password = vm.password
       const name = 'iCook4me' + Math.floor(Math.random() * 100000)
-      AuthFact.register({ username, password, name })
+      const image = '/img/noimage-user.jpg'
+      AuthFact.register({ username, password, name, image })
     }
     $rootScope.$on('msgExistUser', function (event, boolean) {
       vm.msg = boolean

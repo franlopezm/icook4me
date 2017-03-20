@@ -23,7 +23,11 @@
 
     function getAllRecipe (id) {
       return $http.get('/api/recipe/all/' + id)
-                .then(data => data)
+                .then(({data}) => {
+                  data.like = (data.likes.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+                  data.bookmark = (data.bookmarks.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+                  return data
+                })
     }
 
     function updateRecipe (id, title, image, description, ingredients, steps) {
@@ -36,7 +40,7 @@
                 .then(({data}) => {
                   data = data.map(elem => {
                     elem.like = (elem.likes.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
-                    elem.bookmark = ($rootScope.loggedUser.bookmarks.indexOf(elem._id) !== -1) ? 1 : 0
+                    elem.bookmark = (elem.bookmarks.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
                     return elem
                   })
                   return data

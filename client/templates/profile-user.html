@@ -1,16 +1,5 @@
 <section class="profile">
     <div class="row">
-        <div class="col-xs-12 button-profile">
-            <div>
-                <a class="btn btn-default" ng-click="vm.logout()">
-                    <i class="fa fa-power-off aria-hidden="true"></i>
-                    Salir
-                </a>
-            </div>
-            <div>
-                <a class="btn btn-default" href="/profile-edit" role="button">Editar Perfil</a>
-            </div>
-        </div>
         <div class="col-xs-12 profile-flex">
             <div class="img-user-thumbnail img-profile">
                 <span class="thumbnail img-responsive">
@@ -47,23 +36,12 @@
             </div>
         </div>
         <div class="col-xs-12" ng-if="vm.userData.recipes.length > 0">
-            <h3 class="title-section">Mis recetas</h3>
+            <h3 class="title-section">Recetas publicadas por {{vm.userData.name}}</h3>
         </div>
     </div>
-    <div class="col-flex recipe-list">
+    <div class="col-flex">
         <article class="item-flex" ng-repeat="recipe in vm.userData.recipes">
-            <div class="thumbnail row thumbnail-recipe">
-                <section class="col-xs-12">
-                    <a href="/recipe/{{recipe._id}}" class="thumbnail img-responsive">
-                        <recipe-img recipe="recipe"></recipe-img>
-                    </a>
-                    <div class="caption">
-                        <a href="/recipe/{{recipe._id}}" class="link-text">
-                            <h4 class="text-center">{{recipe.title}}</h4>
-                        </a>
-                    </div>
-                </section>
-            </div>
+            <recipe-internal recipe=recipe></recipe-internal>
         </article>
     </div>
 </section>

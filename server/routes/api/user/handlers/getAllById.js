@@ -6,7 +6,13 @@ module.exports = (req, res) => {
   User
     .findById(id)
     .populate('likes')
-    .populate('bookmarks')
+    .populate({
+      path: 'bookmarks',
+      populate: {
+        path: 'autor',
+        select: 'id name image'
+      }
+    })
     .populate('followers')
     .populate('following')
     .populate('recipes')

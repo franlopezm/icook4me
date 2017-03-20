@@ -15,6 +15,7 @@ const Recipe = new mongoose.Schema({
     name: String,
     url: String
   },
+  bookmarks: [{type: ObjectId, ref: 'User'}],
   likes: [{type: ObjectId, ref: 'User'}]
 }, {collection})
 
