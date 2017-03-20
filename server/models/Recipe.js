@@ -11,6 +11,10 @@ const Recipe = new mongoose.Schema({
   createdAt: {type: Number, default: Date.now},
   autor: {type: ObjectId, ref: 'User'},
   urlExternal: String,
+  publisher: {
+    name: String,
+    url: String
+  },
   likes: [{type: ObjectId, ref: 'User'}]
 }, {collection})
 

@@ -21,7 +21,7 @@ module.exports = (req, res) => {
           let urlsite = getUrl.parse(recipe.publisher_url).hostname
           oRecipe.title = recipe.title
           oRecipe.image = recipe.image_url
-          oRecipe.autor = {
+          oRecipe.publisher = {
             name: recipe.publisher,
             url: urlsite
           }

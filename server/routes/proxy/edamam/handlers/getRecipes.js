@@ -27,7 +27,7 @@ module.exports = (req, res) => {
               let oRecipe = {}
               oRecipe.title = recipe.label
               oRecipe.image = recipe.image
-              oRecipe.autor = {
+              oRecipe.publisher = {
                 name: recipe.source,
                 url: urlsite
               }
