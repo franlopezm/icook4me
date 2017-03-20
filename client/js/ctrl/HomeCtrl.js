@@ -7,8 +7,8 @@
   function HomeCtrl ($rootScope, ApiRecipesFact) {
     $rootScope.section = 'home'
     let vm = this
-    let showItems = 18
-    vm.aRecipes = []
+    const showItems = 18
+    let page = 1
 
     ApiRecipesFact.getAllPopAutor()
       .then(data => {
@@ -16,11 +16,13 @@
         vm.showResult = true
       })
 
-    vm.showMoreItems = function (elem) {
-      vm.aRecipes.push(...elem.splice(0, showItems))
-      if (elem.length === 0) {
+    vm.showMoreItems = function () {
+      vm.limitation = showItems * page
+      let result = vm.recipes.length / showItems
+      if (result < page) {
         vm.busy = true
       }
+      page = page + 1
     }
   }
 })()

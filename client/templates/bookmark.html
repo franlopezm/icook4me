@@ -21,6 +21,7 @@
     <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
         <article class="item-flex" ng-repeat="recipe in vm.recipes | filter: vm.query | limitTo: vm.limitation">
             <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
+            <recipe-external ng-if="recipe.urlExternal" recipe=recipe></recipe-external>
         </article>
     </div>
 </section>
