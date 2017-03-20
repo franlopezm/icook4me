@@ -14,10 +14,14 @@
 </section>
 <section>
     <h3 class="title-section">Últimas recetas de los usuarios</h3>
-    <div class="col-flex">
-        <article class="item-flex" ng-repeat="recipe in vm.recipes | orderBy:'-createdAt'">
+    <div ng-hide="vm.showResult">
+        <div class="alert alert-info">
+            <strong>Cargando recetas...</strong>
+        </div>
+    </div>
+    <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems(vm.recipes)" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
+        <article class="item-flex" ng-repeat="recipe in vm.aRecipes">
             <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
         </article>
     </div>
-    <button type="button" class="btn btn-primary btn-show-more center-block">Show More</button>
 </section>
