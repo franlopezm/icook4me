@@ -1,0 +1,26 @@
+<section class="navbar-header navbar-second">
+    <div class="items-nav items-nav-second">
+        <ul class="navbar-list nav-form-search">
+            <li class="form-search">
+                <div>
+                    <i class="fa fa-search icon-search-input" aria-hidden="true"></i>
+                    <input type="text" class="search-input" placeholder="Prueba a filtrar tus recetas" ng-model="vm.query">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3 class="title-section">Favoritos</h3>
+    <div ng-hide="vm.showResult">
+        <div class="alert alert-info">
+            <strong>Cargando recetas favoritas...</strong>
+        </div>
+    </div>
+    <p>Recetas encontradas <strong>{{(vm.recipes | filter:vm.query).length}}</strong> de {{vm.recipes.length}} favoritas.</p>
+    <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
+        <article class="item-flex" ng-repeat="recipe in vm.recipes | filter: vm.query | limitTo: vm.limitation">
+            <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
+        </article>
+    </div>
+</section>

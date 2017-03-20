@@ -38,9 +38,10 @@ function configRoute ($routeProvider, $locationProvider) {
       controllerAs: 'vm',
       secure: true
     })
-    .when('/bookrecipes', {
-      templateUrl: '/templates/bookrecipes.html',
-      controller: 'BookRecipesCtrl',
+    .when('/bookmark', {
+      templateUrl: '/templates/bookmark.html',
+      controller: 'BookmarkCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .when('/profile', {

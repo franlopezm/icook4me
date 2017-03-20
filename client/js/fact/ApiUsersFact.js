@@ -9,7 +9,8 @@
       getUser,
       getUserPopulate,
       updateUser,
-      bookmark
+      bookmark,
+      getBookmarks
     }
 
   // Helper functions
@@ -44,6 +45,19 @@
       const url = `/api/user/bookmark/${id}`
       return $http.put(url, {recipeId, bookmark})
                 .then(({data}) => data)
+    }
+
+    function getBookmarks () {
+      const id = $rootScope.loggedUser.id
+      return $http.get(`/api/user/bookmarks/${id}`)
+        .then(({data}) => {
+          data = data.bookmarks.map(elem => {
+            elem.like = (elem.likes.indexOf($rootScope.loggedUser.id) !== -1) ? 1 : 0
+            elem.bookmark = 1
+            return elem
+          })
+          return data.reverse()
+        })
     }
   }
 })()
