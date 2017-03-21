@@ -23,7 +23,8 @@ module.exports = (req, res) => {
           oRecipe.image = recipe.image_url
           oRecipe.publisher = {
             name: recipe.publisher,
-            url: urlsite
+            url: urlsite,
+            id: recipe.recipe_id
           }
           oRecipe.urlExternal = recipe.source_url
           return oRecipe

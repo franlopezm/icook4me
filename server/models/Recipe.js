@@ -13,7 +13,8 @@ const Recipe = new mongoose.Schema({
   urlExternal: String,
   publisher: {
     name: String,
-    url: String
+    url: String,
+    id: String
   },
   bookmarks: [{type: ObjectId, ref: 'User'}],
   likes: [{type: ObjectId, ref: 'User'}]

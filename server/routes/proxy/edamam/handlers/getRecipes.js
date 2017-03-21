@@ -24,12 +24,14 @@ module.exports = (req, res) => {
             .map(hit => hit.recipe)
             .map(recipe => {
               let urlsite = getUrl.parse(recipe.url).hostname
+              let idRecipe = recipe.uri.split('#recipe_')[1]
               let oRecipe = {}
               oRecipe.title = recipe.label
               oRecipe.image = recipe.image
               oRecipe.publisher = {
                 name: recipe.source,
-                url: urlsite
+                url: urlsite,
+                id: idRecipe
               }
               oRecipe.urlExternal = recipe.url
               return oRecipe

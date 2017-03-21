@@ -8,7 +8,7 @@ const recipe = require('./recipe')
 const recipes = require('./recipes')
 
 Router
-  // .use(passport.authenticate('jwt', { session: false }))
+  .use(passport.authenticate('jwt', { session: false }))
   .use('/user', user)
   .use('/users', users)
   .use('/recipe', recipe)
