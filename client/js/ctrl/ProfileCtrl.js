@@ -5,14 +5,29 @@
     .controller('ProfileCtrl', ProfileCtrl)
 
   function ProfileCtrl ($rootScope, $location, AuthFact, ApiUsersFact) {
-    let vm = this
     $rootScope.section = 'profile'
+    let vm = this
+    const showItems = 18
+    let page = 1
+
     vm.logout = function () {
       AuthFact.logout()
       $location.path('/login')
     }
 
     ApiUsersFact.getUserPopulate($rootScope.loggedUser.id)
-      .then(data => vm.userData = data)
+      .then(data => {
+        vm.userData = data
+        vm.recipes = data.recipes
+      })
+
+    vm.showMoreItems = function () {
+      vm.limitation = showItems * page
+      let result = vm.recipes.length / showItems
+      if (result < page) {
+        vm.busy = true
+      }
+      page = page + 1
+    }
   }
 })()

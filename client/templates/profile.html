@@ -50,8 +50,8 @@
             <h3 class="title-section">Mis recetas</h3>
         </div>
     </div>
-    <div class="col-flex recipe-list">
-        <article class="item-flex" ng-repeat="recipe in vm.userData.recipes">
+    <div ng-if="vm.recipes" class="col-flex recipe-list" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
+        <article class="item-flex" ng-repeat="recipe in vm.recipes | limitTo: vm.limitation">
             <div class="thumbnail row thumbnail-recipe">
                 <section class="col-xs-12">
                     <a href="/recipe/{{recipe._id}}" class="thumbnail img-responsive">
