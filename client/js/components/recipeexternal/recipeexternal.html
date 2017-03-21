@@ -18,7 +18,7 @@
                     <div class="text-center">
                         <ul class="navbar-list">
                             <li>
-                                <a class="link link-thumbnail link-apply" title="Añadir a favoritos" ng-click="$ctrl.addBookmarkExternal($ctrl.recipe.title, $ctrl.recipe.image, $ctrl.recipe.publisher, $ctrl.recipe.urlExternal)">
+                                <a ng-init="$ctrl.bookmark = $ctrl.recipe.bookmark || 0" class="link link-thumbnail {{$ctrl.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe)">
                                     <i class="fa fa-book" aria-hidden="true"></i>
                                 </a>
                             </li>

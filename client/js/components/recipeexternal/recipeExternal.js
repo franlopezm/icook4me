@@ -9,18 +9,19 @@
       controller: recipeExternalCtrl,
       templateUrl: '/js/components/recipeexternal/recipeexternal.html'
     })
-  function recipeExternalCtrl (ApiUsersFact) {
+  function recipeExternalCtrl (ApiUsersFact, ApiRecipesFact) {
     let vm = this
-    vm.addBookmarkExternal = (title, image, publisher, urlExternal) => {
-      console.log(title)
-      console.log(image)
-      console.log(publisher)
-      console.log(urlExternal)
-    }
-
-    vm.addBookmark = (id) => {
+    vm.addBookmark = (recipe) => {
       vm.bookmark = (vm.bookmark === 0) ? 1 : 0
-      ApiUsersFact.bookmark(id, vm.bookmark)
+      const {_id = '', title, image, publisher, urlExternal} = recipe
+      if (_id !== '') {
+        ApiUsersFact.bookmark(_id, vm.bookmark)
+      } else {
+        ApiRecipesFact.addExternal(title, image, publisher, urlExternal)
+        .then(data => {
+          ApiUsersFact.bookmark(data._id, vm.bookmark)
+        })
+      }
     }
   }
 })()
