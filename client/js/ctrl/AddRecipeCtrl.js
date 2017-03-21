@@ -4,49 +4,50 @@
     .module('iCook4meApp')
     .controller('AddRecipeCtrl', AddRecipeCtrl)
 
-  function AddRecipeCtrl ($scope, $rootScope, ApiRecipesFact, $q, $location) {
+  function AddRecipeCtrl ($rootScope, ApiRecipesFact, $q, $location) {
     $rootScope.section = 'add'
-    $scope.ingredients = []
-    $scope.steps = []
+    let vm = this
+    vm.ingredients = []
+    vm.steps = []
 
-    $scope.submitRecipe = (e) => {
+    vm.submitRecipe = (e) => {
       e.preventDefault()
     }
 
-    $scope.addRecipe = (e) => {
-      let title = $scope.title
-      let description = $scope.description || ''
-      let ingredients = $scope.ingredients
-      let steps = $scope.steps
-      let image = $scope.image || 'noimage-recipe.jpg'
+    vm.addRecipe = (e) => {
+      let title = vm.title
+      let description = vm.description || ''
+      let ingredients = vm.ingredients
+      let steps = vm.steps
+      let image = vm.image || 'noimage-recipe.jpg'
       if (title.replace(/\s/g, '') !== '' && ingredients.length !== 0 && steps.length !== 0) {
-        $scope.showMessage = true
+        vm.showMessage = true
         $q.all([ApiRecipesFact.addRecipe(title, image, description, ingredients, steps)])
           .then(([{data}]) => $location.path('/recipe/' + data._id))
       }
     }
 
-    $scope.keyPressAdd = (e) => {
+    vm.keyPressAdd = (e) => {
       if (e.keyCode === 13) {
-        if (e.target.name === 'ingredient') $scope.addIngredient()
-        if (e.target.name === 'step') $scope.addStep()
+        if (e.target.name === 'ingredient') vm.addIngredient()
+        if (e.target.name === 'step') vm.addStep()
       }
     }
-    $scope.addIngredient = () => {
-      let ingredient = $scope.ingredient
-      if (ingredient.replace(/\s/g, '') !== '') $scope.ingredients.push(ingredient)
-      $scope.ingredient = ''
+    vm.addIngredient = () => {
+      let ingredient = vm.ingredient
+      if (ingredient.replace(/\s/g, '') !== '') vm.ingredients.push(ingredient)
+      vm.ingredient = ''
     }
-    $scope.removeIngredient = (index) => {
-      $scope.ingredients.splice(index, 1)
+    vm.removeIngredient = (index) => {
+      vm.ingredients.splice(index, 1)
     }
-    $scope.addStep = () => {
-      let step = $scope.step
-      if (step.replace(/\s/g, '') !== '') $scope.steps.push(step)
-      $scope.step = ''
+    vm.addStep = () => {
+      let step = vm.step
+      if (step.replace(/\s/g, '') !== '') vm.steps.push(step)
+      vm.step = ''
     }
-    $scope.removeStep = (index) => {
-      $scope.steps.splice(index, 1)
+    vm.removeStep = (index) => {
+      vm.steps.splice(index, 1)
     }
   }
 })()

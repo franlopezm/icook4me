@@ -14,18 +14,18 @@
 </section>
 <section>
     <h3 class="title-section">Resultados para el termino "<span>{{queryFood}}</span>"</h3>
-    <div ng-hide="showNoResult">
+    <div ng-if="vm.showNoResult">
         <div class="alert alert-info">
             <strong>Buscando...</strong>
         </div>
     </div>
-    <div ng-show="showNoResult && aRecipes.length < 1">
+    <div ng-if="vm.notFound">
         <div class="alert alert-danger">
             <strong>No se han encontrado resultados.</strong>
         </div>
     </div>
-    <div class="col-flex" infinite-scroll="showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="hasMoreItemsToShow(aRecipes.length)">
-        <article class="item-flex" ng-repeat="recipe in aRecipes | limitTo: paginationLimit()">
+    <div class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.hasMoreItemsToShow(aRecipes.length)">
+        <article class="item-flex" ng-repeat="recipe in vm.aRecipes | limitTo: vm.paginationLimit()">
             <recipe-external ng-if="recipe.urlExternal" recipe=recipe></recipe-external>
             <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
         </article>

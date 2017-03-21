@@ -28,6 +28,7 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/add', {
       templateUrl: '/templates/addrecipe.html',
       controller: 'AddRecipeCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .when('/edit/:id', {
@@ -70,6 +71,7 @@ function configRoute ($routeProvider, $locationProvider) {
     .when('/search/:query', {
       templateUrl: '/templates/searchrecipe.html',
       controller: 'SearchRecipeCtrl',
+      controllerAs: 'vm',
       secure: true
     })
     .otherwise('/')

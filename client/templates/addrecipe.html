@@ -1,13 +1,13 @@
-<div class="messages" ng-show="showMessage">
+<div class="messages" ng-show="vm.showMessage">
     <div class="alert alert-info">
         <strong>Guardando...</strong>
     </div>
 </div>
-<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="submitRecipe($event)">
+<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="vm.submitRecipe($event)">
     <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
-            <input type="text" class="form-control title-recipe" ng-init="title=''" ng-model="title" placeholder="Nombre de la receta..." autofocus>
+            <input type="text" class="form-control title-recipe" ng-init="vm.title=''" ng-model="vm.title" placeholder="Nombre de la receta..." autofocus>
         </header>
         <section class="col-xs-12text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" src="/img/noimage-recipe.jpg" alt="...">
@@ -15,18 +15,18 @@
         </section>
         <section class="col-xs-12 fullscreen-recipe-description">
             <h3>Description:</h3>
-            <textarea class="form-control" ng-model="description" placeholder="Escribe una pequeña descripción para la receta.">
+            <textarea class="form-control" ng-model="vm.description" placeholder="Escribe una pequeña descripción para la receta.">
             </textarea>
         </section>
         <section class="col-xs-12 fullscreen-recipe-ingredients">
             <h3>Ingredientes:</h3>
             <div class="group-input">
-                <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="keyPressAdd($event)" ng-model="ingredient">
-                <button type="button" ng-click="addIngredient()" class="btn btn-info">Añadir</button>
+                <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
+                <button type="button" ng-click="vm.addIngredient()" class="btn btn-info">Añadir</button>
             </div>
             <ul>
-                <li ng-repeat="ingredient in ingredients track by $index" class="list-ingredients">
-                    <i name="btn_removeingredient" class="fa fa-times" aria-hidden="true" ng-click="removeIngredient($index)"></i>
+                <li ng-repeat="ingredient in vm.ingredients track by $index" class="list-ingredients">
+                    <i name="btn_removeingredient" class="fa fa-times" aria-hidden="true" ng-click="vm.removeIngredient($index)"></i>
                     <span>{{ingredient}}</span>
                 </li>
             </ul>
@@ -34,12 +34,12 @@
         <section class="col-xs-12 fullscreen-recipe-preparation">
             <h3>Preparación:</h3>
             <div class="group-input">
-                <input ng-keypress="keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="step">
-                <button type="button" class="btn btn-info" ng-click="addStep()">Añadir</button>
+                <input ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="vm.step">
+                <button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button>
             </div>
             <ol>
-                <li ng-repeat="step in steps track by $index">
-                    <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="removeStep($index)"></i> {{step}}
+                <li ng-repeat="step in vm.steps track by $index">
+                    <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="vm.removeStep($index)"></i> {{step}}
                     <div class="line-step"></div>
                 </li>
             </ol>
@@ -49,7 +49,7 @@
 <div class="items-nav items-nav-second text-center">
     <ul class="navbar-list nav-button">
         <li>
-            <button type="button" class="btn btn-success" ng-click="addRecipe($event)">Publicar</button>
+            <button type="button" class="btn btn-success" ng-click="vm.addRecipe($event)">Publicar</button>
         </li>
     </ul>
 </div>

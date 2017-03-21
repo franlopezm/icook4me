@@ -1,16 +1,16 @@
-/* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular
     .module('iCook4meApp')
     .controller('SearchRecipeCtrl', SearchRecipeCtrl)
 
-  function SearchRecipeCtrl ($scope, $q, $rootScope, $routeParams, ProxyRecipesFact, $location, $anchorScroll, ApiRecipesFact) {
+  function SearchRecipeCtrl ($q, $rootScope, $routeParams, ProxyRecipesFact, $location, $anchorScroll, ApiRecipesFact) {
     $rootScope.section = 'home'
     let {query} = $routeParams
     $rootScope.queryFood = query
-    $scope.showNoResult = false
-    $scope.aRecipes = []
+    let vm = this
+    vm.showNoResult = true
+    vm.aRecipes = []
     let pagesShown = 1
     let pageSize = 12
 
@@ -20,33 +20,31 @@
       ApiRecipesFact.searchRecipes(query)
     ]).then(data => {
       let recipes = [...data[0], ...data[1], ...data[2]]
+      vm.showNoResult = false
       if (recipes.length === 0) {
-        $scope.showNoResult = true
-      } else {
-        $scope.showNoResult = true
+        vm.notFound = true
       }
       $location.hash('top')
       $anchorScroll()
-      $scope.aRecipes.push(...recipes)
+      vm.aRecipes.push(...recipes)
     })
 
     // Pagination functionality
-    $scope.paginationLimit = function () {
+    vm.paginationLimit = function () {
       return pageSize * pagesShown
     }
-    $scope.hasMoreItemsToShow = (num) => {
+    vm.hasMoreItemsToShow = (num) => {
       return pagesShown > (num / pageSize)
     }
-    $scope.showMoreItems = function () {
-      $scope.showNoResult = true
+    vm.showMoreItems = function () {
       let page = pagesShown + 1
       ProxyRecipesFact.searchFood2fork(query, page)
         .then(recipes => {
-          $scope.aRecipes.push(...recipes)
+          vm.aRecipes.push(...recipes)
         })
       ProxyRecipesFact.searchEdamam(query, page)
         .then(recipes => {
-          $scope.aRecipes.push(...recipes)
+          vm.aRecipes.push(...recipes)
         })
       pagesShown = page
     }
