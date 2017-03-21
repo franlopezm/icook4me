@@ -10,8 +10,11 @@
             <input type="text" class="form-control title-recipe" ng-value="vm.title" ng-model="vm.title" placeholder="Nombre de la receta...">
         </header>
         <section class="col-xs-12text-center fullscreen-recipe-img">
-            <img class="img-responsive center-block" ng-src="vm.image" err-src="/img/noimage-recipe.jpg" alt="{{vm.title}}">
-            <input type="file" class="form-control">
+            <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
+            <form enctype='multipart/form-data'>
+               <input name="file" type="file" class="form-control" ngf-select="vm.fileSelected($files)" accept="'image/*'">
+               <button type="button" class="btn btn-success form-control" ng-click="vm.uploadFile()">Subir imagen</button>
+             </form>
         </section>
         <section class="col-xs-12 fullscreen-recipe-description">
             <h3>Description:</h3>

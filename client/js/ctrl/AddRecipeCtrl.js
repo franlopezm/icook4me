@@ -4,7 +4,7 @@
     .module('iCook4meApp')
     .controller('AddRecipeCtrl', AddRecipeCtrl)
 
-  function AddRecipeCtrl ($rootScope, ApiRecipesFact, $q, $location) {
+  function AddRecipeCtrl ($rootScope, ApiRecipesFact, $q, $location, Upload) {
     $rootScope.section = 'add'
     let vm = this
     vm.ingredients = []
@@ -19,7 +19,7 @@
       let description = vm.description || ''
       let ingredients = vm.ingredients
       let steps = vm.steps
-      let image = vm.image || 'noimage-recipe.jpg'
+      let image = vm.imageLink || 'noimage-recipe.jpg'
       if (title.replace(/\s/g, '') !== '' && ingredients.length !== 0 && steps.length !== 0) {
         vm.showMessage = true
         $q.all([ApiRecipesFact.addRecipe(title, image, description, ingredients, steps)])
@@ -48,6 +48,18 @@
     }
     vm.removeStep = (index) => {
       vm.steps.splice(index, 1)
+    }
+
+    vm.fileSelected = (files) => {
+      if (files && files.length) {
+        vm.file = files[0]
+      }
+    }
+    vm.uploadFile = function () {
+      const url = '/upload'
+      const file = vm.file
+      Upload.upload({ url, file })
+            .success(({imageLink}) => { vm.imageLink = imageLink })
     }
   }
 })()
