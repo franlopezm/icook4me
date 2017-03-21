@@ -39,7 +39,7 @@
             <h3 class="title-section">Recetas publicadas por {{vm.userData.name}}</h3>
         </div>
     </div>
-    <div class="col-flex">
+    <div ng-if="vm.userData" class="col-flex">
         <article class="item-flex" ng-repeat="recipe in vm.userData.recipes">
             <recipe-internal recipe=recipe></recipe-internal>
         </article>

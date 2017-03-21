@@ -15,7 +15,13 @@ module.exports = (req, res) => {
     })
     .populate('followers')
     .populate('following')
-    .populate('recipes')
+    .populate({
+      path: 'recipes',
+      populate: {
+        path: 'autor',
+        select: 'id name image'
+      }
+    })
     .then(user => res.json(user))
     .catch(err => { throw err })
 }
