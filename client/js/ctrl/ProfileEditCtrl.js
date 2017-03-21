@@ -4,17 +4,32 @@
     .module('iCook4meApp')
     .controller('ProfileEditCtrl', ProfileEditCtrl)
 
-  function ProfileEditCtrl ($rootScope, ApiUsersFact) {
+  function ProfileEditCtrl ($rootScope, ApiUsersFact, Upload) {
     $rootScope.section = 'profile'
     let vm = this
     ApiUsersFact.getUser()
-      .then(({data}) => vm.userData = data)
+      .then(({data}) => {
+        vm.userData = data
+        vm.imageLink = data.image
+      })
 
     vm.saveUser = () => {
       const name = vm.name
       if (name.replace(/\s/g, '') !== '') {
-        ApiUsersFact.updateUser(name, vm.image, vm.description)
+        ApiUsersFact.updateUser(name, vm.imageLink, vm.description)
       }
+    }
+
+    vm.fileSelected = (files) => {
+      if (files && files.length) {
+        vm.file = files[0]
+      }
+    }
+    vm.uploadFile = function () {
+      const url = '/upload'
+      const file = vm.file
+      Upload.upload({ url, file })
+            .success(({imageLink}) => { vm.imageLink = imageLink })
     }
   }
 })()

@@ -1,9 +1,12 @@
 <section class="profile profile-edit">
-    <h3 class="title-section">Edite su información de perfil</h3>
+    <h3 class="title-section">Edite su perfil de usuario</h3>
     <article class="row fullscreen-recipe" ng-if="vm.userData">
         <section class="col-xs-12 text-center fullscreen-recipe-img">
-            <img class="img-responsive center-block" src="{{vm.userData.image}}" err-src="/img/noimage-user.jpg" alt="{{vm.userData.name}}">
-            <input type="file" class="form-control img-input">
+            <img class="img-responsive center-block" src="{{ vm.imageLink }}" err-src="/img/noimage-user.jpg" alt="{{vm.userData.name}}">
+            <form enctype='multipart/form-data'>
+               <input name="file" type="file" class="form-control img-input" ngf-select="vm.fileSelected($files)" accept="'image/*'">
+               <button type="button" id="img-file" class="btn btn-success form-control img-input" ng-click="vm.uploadFile()">Subir imagen</button>
+             </form>
         </section>
         <header class="col-xs-12">
             <label> Nombre de perfil:
