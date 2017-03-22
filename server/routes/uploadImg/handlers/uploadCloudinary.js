@@ -12,9 +12,9 @@ cloudinary.config({
 
 module.exports = (req, res, next) => {
   if (req.file) {
-    cloudinary.uploader.upload(req.file.path, ({ url }) => {
-      if (url) {
-        req.imageLink = url
+    cloudinary.uploader.upload(req.file.path, ({ secure_url }) => {
+      if (secure_url) {
+        req.imageLink = secure_url
         // delete files inside folder but not the folder itself
         del.sync([`${uploadFolderPath}/**`, `!${uploadFolderPath}`])
         next()
