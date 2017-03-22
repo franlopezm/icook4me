@@ -1,14 +1,15 @@
 <div id="login">
-    <div ng-show="vm.msg" ng-click="vm.showMsg()">
-        <div class="alert alert-danger">
+    <div class="container">
+        <div ng-show="vm.msg" ng-click="vm.showMsg()" class="alert alert-danger msg-alert">
             <strong>Ya existe un usuario registrado con ese correo</strong>
         </div>
-    </div>
-    <h3 class="text-center">Crear cuenta</h3>
-    <div class="omb_login">
-        <div class="row omb_row-sm-offset-3">
+        <div class="row flex-register">
+            <div class="col-xs-12 col-sm-6 color-text box-text">
+                <h1>iCook4me</h1>
+                <h3>Cualquier día es bueno para comenzar a cocinar,<br/>¿Qué vas a comer hoy?</h3>
+            </div>
             <div class="col-xs-12 col-sm-6">
-                <form ng-submit="vm.register($event)" class="omb_loginForm" action="" autocomplete="off" method="POST">
+                <form ng-submit="vm.register($event)" id="form-login" action="" autocomplete="off" method="POST">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
                         <input type="email" required ng-model="vm.username" class="form-control" placeholder="Dirección de correo electrónico">
@@ -16,16 +17,16 @@
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input ng-model="vm.password" required type="password" class="form-control" placeholder="*************">
+                        <input type="password" required ng-model="vm.password" class="form-control" placeholder="*************">
                     </div>
                     <span class="help-block"></span>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
+                    <div class="new-count color-text">
+                        <div>¿Ya tienes una cuenta?</div>
+                        <a class="btn btn-success" href="/login" role="button">Inicia Sesión</a>
+                    </div>
                 </form>
             </div>
-        </div>
-        <div class="new-count">
-            <div>¿Ya tienes una cuenta?</div>
-            <a class="btn btn-success" href="/login" role="button">Inicia Sesión</a>
         </div>
     </div>
 </div>

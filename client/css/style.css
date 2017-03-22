@@ -2,6 +2,12 @@ body {
   padding-top: 120px;
   padding-bottom: 15px; }
 
+.msg-alert {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  z-index: 400; }
+
 .link {
   padding: 5px;
   margin: 0 5px;
@@ -288,14 +294,18 @@ body {
   background-position: center;
   padding: 20px 0;
   overflow: hidden; }
+  #login .flex-register,
   #login .flex-login {
     display: flex;
     flex-wrap: wrap-reverse;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    z-index: 390; }
+  #login .flex-register {
+    flex-wrap: wrap; }
   #login #form-login {
-    margin-top: 40%;
+    margin: 40% auto 0;
     max-width: 300px; }
     #login #form-login span,
     #login #form-login input,
@@ -319,21 +329,15 @@ body {
       margin-top: 10px; }
   #login .box-text {
     margin-top: -30px;
-    padding: 20px; }
+    padding: 30px 20px 40px;
+    background: rgba(80, 93, 105, 0.75); }
     #login .box-text h1 {
-      font-family: "Indie Flower", cursive; }
-    #login .box-text h1 {
+      font-family: "Indie Flower", cursive;
       font-size: 4.5em;
-      font-weight: 600;
-      color: #fda926;
-      text-shadow: 0 0 1px #fda926; }
+      color: #FFFFFF; }
     #login .box-text h3 {
       text-align: center; }
 
-@media all and (max-width: 768px) {
-  #login #form-login {
-    margin-top: 10%;
-    max-width: 100%; } }
 #form-add-recipe {
   margin-top: -40px; }
 
@@ -571,6 +575,13 @@ body {
 .img-profile {
   max-width: 100px; }
 
+@media all and (max-width: 768px) {
+  #login #form-login {
+    margin-top: 10%;
+    max-width: 100%; }
+  #login .box-text {
+    max-width: 500px;
+    margin: 0 auto; } }
 @media all and (max-width: 700px) {
   .text-nav {
     display: none; } }
@@ -609,7 +620,10 @@ body {
   #form-add-recipe,
   .profile {
     margin-top: 0px;
-    margin-bottom: -40px; } }
+    margin-bottom: -40px; }
+
+  #login .box-text {
+    max-width: 400px; } }
 @media all and (max-width: 450px) {
   .navbar-primary .link {
     font-size: 19px;
@@ -637,6 +651,9 @@ body {
     width: 260px; }
 
   .title-section {
-    font-size: 20px; } }
+    font-size: 20px; }
+
+  #login .box-text {
+    max-width: 350px; } }
 
 /*# sourceMappingURL=style.css.map */
