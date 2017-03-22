@@ -273,47 +273,62 @@ body {
 .link-apply {
   color: #d45e55; }
 
-#login .row-flex {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center; }
-#login .item-row-flex {
-  margin: 10px 0;
-  width: 300px;
-  text-align: center; }
-#login .social-buttons a {
-  border-radius: 0; }
-#login .social-buttons a {
-  color: #FFF;
-  opacity: 0.9; }
-  #login .social-buttons a:hover {
-    opacity: 0.8; }
-#login .social-buttons .btn-facebook {
-  background: #3b5998; }
-#login .social-buttons .btn-twitter {
-  background: #00aced; }
-#login .social-buttons .btn-google {
-  background: #c32f10; }
-#login .not-button {
-  margin: 5px 0; }
-#login .remember-me {
-  text-align: right;
-  margin-top: 10px; }
-  #login .remember-me span {
-    margin-left: 5px; }
-#login .new-count {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600; }
-  #login .new-count .link {
-    color: #2a81ce; }
-    #login .new-count .link:hover {
-      color: #5d5d5d; }
-#login .btn-success {
-  border-radius: 0;
-  margin-top: 10px; }
+#login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-image: url("/img/backgroundimgicook4me.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  overflow: hidden; }
+  #login .flex-login {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  #login #form-login {
+    margin-top: 40%;
+    max-width: 300px; }
+    #login #form-login span,
+    #login #form-login input,
+    #login #form-login button {
+      border-radius: 0; }
+  #login .color-text {
+    color: #FFF; }
+  #login .new-count {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2); }
+    #login .new-count .link {
+      color: #2a81ce; }
+      #login .new-count .link:hover {
+        color: #5d5d5d; }
+    #login .new-count .btn-success {
+      border-radius: 0;
+      margin-top: 10px; }
+  #login .box-text {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px; }
+    #login .box-text h1 {
+      font-family: "Indie Flower", cursive; }
+    #login .box-text h1 {
+      font-size: 4.5em;
+      font-weight: 600;
+      color: #fda926;
+      text-shadow: 0 0 1px #fda926; }
+    #login .box-text h3 {
+      text-align: center; }
 
 #form-add-recipe {
   margin-top: -40px; }

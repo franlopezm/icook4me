@@ -1,43 +1,57 @@
 #login
-  .row-flex
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  min-height: 100%
+  background-image: url('/img/backgroundimgicook4me.jpg')
+  background-repeat: no-repeat
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  background-position: center
+  padding: 20px 0
+  overflow: hidden
+  .flex-login
     display: flex
-    flex-wrap: wrap
-    flex-direction: column 
+    flex-wrap: wrap-reverse
+    flex-direction: row
+    justify-content: space-between
     align-items: center
-  .item-row-flex
-    margin: 10px 0
-    width: 300px
-    text-align: center
-  .social-buttons 
-    a
+  #form-login
+    margin-top: 40%
+    max-width: 300px
+    span,
+    input,
+    button
       border-radius: 0
-    a
-      color: #FFF
-      opacity: 0.9
-      &:hover
-        opacity: 0.8
-    .btn-facebook
-      background: #3b5998  
-    .btn-twitter
-      background: #00aced
-    .btn-google
-      background: #c32f10
-  .not-button
-    margin: 5px 0
-  .remember-me
-    text-align: right
-    margin-top: 10px
-    span
-      margin-left: 5px
+  .color-text
+    color: #FFF
   .new-count
     margin-top: 20px
     text-align: center
-    font-size: 12px
-    font-weight: 600
+    font-size: 13px
+    letter-spacing: 0.3px
+    padding: 20px
+    background: rgba(0,0,0,0.2)
     .link
       color: $link-second-hover
       &:hover
-        color: $link-second
-  .btn-success
-    border-radius: 0
-    margin-top: 10px
+        color: $link-second  
+    .btn-success
+      border-radius: 0
+      margin-top: 10px
+  .box-text
+    background: rgba(0,0,0,0.6)
+    padding: 20px
+    h1
+      font-family: 'Indie Flower', cursive
+    h1  
+      font-size: 4.5em
+      font-weight: 600
+      color: #fda926
+      text-shadow: 0 0 1px #fda926
+    h3
+      text-align: center
+    
