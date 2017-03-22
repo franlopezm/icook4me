@@ -1,14 +1,14 @@
 <div id="login">
-    <div class="container">
-        <div ng-show="vm.msg" ng-click="vm.showMsg()" class="alert alert-danger msg-alert">
-            <strong>Ya existe un usuario registrado con ese correo</strong>
-        </div>
-        <div class="row flex-register">
-            <div class="col-xs-12 col-sm-6 color-text box-text">
+    <div ng-show="vm.msg" ng-click="vm.showMsg()" class="alert alert-danger msg-alert">
+        <strong>Ya existe un usuario registrado con ese correo</strong>
+    </div>
+    <div id="content">
+        <div class="flex-register">
+            <div class="color-text box-text">
                 <h1>iCook4me</h1>
                 <h3>Cualquier día es bueno para comenzar a cocinar,<br/>¿Qué vas a comer hoy?</h3>
             </div>
-            <div class="col-xs-12 col-sm-6">
+            <div>
                 <form ng-submit="vm.register($event)" id="form-login" action="" autocomplete="off" method="POST">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
