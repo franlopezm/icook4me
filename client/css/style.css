@@ -318,7 +318,7 @@ body {
       border-radius: 0;
       margin-top: 10px; }
   #login .box-text {
-    background: rgba(0, 0, 0, 0.6);
+    margin-top: -30px;
     padding: 20px; }
     #login .box-text h1 {
       font-family: "Indie Flower", cursive; }
@@ -330,6 +330,10 @@ body {
     #login .box-text h3 {
       text-align: center; }
 
+@media all and (max-width: 768px) {
+  #login #form-login {
+    margin-top: 10%;
+    max-width: 100%; } }
 #form-add-recipe {
   margin-top: -40px; }
 
@@ -633,9 +637,6 @@ body {
     width: 260px; }
 
   .title-section {
-    font-size: 20px; }
-
-  #login .item-row-flex {
-    width: 200px; } }
+    font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
