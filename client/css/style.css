@@ -508,7 +508,7 @@ body {
 .show-recipe .fullscreen-recipe-img {
   margin-bottom: 0; }
   .show-recipe .fullscreen-recipe-img img {
-    max-width: 300px;
+    width: auto;
     height: auto;
     margin-bottom: 10px; }
   .show-recipe .fullscreen-recipe-img .recipeinfo {
