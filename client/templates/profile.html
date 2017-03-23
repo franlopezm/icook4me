@@ -11,33 +11,11 @@
                 <a class="btn btn-default" href="/profile-edit" role="button">Editar Perfil</a>
             </div>
         </div>
-        <div class="col-xs-12 profile-flex">
+        <div class="col-xs-12 col-sm-2">
             <div class="img-user-thumbnail img-profile">
                 <span class="thumbnail img-responsive">
                     <img src="{{vm.userData.image}}" err-src="/img/noimage-user.jpg" alt="{{vm.userData.name}}">
                 </span>
-            </div>
-            <div class="profile-followers">
-                <div class="row">
-                    <div class="col-xs-4 text-center">
-                        <h5 class="bold-text">{{vm.userData.recipes.length}}</h5>
-                        <div>
-                            Recetas
-                        </div>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                        <!-- <h5 class="bold-text">10</h5>
-                        <div>
-                            Following
-                        </div> -->
-                    </div>
-                    <div class="col-xs-4 text-center">
-                        <!-- <h5 class="bold-text">10</h5>
-                        <div>
-                            Followers
-                        </div> -->
-                    </div>
-                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 user-info">
@@ -47,7 +25,7 @@
             </div>
         </div>
         <div class="col-xs-12" ng-if="vm.userData.recipes.length > 0">
-            <h3 class="title-section">Mis recetas</h3>
+            <h3 class="title-section"><strong>{{vm.userData.recipes.length}}</strong> Recetas publicadas</h3>
         </div>
     </div>
     <div ng-if="vm.recipes" class="col-flex recipe-profile" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
