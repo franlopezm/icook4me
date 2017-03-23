@@ -376,6 +376,9 @@ body {
 #form-add-recipe {
   margin-top: -40px; }
 
+.receipe-details {
+  margin-top: 50px; }
+
 .fullscreen-recipe textarea,
 .fullscreen-recipe input {
   border-radius: 0;
@@ -396,8 +399,8 @@ body {
 .fullscreen-recipe .fullscreen-recipe-img {
   margin-bottom: 30px; }
   .fullscreen-recipe .fullscreen-recipe-img img {
-    max-height: 350px;
-    border: 10px solid #eaeaea;
+    height: 250px;
+    border: 3px solid #eaeaea;
     margin-bottom: 10px; }
   .fullscreen-recipe .fullscreen-recipe-img input {
     background: transparent;
@@ -495,17 +498,23 @@ body {
 .show-recipe .fullscreen-recipe-img {
   margin-bottom: 0; }
   .show-recipe .fullscreen-recipe-img img {
-    max-height: 350px;
-    border: 10px solid #eaeaea;
+    max-width: 300px;
     margin-bottom: 10px; }
   .show-recipe .fullscreen-recipe-img .recipeinfo {
     text-align: left;
     font-weight: 600; }
+    .show-recipe .fullscreen-recipe-img .recipeinfo div {
+      margin-bottom: 5px; }
     .show-recipe .fullscreen-recipe-img .recipeinfo .link-username-recipe {
       display: inline-block;
       margin: 0 4px; }
       .show-recipe .fullscreen-recipe-img .recipeinfo .link-username-recipe::first-letter {
         text-transform: uppercase; }
+    .show-recipe .fullscreen-recipe-img .recipeinfo img {
+      display: inline-block;
+      max-height: 40px;
+      border-radius: 20%;
+      border: none; }
 .show-recipe .fullscreen-recipe-description,
 .show-recipe .fullscreen-recipe-preparation,
 .show-recipe .fullscreen-recipe-ingredients {
@@ -618,6 +627,9 @@ body {
   .profile {
     margin-top: -40px; }
 
+  .receipe-details {
+    margin-top: 0px; }
+
   #login #form-login {
     margin-top: 10%; }
   #login .box-text {
@@ -651,7 +663,7 @@ body {
 
   .navbar-second {
     top: inherit;
-    bottom: 46px; }
+    bottom: 51px; }
     .navbar-second .link {
       line-height: 36px;
       font-size: 20px;
@@ -679,10 +691,12 @@ body {
   .navbar-primary .brand-nav .link {
     font-size: 25px; }
 
-  .navbar-second .link {
-    font-size: 18px; }
-  .navbar-second h3 .link {
-    font-size: 18px; }
+  .navbar-second {
+    bottom: 46px; }
+    .navbar-second .link {
+      font-size: 18px; }
+    .navbar-second h3 .link {
+      font-size: 18px; }
 
   .link {
     font-size: 18px;

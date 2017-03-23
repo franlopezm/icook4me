@@ -9,7 +9,7 @@
         <header class="col-xs-12">
             <input type="text" class="form-control title-recipe" ng-init="vm.title=''" ng-model="vm.title" placeholder="Nombre de la receta..." autofocus>
         </header>
-        <section class="col-xs-12text-center fullscreen-recipe-img">
+        <section class="col-xs-12 text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
             <form enctype='multipart/form-data'>
                <input name="file" type="file" class="form-control" ngf-select="vm.fileSelected($files)" accept="'image/*'">

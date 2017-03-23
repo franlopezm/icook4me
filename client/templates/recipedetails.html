@@ -1,60 +1,66 @@
-<section class="navbar-header navbar-second">
-    <div class="items-nav items-nav-second">
-        <ul class="navbar-list">
-            <li>
-                <a class="link link-second" title="Go Back" ng-click="back()">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li ng-if="vm.recipe">
-                <a ng-init="vm.like = vm.recipe.like" class="link link-second {{vm.like === 0 ? '' : 'link-apply'}}" title="Me gusta" ng-click="vm.addLike(vm.recipe._id)">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li ng-if="vm.recipe">
-                <a ng-init="vm.bookmark = vm.recipe.bookmark" class="link link-second {{vm.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="vm.addBookmark(vm.recipe._id)">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li ng-if="vm.recipe.autor._id === loggedUser.id">
-                <a class="link link-second" href="/edit/{{vm.recipe._id}}">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
-<article class="row fullscreen-recipe show-recipe">
-    <header class="col-xs-12">
-        <h2>
-          {{vm.recipe.title}}
-        </h2>
-    </header>
-    <section class="col-xs-12 text-center fullscreen-recipe-img">
-        <recipe-img recipe="vm.recipe"></recipe-img>
-        <div class="recipeinfo">
-            <p>Autor: <a href="/profile/{{vm.recipe.autor._id}}" class="link-thumbnail link-username-recipe">{{vm.recipe.autor.name}}</a></p>
+<section ng-if="vm.recipe" class="receipe-details">
+    <section class="navbar-header navbar-second">
+        <div class="items-nav items-nav-second">
+            <ul class="navbar-list">
+                <li>
+                    <a class="link link-second" title="Go Back" ng-click="back()">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="vm.recipe">
+                    
+                    <a ng-init="vm.like = vm.recipe.like" class="link link-second {{vm.like === 0 ? '' : 'link-apply'}}" title="Me gusta" ng-click="vm.addLike(vm.recipe._id)">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="vm.recipe">
+                    <a ng-init="vm.bookmark = vm.recipe.bookmark" class="link link-second {{vm.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="vm.addBookmark(vm.recipe._id)">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li ng-if="vm.recipe.autor._id === loggedUser.id">
+                    <a class="link link-second" href="/edit/{{vm.recipe._id}}">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
-    <section class="col-xs-12 fullscreen-recipe-description">
-        <h3>Description:</h3>
-        <p>{{vm.recipe.description}}</p>
-    </section>
-    <section class="col-xs-12 fullscreen-recipe-ingredients">
-        <h3>Ingredientes:</h3>
-        <ul>
-            <li ng-repeat="ingredient in vm.recipe.ingredients track by $index">
-                {{ingredient}}
-            </li>
-        </ul>
-    </section>
-    <section class="col-xs-12 fullscreen-recipe-preparation">
-        <h3>Preparación:</h3>
-        <ol>
-            <li ng-repeat="step in vm.recipe.steps track by $index">
-                {{step}}
-                <div class="line-step"></div>
-            </li>
-        </ol>
-    </section>
-</article>
+    <article class="row fullscreen-recipe show-recipe">
+        <header class="col-xs-12">
+            <h2>{{vm.recipe.title}}</h2>
+        </header>
+        <section class="col-xs-12 col-sm-5 text-center fullscreen-recipe-img">
+            <img class="img-responsive center-block" ng-src="{{ vm.recipe.image }}" err-src="/img/noimage-recipe.jpg">
+            <div class="recipeinfo">
+                <div class="text-center" ng-init="vm.likesRecipe = vm.recipe.likes.length">{{vm.likesRecipe}} <i class="fa fa-heart" aria-hidden="true"></i> {{(vm.likesRecipe > 1) ? ' Me gustas': 'Me gusta'}}</div>
+                <p>
+                    <img class="img-responsive" src="{{vm.recipe.autor.image}}" err-src="/img/noimage-user.jpg">
+                    <a href="/profile/{{vm.recipe.autor._id}}" class="link-thumbnail link-username-recipe">{{vm.recipe.autor.name}}</a>
+                </p>
+            </div>
+        </section>
+        <section ng-if="vm.recipe.description !== ''" class="col-xs-12 col-sm-7 fullscreen-recipe-description">
+            <h3>Description:</h3>
+            <p>{{vm.recipe.description}}</p>
+        </section>
+        <section class="col-xs-12"></section>
+        <section class="col-xs-12 col-sm-5 fullscreen-recipe-ingredients">
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li ng-repeat="ingredient in vm.recipe.ingredients track by $index">
+                    {{ingredient}}
+                </li>
+            </ul>
+        </section>
+        <section class="col-xs-12 col-sm-7 fullscreen-recipe-preparation">
+            <h3>Preparación:</h3>
+            <ol>
+                <li ng-repeat="step in vm.recipe.steps track by $index">
+                    {{step}}
+                    <div class="line-step"></div>
+                </li>
+            </ol>
+        </section>
+    </article>
+</section>

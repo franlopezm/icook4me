@@ -1,6 +1,9 @@
 #form-add-recipe
   margin-top: -40px
 
+.receipe-details
+  margin-top: 50px
+
 .fullscreen-recipe
   textarea,
   input
@@ -21,8 +24,8 @@
   .fullscreen-recipe-img
     margin-bottom: 30px
     img
-      max-height: 350px
-      border: 10px solid #eaeaea
+      height: 250px
+      border: 3px solid #eaeaea
       margin-bottom: 10px
     input
       background: transparent
@@ -93,17 +96,23 @@
   .fullscreen-recipe-img
     margin-bottom: 0
     img
-      max-height: 350px
-      border: 10px solid #eaeaea
+      max-width: 300px
       margin-bottom: 10px
     .recipeinfo
       text-align: left
       font-weight: 600
+      div
+        margin-bottom: 5px
       .link-username-recipe
         display: inline-block
         margin: 0 4px
         &::first-letter
           text-transform: uppercase
+      img
+        display: inline-block
+        max-height: 40px
+        border-radius: 20%
+        border: none
   .fullscreen-recipe-description,
   .fullscreen-recipe-preparation,
   .fullscreen-recipe-ingredients
