@@ -3,57 +3,63 @@
         <strong>Guardando...</strong>
     </div>
 </div>
-<form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="vm.submitRecipe($event)">
-    <h3 class="title-section">Editando una receta</h3>
-    <article class="row fullscreen-recipe">
-        <header class="col-xs-12">
-            <input type="text" class="form-control title-recipe" ng-value="vm.title" ng-model="vm.title" placeholder="Nombre de la receta...">
-        </header>
-        <section class="col-xs-12text-center fullscreen-recipe-img">
-            <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
-            <form enctype='multipart/form-data'>
-               <input name="file" type="file" class="form-control" ngf-select="vm.fileSelected($files)" accept="'image/*'">
-               <button type="button" class="btn btn-success form-control" ng-click="vm.uploadFile()">Subir imagen</button>
-             </form>
-        </section>
-        <section class="col-xs-12 fullscreen-recipe-description">
-            <h3>Description:</h3>
-            <textarea class="form-control" ng-model="vm.description" placeholder="Escribe una pequeña descripción para la receta.">
-            {{vm.description}}
-            </textarea>
-        </section>
-        <section class="col-xs-12 fullscreen-recipe-ingredients">
-            <h3>Ingredientes:</h3>
-            <div class="group-input">
-                <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
-                <button type="button" ng-click="vm.addIngredient()" class="btn btn-info">Añadir</button>
-            </div>
-            <ul>
-                <li ng-repeat="ingredient in vm.ingredients track by $index" class="list-ingredients">
-                    <i name="btn_removeingredient" class="fa fa-times" aria-hidden="true" ng-click="vm.removeIngredient($index)"></i>
-                    <span>{{ingredient}}</span>
-                </li>
-            </ul>
-        </section>
-        <section class="col-xs-12 fullscreen-recipe-preparation">
-            <h3>Preparación:</h3>
-            <div class="group-input">
-                <input ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="vm.step">
-                <button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button>
-            </div>
-            <ol>
-                <li ng-repeat="step in vm.steps track by $index">
-                    <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="vm.removeStep($index)"></i> {{step}}
-                    <div class="line-step"></div>
-                </li>
-            </ol>
-        </section>
-    </article>
-</form>
-<div class="items-nav items-nav-second text-center">
-    <ul class="navbar-list nav-button">
-        <li>
-            <button type="button" class="btn btn-success" ng-click="vm.updateRecipe($event)">Guardar cambios</button>
-        </li>
-    </ul>
-</div>
+<section class="receipe-details">
+    <form id="form-add-recipe" action="" method="POST" class="form-inline" role="form" ng-submit="vm.submitRecipe($event)">
+        <h3 class="title-section">Editando una receta</h3>
+        <article class="row fullscreen-recipe">
+            <header class="col-xs-12">
+                <input type="text" class="form-control title-recipe" ng-value="vm.title" ng-model="vm.title" placeholder="Nombre de la receta...">
+            </header>
+            <section class="col-xs-12 col-sm-5 text-center fullscreen-recipe-img">
+                <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
+                <form enctype='multipart/form-data'>
+                    <input name="file" type="file" class="form-control img-input" ngf-select="vm.fileSelected($files)" accept="'image/*'">
+                    <button type="button" id="img-file" class="btn btn-success form-control img-input" ng-click="vm.uploadFile()">Subir imagen</button>
+                </form>
+            </section>
+            <section class="col-xs-12 col-sm-7 fullscreen-recipe-description">
+                <h3>Description:</h3>
+                <textarea class="form-control" ng-model="vm.description" placeholder="Escribe una pequeña descripción para la receta.">
+                    {{vm.description}}
+                </textarea>
+            </section>
+            <section class="col-xs-12"></section>
+            <section class="col-xs-12 col-sm-6 fullscreen-recipe-ingredients">
+                <h3>Ingredientes:</h3>
+                <div class="group-input">
+                    <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
+                    <button type="button" ng-click="vm.addIngredient()" class="btn btn-info">Añadir</button>
+                </div>
+                <ul>
+                    <li ng-repeat="ingredient in vm.ingredients track by $index" class="list-ingredients">
+                        <i name="btn_removeingredient" class="fa fa-times" aria-hidden="true" ng-click="vm.removeIngredient($index)"></i>
+                        <span>{{ingredient}}</span>
+                    </li>
+                </ul>
+            </section>
+            <section class="col-xs-12 col-sm-6 fullscreen-recipe-preparation">
+                <h3>Preparación:</h3>
+                <div class="group-input">
+                    <textarea ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso para la receta" ng-model="vm.step">
+                    </textarea>
+                    <div>
+                        <button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button>
+                    </div>
+                </div>
+                <ol>
+                    <li ng-repeat="step in vm.steps track by $index">
+                        <i name="remove_step" class="fa fa-times" aria-hidden="true" ng-click="vm.removeStep($index)"></i> {{step}}
+                        <div class="line-step"></div>
+                    </li>
+                </ol>
+            </section>
+        </article>
+    </form>
+    <div class="items-nav items-nav-second text-center">
+        <ul class="navbar-list nav-button">
+            <li>
+                <button type="button" class="btn btn-success" ng-click="vm.updateRecipe($event)">Guardar cambios</button>
+            </li>
+        </ul>
+    </div>
+</section>

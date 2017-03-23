@@ -3,25 +3,27 @@
         <strong>Guardando...</strong>
     </div>
 </div>
+<section class="receipe-details">
 <form id="form-add-recipe" action="" method="POST" enctype='multipart/form-data' class="form-inline" role="form" ng-submit="vm.submitRecipe($event)">
     <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
             <input type="text" class="form-control title-recipe" ng-init="vm.title=''" ng-model="vm.title" placeholder="Nombre de la receta..." autofocus>
         </header>
-        <section class="col-xs-12 text-center fullscreen-recipe-img">
+        <section class="col-xs-12 col-sm-5 text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
             <form enctype='multipart/form-data'>
-               <input name="file" type="file" class="form-control" ngf-select="vm.fileSelected($files)" accept="'image/*'">
-               <button type="button" class="btn btn-success form-control" ng-click="vm.uploadFile()">Subir imagen</button>
+               <input name="file" type="file" class="form-control img-input" ngf-select="vm.fileSelected($files)" accept="'image/*'">
+               <button type="button" id="img-file" class="btn btn-success form-control img-input" ng-click="vm.uploadFile()">Subir imagen</button>
              </form>
         </section>
-        <section class="col-xs-12 fullscreen-recipe-description">
+        <section class="col-xs-12 col-sm-7 fullscreen-recipe-description">
             <h3>Description:</h3>
             <textarea class="form-control" ng-model="vm.description" placeholder="Escribe una pequeña descripción para la receta.">
             </textarea>
         </section>
-        <section class="col-xs-12 fullscreen-recipe-ingredients">
+        <section class="col-xs-12"></section>
+        <section class="col-xs-12 col-sm-6 fullscreen-recipe-ingredients">
             <h3>Ingredientes:</h3>
             <div class="group-input">
                 <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
@@ -34,11 +36,12 @@
                 </li>
             </ul>
         </section>
-        <section class="col-xs-12 fullscreen-recipe-preparation">
+        <section class="col-xs-12 col-sm-6 fullscreen-recipe-preparation">
             <h3>Preparación:</h3>
             <div class="group-input">
-                <input ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso" ng-model="vm.step">
-                <button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button>
+                <textarea ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso para la receta" ng-model="vm.step">
+                </textarea>
+                <div><button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button></div>
             </div>
             <ol>
                 <li ng-repeat="step in vm.steps track by $index">
@@ -56,3 +59,4 @@
         </li>
     </ul>
 </div>
+</section>

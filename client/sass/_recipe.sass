@@ -23,8 +23,11 @@
     border-radius: 0
   .fullscreen-recipe-img
     margin-bottom: 30px
+    .img-input
+      max-width: 300px
+      margin: 0 auto
     img
-      height: 250px
+      width: 250px
       border: 3px solid #eaeaea
       margin-bottom: 10px
     input
@@ -47,7 +50,7 @@
       display: inline-block
     textarea
       width: 100%
-      min-height: 80px
+      min-height: 120px
     i 
       font-size: 18px
       padding: 2px 1%
@@ -81,13 +84,21 @@
         padding: 5px 0
         .line-step
           width: 40%
-          margin: 10px auto
+          margin: 0px 0 5px 10px
           height: 1px
           box-shadow: 0 1px rgba(0,0,0,0.4)          
     button
       display: inline
       width: 67px
-  
+  .fullscreen-recipe-preparation
+    textarea
+      min-height: 100px
+      margin-bottom: 5px
+    textarea + div
+      overflow: hidden
+    textarea + div > button
+      float: right
+
 .show-recipe
   h2
     text-align: center
@@ -97,6 +108,7 @@
     margin-bottom: 0
     img
       max-width: 300px
+      height: auto
       margin-bottom: 10px
     .recipeinfo
       text-align: left
@@ -113,6 +125,7 @@
         max-height: 40px
         border-radius: 20%
         border: none
+        width: auto
   .fullscreen-recipe-description,
   .fullscreen-recipe-preparation,
   .fullscreen-recipe-ingredients
@@ -140,8 +153,3 @@
       margin-left: -20px
       li
         padding: 5px 0
-        .line-step
-          width: 40%
-          margin: 10px auto
-          height: 1px
-          box-shadow: 0 1px rgba(0,0,0,0.4)
