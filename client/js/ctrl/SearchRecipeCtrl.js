@@ -5,7 +5,7 @@
     .controller('SearchRecipeCtrl', SearchRecipeCtrl)
 
   function SearchRecipeCtrl ($q, $rootScope, $routeParams, ProxyRecipesFact, $location, $anchorScroll, ApiRecipesFact) {
-    $rootScope.section = 'home'
+    $rootScope.section = 'search'
     let {query} = $routeParams
     $rootScope.queryFood = query
     let vm = this

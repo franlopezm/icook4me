@@ -1,4 +1,10 @@
 @media all and (max-width: 800px )
+  body
+    padding-top: 120px
+  
+  .profile
+    margin-top: -40px
+
   #login
     #form-login
       margin-top: 10%
@@ -7,10 +13,11 @@
       margin: 0 auto
       h1
         font-size: 4.5em
-
-@media all and (max-width: 700px )
-  .text-nav
+  #form-navbar
     display: none
+
+  #searchform-responsive
+    display: block   
 
 @media all and (max-width: 600px )
   body
@@ -23,7 +30,6 @@
   
   .navbar-primary
     .link
-      line-height: 40px
       font-size: 20px
       padding: 8px
       margin: 0 15px
@@ -35,7 +41,7 @@
  
   .navbar-second
     top: inherit
-    bottom: 40px
+    bottom: 46px
     .link
       line-height: 36px
       font-size: 20px
@@ -46,6 +52,9 @@
 
   .search-input
     width: 90%
+  
+  .text-nav
+    display: none
 
   #form-add-recipe,
   .profile
@@ -72,7 +81,6 @@
         font-size: 18px
 
   .link
-    line-height: 35px
     font-size: 18px
     margin: 0 1px
 

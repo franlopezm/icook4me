@@ -61,22 +61,18 @@
   text-align: center
 
 .form-search
-  .input-group
-    margin-top: -25px
-  span
-    border-radius: 0
-    i
-      font-size: 18px
-  input
-    min-width: 200px
+  line-height: 25px
+  font-size: 15px
+  padding: 5px
+  width: 100%
 
 .search-input
   background: #FFFFFF
   line-height: 30px
   border-radius: 0
-  width: 100%
+  width: 90%
   margin: 0 auto
-  padding-left: 5px
+  padding-left: 30px
   border: 1px solid $link-thumbnail-primary
 
 .icon-search-input
@@ -84,6 +80,21 @@
   font-size: 19px
   padding: 5px 8px
   background: transparent
+
+.navbar-left
+  display: flex
+  align-items: center
+
+#form-navbar
+  .form-search
+    width: 200px
+    .input-group
+      width: 100%
+    .search-input
+      width: 100%
+
+#searchform-responsive
+  display: none
 
 .nav-button
   li

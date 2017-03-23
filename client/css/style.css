@@ -1,5 +1,5 @@
 body {
-  padding-top: 120px;
+  padding-top: 70px;
   padding-bottom: 15px; }
 
 .msg-alert {
@@ -128,22 +128,19 @@ body {
   width: 100%;
   text-align: center; }
 
-.form-search .input-group {
-  margin-top: -25px; }
-.form-search span {
-  border-radius: 0; }
-  .form-search span i {
-    font-size: 18px; }
-.form-search input {
-  min-width: 200px; }
+.form-search {
+  line-height: 25px;
+  font-size: 15px;
+  padding: 5px;
+  width: 100%; }
 
 .search-input {
   background: #FFFFFF;
   line-height: 30px;
   border-radius: 0;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
-  padding-left: 5px;
+  padding-left: 30px;
   border: 1px solid #4a86bb; }
 
 .icon-search-input {
@@ -151,6 +148,20 @@ body {
   font-size: 19px;
   padding: 5px 8px;
   background: transparent; }
+
+.navbar-left {
+  display: flex;
+  align-items: center; }
+
+#form-navbar .form-search {
+  width: 200px; }
+  #form-navbar .form-search .input-group {
+    width: 100%; }
+  #form-navbar .form-search .search-input {
+    width: 100%; }
+
+#searchform-responsive {
+  display: none; }
 
 .nav-button li {
   line-height: 40px; }
@@ -542,37 +553,35 @@ body {
         height: 1px;
         box-shadow: 0 1px rgba(0, 0, 0, 0.4); }
 
-.profile {
-  margin-top: -40px; }
-  .profile .img-user-thumbnail span {
-    margin-bottom: 0px; }
-  .profile .user-info {
-    margin-top: 10px; }
-    .profile .user-info h5:first-letter {
-      text-transform: uppercase; }
-  .profile .button-profile {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px; }
-    .profile .button-profile .btn {
-      border-radius: 0;
-      font-weight: 600;
-      margin-right: 10px; }
-  .profile .title-section {
-    max-width: 80%;
-    margin-top: 30px;
-    padding: 10px 0 5px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  .profile .recipe-list .item-flex {
-    width: 150px; }
-    .profile .recipe-list .item-flex section h4 {
-      font-size: 12px;
-      font-weight: 600; }
-    .profile .recipe-list .item-flex .link-text {
-      color: #4a86bb; }
-      .profile .recipe-list .item-flex .link-text:hover {
-        color: #ff9d4b; }
+.profile .img-user-thumbnail span {
+  margin-bottom: 0px; }
+.profile .user-info {
+  margin-top: 10px; }
+  .profile .user-info h5:first-letter {
+    text-transform: uppercase; }
+.profile .button-profile {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px; }
+  .profile .button-profile .btn {
+    border-radius: 0;
+    font-weight: 600;
+    margin-right: 10px; }
+.profile .title-section {
+  max-width: 80%;
+  margin-top: 30px;
+  padding: 10px 0 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.profile .recipe-list .item-flex {
+  width: 150px; }
+  .profile .recipe-list .item-flex section h4 {
+    font-size: 12px;
+    font-weight: 600; }
+  .profile .recipe-list .item-flex .link-text {
+    color: #4a86bb; }
+    .profile .recipe-list .item-flex .link-text:hover {
+      color: #ff9d4b; }
 
 .profile-edit .title-section {
   max-width: 80%;
@@ -603,16 +612,25 @@ body {
   display: none; }
 
 @media all and (max-width: 800px) {
+  body {
+    padding-top: 120px; }
+
+  .profile {
+    margin-top: -40px; }
+
   #login #form-login {
     margin-top: 10%; }
   #login .box-text {
     max-width: 400px;
     margin: 0 auto; }
     #login .box-text h1 {
-      font-size: 4.5em; } }
-@media all and (max-width: 700px) {
-  .text-nav {
-    display: none; } }
+      font-size: 4.5em; }
+
+  #form-navbar {
+    display: none; }
+
+  #searchform-responsive {
+    display: block; } }
 @media all and (max-width: 600px) {
   body {
     padding-top: 15px;
@@ -623,7 +641,6 @@ body {
     bottom: 0; }
 
   .navbar-primary .link {
-    line-height: 40px;
     font-size: 20px;
     padding: 8px;
     margin: 0 15px; }
@@ -634,7 +651,7 @@ body {
 
   .navbar-second {
     top: inherit;
-    bottom: 40px; }
+    bottom: 46px; }
     .navbar-second .link {
       line-height: 36px;
       font-size: 20px;
@@ -644,6 +661,9 @@ body {
 
   .search-input {
     width: 90%; }
+
+  .text-nav {
+    display: none; }
 
   #form-add-recipe,
   .profile {
@@ -665,7 +685,6 @@ body {
     font-size: 18px; }
 
   .link {
-    line-height: 35px;
     font-size: 18px;
     margin: 0 1px; }
 
