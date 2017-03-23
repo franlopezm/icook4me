@@ -1,60 +1,52 @@
-<div class="thumbnail row thumbnail-recipe app-recipe">
-    <header>
-        <div class="col-xs-5">
-            <div>{{$ctrl.recipe.createdAt | date:'dd-MM-yyyy' }}</div>
-            <div ng-init="$ctrl.likesRecipe = $ctrl.recipe.likes.length">{{$ctrl.likesRecipe}} <i class="fa fa-heart" aria-hidden="true"></i></div>
-        </div>
-        <div class="col-xs-7 text-right">
-            <div class="row">
-                <div class="col-xs-8">
-                    <div>Publicada por:</div>
-                    <div><a href="/profile/{{$ctrl.recipe.autor._id}}" class="link-thumbnail link-username-recipe">{{$ctrl.recipe.autor.name}}</a></div>
+<div class="thumbnail-recipe">
+    <a href="/recipe/{{$ctrl.recipe._id}}">
+        <recipe-img recipe="$ctrl.recipe"></recipe-img>
+    </a>
+    <section class="recipe-content">
+        <header>
+            <h4 class="text-center">
+                <a href="/recipe/{{$ctrl.recipe._id}}" title="{{$ctrl.recipe.title}}" >{{$ctrl.recipe.title}}</a>
+            </h4>
+            </a>
+            <a href="/recipe/{{$ctrl.recipe._id}}" class="link-text">
+                <p class="preview-text" ng-if="$ctrl.recipe.description">{{$ctrl.recipe.description.substr(0,150)}}...</p>
+                <p class="preview-text" ng-if="$ctrl.recipe.description === ''">{{$ctrl.recipe.steps.join('; ').substr(0,150)}}...</p>
+            </a>
+        </header>
+        <section class="info-details">
+            <span class="like-info" ng-init="$ctrl.likesRecipe = $ctrl.recipe.likes.length">{{$ctrl.likesRecipe}} <i class="fa fa-heart" aria-hidden="true"></i> Me gusta</span>
+            <span class="date-info">{{$ctrl.recipe.createdAt | date:'dd-MM-yyyy' }}</span>
+        </section>
+        <footer>
+            <nav class="navbar-thumbnail-recipe">
+                <div class="text-center">
+                    <ul class="navbar-list">
+                        <li>
+                            <a ng-init="$ctrl.like = $ctrl.recipe.like" class="link link-thumbnail {{$ctrl.like === 0 ? '' : 'link-apply'}}" title="Me gusta" ng-click="$ctrl.addLike($ctrl.recipe._id)">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-init="$ctrl.bookmark = $ctrl.recipe.bookmark" class="link link-thumbnail {{$ctrl.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe._id)">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li ng-if="$ctrl.recipe.autor._id === $root.loggedUser.id">
+                            <a class="link link-thumbnail" title="Editar receta" href="/edit/{{$ctrl.recipe._id}}">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-xs-4 user-thumbnail-recipe">
-                    <a href="/profile/{{$ctrl.recipe.autor._id}}" class="thumbnail img-responsive">
-                        <img src="{{$ctrl.recipe.autor.image}}" err-src="/img/noimage-user.jpg" alt="{{$ctrl.recipe.autor.name}}">
-                    </a>
-                </div>
+            </nav>
+        </footer>
+        <section>
+            <div class="user-thumbnail">
+                <a href="/profile/{{$ctrl.recipe.autor._id}}">
+                    <img class="img-responsive" src="{{$ctrl.recipe.autor.image}}" err-src="/img/noimage-user.jpg" alt="{{$ctrl.recipe.autor.name}}">
+                </a>
+                <a href="/profile/{{$ctrl.recipe.autor._id}}" class="link-user-thumbnail">{{$ctrl.recipe.autor.name}}</a>
             </div>
-        </div>
-    </header>
-    <section class="col-xs-12">
-        <a href="/recipe/{{$ctrl.recipe._id}}" class="thumbnail img-responsive">
-            <recipe-img recipe="$ctrl.recipe"></recipe-img>
-        </a>
-        <div class="caption">
-            <a href="/recipe/{{$ctrl.recipe._id}}" class="link-text">
-                <h4 class="text-center">{{$ctrl.recipe.title}}</h4>
-            </a>
-            <a href="/recipe/{{$ctrl.recipe._id}}" class="link-text">
-                <p ng-if="$ctrl.recipe.description">{{$ctrl.recipe.description.substr(0,200)}}...</p>
-                <p ng-if="$ctrl.recipe.description === ''">{{$ctrl.recipe.steps.join('; ').substr(0,200)}}...</p>
-            </a>
-        </div>
+        </section>
     </section>
-    <footer class="col-xs-12">
-        <nav>
-    <div class="navbar-thumbnail-recipe">
-        <div class="text-center">
-            <ul class="navbar-list">
-                <li>
-                    <a ng-init="$ctrl.like = $ctrl.recipe.like" class="link link-thumbnail {{$ctrl.like === 0 ? '' : 'link-apply'}}" title="Me gusta" ng-click="$ctrl.addLike($ctrl.recipe._id)">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a ng-init="$ctrl.bookmark = $ctrl.recipe.bookmark" class="link link-thumbnail {{$ctrl.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe._id)">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li ng-if="$ctrl.recipe.autor._id === $root.loggedUser.id">
-                    <a class="link link-thumbnail" title="Editar receta" href="/edit/{{$ctrl.recipe._id}}">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-    </footer>
 </div>

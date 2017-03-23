@@ -50,7 +50,7 @@
             <h3 class="title-section">Mis recetas</h3>
         </div>
     </div>
-    <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
+    <div ng-if="vm.recipes" class="col-flex recipe-profile" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
         <article class="item-flex" ng-repeat="recipe in vm.recipes | limitTo: vm.limitation">
             <recipe-internal recipe=recipe></recipe-internal>
         </article>

@@ -6,8 +6,6 @@
                     <a class="link {{section === 'home' ? 'active' : ''}}" href="/" title="Inicio">iCook4me</a>
                 </h1>
             </li>
-        </ul>
-        <ul class="navbar-list">
             <li>
                 <a class="link {{section === 'add' ? 'active' : ''}}" href="/add" title="Añadir receta">
                     <i class="fa fa-plus-square " aria-hidden="true "></i>
@@ -23,9 +21,11 @@
         </ul>
         <ul class="navbar-list">
             <li>
+                <form-search-recipes value="queryFood"></form-search-recipes>
+            </li>
+            <li class="user-navbar">
                 <a class="link {{section === 'profile' ? 'active' : ''}}" href="/profile" title="Perfil de {{loggedUser.name}}">
-                    <span class="text-nav">{{loggedUser.name.substr(0,10)}}...</span>
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <img src="{{loggedUser.image}}" err-src="/img/noimage-user.jpg" alt="{{loggedUser.name}}">
                 </a>
             </li>
         </ul>

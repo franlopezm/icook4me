@@ -1,37 +1,31 @@
-<article class="item-flex">
-    <div class="thumbnail row thumbnail-recipe">
-        <section class="col-xs-12 external-recipe">
-            <div class="caption">
+<div class="thumbnail-recipe external-recipe">
+    <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black">
+        <recipe-img recipe="$ctrl.recipe"></recipe-img>
+    </a>
+    <section class="recipe-content">
+        <header>
+            <h4 class="text-center">
+                <a href="{{$ctrl.recipe.urlExternal}}" target="_black" title="{{$ctrl.recipe.title}}" >{{$ctrl.recipe.title}}</a>
+            </h4>
+        </header>
+        <footer class="external-footer">
+            <nav class="navbar-thumbnail-recipe">
                 <div class="text-center">
-                    <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black" class="link-thumbnail brand-extenal-recipe">
-                        {{$ctrl.recipe.title}}
-                        </a>
-                </div>
-            </div>
-            <a ng-href="{{$ctrl.recipe.urlExternal}}" target="_black" class="thumbnail img-responsive">
-                <recipe-img recipe="$ctrl.recipe"></recipe-img>
-            </a>
-        </section>
-        <footer class="col-xs-12">
-            <nav>
-                <div class="navbar-thumbnail-recipe">
-                    <div class="text-center">
-                        <ul class="navbar-list">
-                            <li>
-                                <a ng-init="$ctrl.bookmark = $ctrl.recipe.bookmark || 0" class="link link-thumbnail {{$ctrl.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe)">
-                                    <i class="fa fa-book" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-list">
+                        <li>
+                            <a ng-init="$ctrl.bookmark = $ctrl.recipe.bookmark || 0" class="link link-thumbnail {{$ctrl.bookmark === 0 ? '' : 'link-apply'}}" title="Añadir a favoritos" ng-click="$ctrl.addBookmark($ctrl.recipe)">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
-            <header>
-                <div class="col-xs-12 text-center">
-                    <div>Puedes encontrar más recetas en:</div>
-                    <div><a ng-href="http://{{$ctrl.recipe.publisher.url}}" target="_blank" class="link-text link-username-recipe link-publisher">{{$ctrl.recipe.publisher.name}}</a></div>
-                </div>
-            </header>
         </footer>
-    </div>
-</article>
+        <section class="external-blog">
+            <div class="text-center">
+                <div>Puedes encontrar más recetas en:</div>
+                <div><a ng-href="http://{{$ctrl.recipe.publisher.url}}" target="_blank" class="link-text link-username-recipe link-publisher">{{$ctrl.recipe.publisher.name}}</a></div>
+            </div>
+        </section>
+    </section>
+</div>

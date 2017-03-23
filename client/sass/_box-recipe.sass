@@ -1,67 +1,94 @@
-.thumbnail
-  border-radius: 0
+.col-flex
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  justify-content: space-between
+  
+.item-flex
+  color: #484848
+  border: 1px solid #ddd
+  margin-bottom: 20px
 
-.thumbnail-recipe
-  margin-right: 0
-  margin-left: 0
-  color: $colortext-primary
-  max-width: 300px
-  overflow: hidden
-  header
-    div
-      padding: 0 3px
-      font-size: 0.95em
-      font-weight: 600
-    .row
-      padding: 0 10px
-    .link-username-recipe
-      margin: 0
-      font-size: 12px
-
-.app-recipe
-  box-shadow: 0 0 3px 2px #87accc
-
-.user-thumbnail-recipe
-  padding: 0 5px
-  img
-    max-height: 50px
-  a
-    margin-bottom: 5px
-    border: none
-    background: transparent
-
-.img-user-thumbnail
-  padding: 0
-
-.thumbnail-recipe
-  section
-    img
-      max-height: 150px
-      margin: 0 auto
-    a
-      margin-bottom: 5px
-      outline-color: #ddd
-      text-align: center
-      &:hover
-        border-color: #ddd
-      &:focus
-        border-color: #ddd
-      p
-        text-align: justify
-    .caption
-      padding: 0
+.img-recipe-show
+  height: 200px
+  width: 100%
+  background-repeat: no-repeat
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  background-position: center
 
 .link-text
   color: $colortext-primary
   &:hover
     text-decoration: none
-    color: $colortext-primary
+    color: rgb(90, 82, 56)
 
-.link-like
-  color: $link-thumbnail-primary
-  &:hover
-    color: $link-thumbnail-hover
-    text-decoration: none
+.thumbnail-recipe
+  overflow: hidden
+  width: 300px
+  color: $colortext-primary
+  .recipe-content
+    padding: 10px
+  header
+    font-size: 0.95em
+    font-weight: 600
+    h4
+      margin: 0
+      margin-bottom: 5px
+      font-weight: 600
+      text-decoration: none
+      font-size: 20px
+      color: $link-thumbnail-primary
+      a
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+      a:hover
+        color: $link-thumbnail-hover
+        text-decoration: none
+      a:focus
+        text-decoration: none
+  .preview-text
+    min-height: 74px
+    margin-bottom: 5px
+  .user-thumbnail
+    a
+      text-decoration: none
+    img
+      display: inline
+      max-height: 40px
+  .link-user-thumbnail
+    display: inline-block
+    line-height: 25px
+    font-size: 13px
+    font-weight: 600
+    margin-left: 5px
+    color: $link-thumbnail-primary
+    &:hover
+      color: $link-thumbnail-hover
+      text-decoration: none
+    &:focus
+      text-decoration: none
+    &:first-letter
+      text-transform: uppercase
+  .navbar-thumbnail-recipe
+    margin: 5px auto 10px
+    line-height: 35px
+    border: 1px solid rgba(0,0,0,0.2)
+    border-left: none
+    border-right: none
+  .info-details
+    font-size: 11px
+    span
+      display: inline-block
+    .like-info
+      i
+        font-weight: 10px
+    .date-info
+      float: right
 
 .link-thumbnail
   line-height: 25px
@@ -76,21 +103,12 @@
     text-decoration: none
   i
     font-size: 18px
-
-.external-recipe
-  .caption
-    margin: 10px 5px
-  .brand-extenal-recipe
-    line-height: 25px
-    font-size: 15px
-    font-weight: 600
-    padding: 5px
-    color: $link-thumbnail-primary
-    &:focus
-      text-decoration: none
-    &:hover
-      color: $link-thumbnail-hover
-      text-decoration: none
+  
+.link-like
+  color: $link-thumbnail-primary
+  &:hover
+    color: $link-thumbnail-hover
+    text-decoration: none
 
 .link-publisher
   color: $link-second
@@ -99,5 +117,16 @@
   &:focus
     text-decoration: none
 
+.external-footer
+  margin: 30px 0 10px
+
+.external-blog
+  font-size: 0.95em
+  font-weight: 600
+
 .link-apply
   color: $link-apply
+
+@media all and (max-width: 730px )    
+  .col-flex
+    justify-content: space-around

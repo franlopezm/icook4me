@@ -1,1 +1,1 @@
-<img class="img-responsive center-block" ng-src="{{$ctrl.recipe.image}}" err-src="/img/noimage-recipe.jpg" alt="{{$ctrl.recipe.title}}">
+<img ng-style="{ 'background-image': 'url({{ $ctrl.recipe.image }})' }" class="img-responsive img-recipe-show" ng-src="{{$ctrl.recipe.image}}" err-src="/img/noimage-recipe.jpg" >

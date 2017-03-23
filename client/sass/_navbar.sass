@@ -16,10 +16,12 @@
   width: 100%
   box-shadow: 0 0 4px #000
   .link
-    line-height: 51px
     font-size: 25px
     padding: 8px
     margin: 0 15px
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
   .brand-nav
     font-family: 'Indie Flower', cursive
     margin: 0
@@ -59,22 +61,22 @@
   text-align: center
 
 .form-search
-  line-height: 25px
-  font-size: 15px
-  padding: 5px
-  width: 100%
-
-.form-arrow
-  width: 83%
+  .input-group
+    margin-top: -25px
+  span
+    border-radius: 0
+    i
+      font-size: 18px
+  input
+    min-width: 200px
 
 .search-input
   background: #FFFFFF
   line-height: 30px
   border-radius: 0
-  width: 90%
-  text-align: center
+  width: 100%
   margin: 0 auto
-  padding: 0 10px 0px 24px
+  padding-left: 5px
   border: 1px solid $link-thumbnail-primary
 
 .icon-search-input
@@ -92,10 +94,13 @@
     margin: -2px 20px 0
 
 .text-nav
-  font-size: 12px
-  margin-left: -10px
-  padding: 9px 11px
+  font-size: 11px
+  padding-left: 10px
   line-height: initial
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
+
+.user-navbar
+  a
+    padding: 0
+    img
+      max-height: 35px
+      border-radius: 20%

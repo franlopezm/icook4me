@@ -1,6 +1,11 @@
-<form action="" method="POST" class="form-inline" role="form" ng-submit="$ctrl.searchRecipes($event)">
-    <div>
+<form action="" method="POST" class="form-inline form-search" role="form" ng-submit="$ctrl.searchRecipes($event)">  
+  <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-search"></i></span>
+      <input type="text" class="search-input" placeholder="Busca Pollo a la sidra" ng-init="$ctrl.query= $ctrl.value ? $ctrl.value : ''" ng-value="$ctrl.query ? $ctrl.query : ''" ng-model="$ctrl.query">
+  </div>
+
+    <!-- <div>
         <i class="fa fa-search icon-search-input" aria-hidden="true"></i>
         <input type="text" class="search-input" placeholder="Prueba a buscar Pollo a la sidra" ng-init="$ctrl.query= $ctrl.value ? $ctrl.value : ''" ng-value="$ctrl.query ? $ctrl.query : ''" ng-model="$ctrl.query">
-    </div>
+    </div> -->
 </form>
