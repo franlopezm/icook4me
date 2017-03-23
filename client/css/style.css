@@ -510,6 +510,7 @@ body {
   .show-recipe .fullscreen-recipe-img img {
     width: auto;
     height: auto;
+    max-height: 300px;
     margin-bottom: 10px; }
   .show-recipe .fullscreen-recipe-img .recipeinfo {
     text-align: left;
