@@ -714,6 +714,10 @@ body {
     font-size: 18px;
     margin: 0 1px; }
 
+  .navbar-thumbnail-recipe .link-thumbnail {
+    font-size: 15px;
+    margin: 0 15px; }
+
   .navbar-second .link {
     margin: 0 8px; }
 
