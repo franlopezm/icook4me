@@ -32,7 +32,10 @@
           if (!data.success) {
             $rootScope.$broadcast('msgExistUser', true)
           } else {
-            $location.path('/login')
+            const { username, password } = credentials
+            login({ username, password })
+              .then(setCredentials)
+              .then(() => $location.path('/'))
           }
         })
     }

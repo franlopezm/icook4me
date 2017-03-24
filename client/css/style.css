@@ -632,6 +632,9 @@ body {
   margin-top: 5px;
   width: 100%; }
 
+.email-profile {
+  color: #2a81ce; }
+
 @media all and (max-width: 800px) {
   body {
     padding-top: 120px; }

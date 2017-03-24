@@ -4,25 +4,28 @@
         <section class="col-xs-12 col-sm-6 text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" src="{{ vm.imageLink }}" err-src="/img/noimage-user.jpg" alt="{{vm.userData.name}}">
             <form enctype='multipart/form-data'>
-               <input name="file" type="file" class="form-control img-input" ngf-select="vm.fileSelected($files)" accept="'image/*'">
-               <button type="button" id="img-file" class="btn btn-info form-control img-input" ng-click="vm.uploadFile()">Subir imagen</button>
-             </form>
+                <input name="file" type="file" class="form-control img-input" ngf-select="vm.fileSelected($files)" accept="'image/*'">
+                <button type="button" id="img-file" class="btn btn-info form-control img-input" ng-click="vm.uploadFile()">Subir imagen</button>
+            </form>
         </section>
-        <header class="col-xs-12 col-sm-6">
-            <label> Nombre de perfil:
-                <input type="text" class="form-control" ng-init="vm.name=vm.userData.name" value="vm.name" ng-model="vm.name" placeholder="Nombre de perfil..." autofocus>
-            </label>
-        </header>
-        <section class="col-xs-12 col-sm-6 fullscreen-recipe-description">
-            <h3>Description:</h3>
-            <textarea class="form-control" ng-init="vm.description=vm.userData.description" ng-model="vm.description" placeholder="Escriba una pequeña descripción para su perfil.">
-            {{vm.description}}
-            </textarea>
-        </section>
+        <form id="profileform" ng-submit="vm.saveUser($event)">
+            <header class="col-xs-12 col-sm-6">
+                <h5 class="bold-text">Email de la cuenta: <span class="email-profile">{{vm.userData.username}}</span></h5>
+                <label> Nombre de perfil:
+                    <input type="text" class="form-control" required ng-init="vm.name=vm.userData.name" value="vm.name" ng-model="vm.name" placeholder="Nombre de perfil..." autofocus>
+                </label>
+            </header>
+            <section class="col-xs-12 col-sm-6 fullscreen-recipe-description">
+                <h3>Description:</h3>
+                <textarea class="form-control" ng-init="vm.description=vm.userData.description" ng-model="vm.description" placeholder="Escriba una pequeña descripción para su perfil.">
+                    {{vm.description}}
+                </textarea>
+            </section>
+        </form>
     </article>
     <div class="col-xs-12 button-profile">
         <div class="center-block">
-            <a class="btn btn-success" ng-click="vm.saveUser()" role="button">Actualizar perfil</a>
+            <button class="btn btn-success" form="profileform" type="submit" role="button">Actualizar perfil</button>
         </div>
     </div>
 </section>

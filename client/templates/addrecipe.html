@@ -8,7 +8,7 @@
     <h3 class="title-section">Añade una receta</h3>
     <article class="row fullscreen-recipe">
         <header class="col-xs-12">
-            <input type="text" class="form-control title-recipe" ng-init="vm.title=''" ng-model="vm.title" placeholder="Nombre de la receta..." autofocus>
+            <input type="text" class="form-control title-recipe" required ng-init="vm.title=''" ng-model="vm.title" placeholder="Nombre de la receta..." autofocus>
         </header>
         <section class="col-xs-12 col-sm-5 text-center fullscreen-recipe-img">
             <img class="img-responsive center-block" ng-src="{{ vm.imageLink }}" err-src="/img/noimage-recipe.jpg">
@@ -26,7 +26,7 @@
         <section class="col-xs-12 col-sm-6 fullscreen-recipe-ingredients">
             <h3>Ingredientes:</h3>
             <div class="group-input">
-                <input name="ingredient" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
+                <input name="ingredient" ng-required="(vm.ingredients.length > 0) ? '' : 'required'" type="text" class="form-control" placeholder="Añadir ingrediente" ng-keypress="vm.keyPressAdd($event)" ng-model="vm.ingredient">
                 <button type="button" ng-click="vm.addIngredient()" class="btn btn-info">Añadir</button>
             </div>
             <ul>
@@ -39,7 +39,7 @@
         <section class="col-xs-12 col-sm-6 fullscreen-recipe-preparation">
             <h3>Preparación:</h3>
             <div class="group-input">
-                <textarea ng-keypress="vm.keyPressAdd($event)" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso para la receta" ng-model="vm.step">
+                <textarea ng-keypress="vm.keyPressAdd($event)" ng-required="(vm.steps.length > 0) ? '' : 'required'" name="step" type="text" class="form-control" placeholder="Añade un nuevo paso para la receta" ng-model="vm.step">
                 </textarea>
                 <div><button type="button" class="btn btn-info" ng-click="vm.addStep()">Añadir</button></div>
             </div>
@@ -55,7 +55,8 @@
 <div class="items-nav items-nav-second text-center">
     <ul class="navbar-list nav-button">
         <li>
-            <button type="button" class="btn btn-success" ng-click="vm.addRecipe($event)">Publicar</button>
+            <button  ng-if="vm.title !== '' && vm.ingredients.length !== 0 && vm.steps.length !== 0" type="button" ng-click="vm.addRecipe()" class="btn btn-success">Publicar</button>
+            <button ng-if="vm.title === '' || vm.ingredients.length === 0 || vm.steps.length === 0" type="submit" form="form-add-recipe" class="btn btn-success">Publicar</button>
         </li>
     </ul>
 </div>

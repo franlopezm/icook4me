@@ -14,7 +14,7 @@
       e.preventDefault()
     }
 
-    vm.addRecipe = (e) => {
+    vm.addRecipe = () => {
       let title = vm.title
       let description = vm.description || ''
       let ingredients = vm.ingredients
