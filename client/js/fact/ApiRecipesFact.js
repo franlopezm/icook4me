@@ -23,11 +23,13 @@
                 .then(data => data)
     }
 
+    /* Add the external recipe to the database if it is marked as favorite */
     function addExternal (title, image, publisher, urlExternal) {
       return $http.post('/api/recipe/external', {title, image, publisher, urlExternal})
                 .then(({data}) => data)
     }
 
+    /* Get all data from one recipe per id */
     function getAllRecipe (id) {
       return $http.get('/api/recipe/all/' + id)
                 .then(({data}) => {
@@ -37,6 +39,7 @@
                 })
     }
 
+    /* Gets all external recipes in the database */
     function getAllRecipesExternal () {
       return $http.get('/api/recipes/external')
                 .then(({data}) => {
@@ -48,6 +51,7 @@
                 })
     }
 
+    /* Get all the recipes (except the external recipes) with url, name and image of the author */
     function getAllPopAutor () {
       return $http.get('/api/recipes/autorpop')
                 .then(({data}) => {
@@ -65,6 +69,7 @@
                 .then(data => data)
     }
 
+    /* Search the internal recipes */
     function searchRecipes (query) {
       return $http.get(`/api/recipes/search?q=${query}`)
                 .then(({data}) => {

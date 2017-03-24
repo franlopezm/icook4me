@@ -21,6 +21,7 @@
       }
     }
 
+    /* Upload img to Cloudinary */
     vm.fileSelected = (files) => {
       if (files && files.length) {
         vm.file = files[0]

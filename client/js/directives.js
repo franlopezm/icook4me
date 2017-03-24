@@ -4,6 +4,7 @@
     .module('myDirectives', [])
     .directive('errSrc', errSrc)
 
+  /* Show default image if get error 404 in img tag html */
   function errSrc () {
     return {
       link: function (scope, element, attrs) {

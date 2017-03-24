@@ -1,33 +1,35 @@
-/* eslint no-undef: "off" */
-angular
+(function () {
+  'use strict'
+  angular
   .module('iCook4meApp')
   .run(runConfig)
 
-function runConfig ($rootScope, $location, StorageFact, AuthFact) {
+  function runConfig ($rootScope, $location, StorageFact, AuthFact) {
   /* Authentication autorization */
-  if (AuthFact.isLoggedIn()) {
-    const token = StorageFact.readToken()
-    AuthFact.setCredentials(token)
-  }
-
-  $rootScope.$on('$routeChangeStart', function (event, next, current) {
-    if (next && next.secure) {
-      if (!AuthFact.isLoggedIn()) {
-        $location.path('/login')
-      }
+    if (AuthFact.isLoggedIn()) {
+      const token = StorageFact.readToken()
+      AuthFact.setCredentials(token)
     }
-  })
 
-  /* History */
-  let history = []
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+      if (next && next.secure) {
+        if (!AuthFact.isLoggedIn()) {
+          $location.path('/login')
+        }
+      }
+    })
 
-  $rootScope.$on('$routeChangeSuccess', function () {
-    history.push($location.$$path)
-  })
+  /* History of visited pages */
+    let history = []
 
-  $rootScope.back = function () {
-    let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
-    $location.path(prevUrl)
-    history = []
+    $rootScope.$on('$routeChangeSuccess', function () {
+      history.push($location.$$path)
+    })
+
+    $rootScope.back = function () {
+      let prevUrl = history.length > 1 ? history.splice(-2)[0] : '/'
+      $location.path(prevUrl)
+      history = []
+    }
   }
-}
+})()

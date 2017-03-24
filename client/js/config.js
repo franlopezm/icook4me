@@ -1,14 +1,16 @@
-angular
+(function () {
+  'use strict'
+  angular
   .module('iCook4meApp')
   .config(configProvider)
   .config(configRoute)
 
-function configProvider ($httpProvider) {
-  $httpProvider.interceptors.push('AuthInterceptor')
-}
+  function configProvider ($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor')
+  }
 
-function configRoute ($routeProvider, $locationProvider) {
-  $routeProvider
+  function configRoute ($routeProvider, $locationProvider) {
+    $routeProvider
     .when('/login', {
       templateUrl: '/templates/login.html',
       controller: 'LoginCtrl',
@@ -75,5 +77,7 @@ function configRoute ($routeProvider, $locationProvider) {
       secure: true
     })
     .otherwise('/')
-  $locationProvider.html5Mode(true)
-}
+    /* remove #! of the routes, need to use $locationProvider */
+    $locationProvider.html5Mode(true)
+  }
+})()

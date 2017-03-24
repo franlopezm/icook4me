@@ -23,12 +23,13 @@
       if (recipes.length === 0) {
         vm.notFound = true
       }
+      /* Top of page in a new search */
       $location.hash('top')
       $anchorScroll()
       vm.aRecipes = recipes
     })
 
-    // Pagination functionality
+    /* Pagination */
     vm.paginationLimit = function () {
       return pageSize * pagesShown
     }

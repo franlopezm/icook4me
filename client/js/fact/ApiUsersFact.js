@@ -14,12 +14,14 @@
     }
 
   // Helper functions
+    /* Get loggedin user data */
     function getUser () {
       const userId = $rootScope.loggedUser.id
       return $http.get(`/api/user/${userId}`)
                 .then((data) => data)
     }
 
+    /* Get data from a particular user with populate */
     function getUserPopulate (id) {
       const url = `/api/user/all/${id}`
       return $http.get(url)
@@ -54,6 +56,7 @@
                 .then(({data}) => data)
     }
 
+    /* Get all recipes from a user's bookmarks */
     function getBookmarks () {
       const id = $rootScope.loggedUser.id
       return $http.get(`/api/user/bookmarks/${id}`)

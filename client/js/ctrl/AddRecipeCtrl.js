@@ -27,6 +27,7 @@
       }
     }
 
+    /* Pressing intro key adds an ingredient or step in the recipe */
     vm.keyPressAdd = (e) => {
       if (e.keyCode === 13) {
         if (e.target.name === 'ingredient') vm.addIngredient()
@@ -50,6 +51,7 @@
       vm.steps.splice(index, 1)
     }
 
+    /* Upload img to Cloudinary */
     vm.fileSelected = (files) => {
       if (files && files.length) {
         vm.file = files[0]

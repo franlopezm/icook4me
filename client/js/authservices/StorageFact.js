@@ -1,4 +1,3 @@
-/* eslint no-undef: "off" */
 (function () {
   'use strict'
   angular

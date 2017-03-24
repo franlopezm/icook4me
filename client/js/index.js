@@ -1,9 +1,12 @@
-angular
-  .module('iCook4meApp', [
-    'ngRoute',
-    'angular-jwt',
-    'infinite-scroll',
-    'ngFileUpload',
-    'myDirectives',
-    'myComponents'
-  ])
+(function () {
+  'use strict'
+  angular
+    .module('iCook4meApp', [
+      'ngRoute',
+      'angular-jwt',
+      'infinite-scroll',
+      'ngFileUpload',
+      'myDirectives',
+      'myComponents'
+    ])
+})()

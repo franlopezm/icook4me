@@ -16,6 +16,7 @@
         vm.showResult = true
       })
 
+    /* Pagination */
     vm.showMoreItems = function () {
       vm.limitation = showItems * page
       let result = vm.recipes.length / showItems

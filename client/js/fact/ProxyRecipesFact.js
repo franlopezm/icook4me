@@ -25,6 +25,7 @@
                 .then(({data}) => compareRecipes(data))
     }
 
+    /* Compare if the external recipe exists in the database to show the internal recipe. */
     function compareRecipes (data) {
       let newRecipes = ApiRecipesFact.getAllRecipesExternal()
         .then(recipes => {

@@ -11,6 +11,7 @@
 
     ApiRecipesFact.getAllRecipe(id)
       .then(data => {
+        /* If the recipe does not belong to the user does not allow editing */
         if (data.autor._id === $rootScope.loggedUser.id) {
           vm.title = data.title
           vm.description = data.description
@@ -40,6 +41,7 @@
       }
     }
 
+    /* Pressing intro key adds an ingredient or step in the recipe */
     vm.keyPressAdd = (e) => {
       if (e.keyCode === 13) {
         if (e.target.name === 'ingredient') vm.addIngredient()
@@ -63,6 +65,7 @@
       vm.steps.splice(index, 1)
     }
 
+    /* Upload img to Cloudinary */
     vm.fileSelected = (files) => {
       if (files && files.length) {
         vm.file = files[0]
