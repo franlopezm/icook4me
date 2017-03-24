@@ -229,6 +229,8 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
+        .thumbnail-recipe header h4 a::first-letter {
+          text-transform: uppercase; }
       .thumbnail-recipe header h4 a:hover {
         color: #ff9d4b;
         text-decoration: none; }

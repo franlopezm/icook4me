@@ -10,18 +10,20 @@
         </ul>
     </div>
 </section>
-<section>
-    <h3 class="title-section">Favoritos</h3>
-    <div ng-hide="vm.showResult">
-        <div class="alert alert-info">
-            <strong>Cargando recetas favoritas...</strong>
+<section class="receipe-details">
+    <section>
+        <h3 class="title-section">Recetas guardadas</h3>
+        <div ng-hide="vm.showResult">
+            <div class="alert alert-info">
+                <strong>Cargando recetas favoritas...</strong>
+            </div>
         </div>
-    </div>
-    <p>Recetas encontradas <strong>{{(vm.recipes | filter:vm.query).length}}</strong> de {{vm.recipes.length}} favoritas.</p>
-    <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
-        <article class="item-flex" ng-repeat="recipe in vm.recipes | filter: vm.query | limitTo: vm.limitation">
-            <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
-            <recipe-external ng-if="recipe.urlExternal" recipe=recipe></recipe-external>
-        </article>
-    </div>
+        <p>Recetas encontradas <strong>{{(vm.recipes | filter:vm.query).length}}</strong> de {{vm.recipes.length}} favoritas.</p>
+        <div ng-if="vm.recipes" class="col-flex" infinite-scroll="vm.showMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="vm.busy">
+            <article class="item-flex" ng-repeat="recipe in vm.recipes | filter: vm.query | limitTo: vm.limitation">
+                <recipe-internal ng-if="recipe.urlExternal === undefined" recipe=recipe></recipe-internal>
+                <recipe-external ng-if="recipe.urlExternal" recipe=recipe></recipe-external>
+            </article>
+        </div>
+    </section>
 </section>
