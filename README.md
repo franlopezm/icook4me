@@ -16,11 +16,13 @@ This repo contains full-stack project iCook4me in which users can share and sear
 
 iCook4me is made with NodeJS and ExpressJS for the part of the server, and the client part is made with AngularJS.
 
-### Installation
+---
+
+## Installation
 
 You need to have installed [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com/), [bower](https://bower.io/) and [MongoDB](https://www.mongodb.com/)
 
-#### Configuration `env` file
+### Configuration `env` file
 You need to create an **.env** file in the project root with the following environment variables configured:
 - Port:
 ```
@@ -53,7 +55,7 @@ You need to create an **.env** file in the project root with the following envir
 ```
 
 
-#### To run the server:
+### To run the server:
 ```
     npm start
 ```
