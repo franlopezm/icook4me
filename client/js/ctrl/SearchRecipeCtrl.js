@@ -9,10 +9,9 @@
     let {query} = $routeParams
     $rootScope.queryFood = query
     let vm = this
-    vm.showNoResult = true
-    vm.aRecipes = []
     let pagesShown = 1
     let pageSize = 12
+    vm.showNoResult = true
 
     $q.all([
       ProxyRecipesFact.searchFood2fork(query),
@@ -26,7 +25,7 @@
       }
       $location.hash('top')
       $anchorScroll()
-      vm.aRecipes.push(...recipes)
+      vm.aRecipes = recipes
     })
 
     // Pagination functionality
@@ -38,14 +37,13 @@
     }
     vm.showMoreItems = function () {
       let page = pagesShown + 1
-      ProxyRecipesFact.searchFood2fork(query, page)
-        .then(recipes => {
-          vm.aRecipes.push(...recipes)
-        })
-      ProxyRecipesFact.searchEdamam(query, page)
-        .then(recipes => {
-          vm.aRecipes.push(...recipes)
-        })
+      $q.all([
+        ProxyRecipesFact.searchFood2fork(query, page),
+        ProxyRecipesFact.searchEdamam(query, page)
+      ]).then(data => {
+        let recipes = [...data[0], ...data[1]]
+        vm.aRecipes.push(...recipes)
+      })
       pagesShown = page
     }
   }
