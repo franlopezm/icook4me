@@ -10,7 +10,7 @@
 [![SASS](https://github.com/FransLopez/logo-images/blob/master/logos/sass.png)](http://sass-lang.com/)  
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-#iCook4me
+# iCook4me
 
 This repo contains full-stack project iCook4me in which users can share and search for kitchen recipes.
 
