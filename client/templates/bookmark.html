@@ -12,10 +12,15 @@
 </section>
 <section class="receipe-details">
     <section>
-        <h3 class="title-section">Recetas guardadas</h3>
+        <h3 class="title-section">Recetas guardadas como favoritas</h3>
         <div ng-hide="vm.showResult">
             <div class="alert alert-info">
-                <strong>Cargando recetas favoritas...</strong>
+                <strong>Cargando recetas guardadas como favoritas...</strong>
+            </div>
+        </div>
+        <div ng-show="vm.recipes && vm.recipes.length === 0">
+            <div class="alert alert-info">
+                <strong>No hay recetas guardadas como favoritas</strong>
             </div>
         </div>
         <p>Recetas encontradas <strong>{{(vm.recipes | filter:vm.query).length}}</strong> de {{vm.recipes.length}} favoritas.</p>
