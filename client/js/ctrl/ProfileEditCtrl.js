@@ -17,7 +17,7 @@
       e.preventDefault()
       const name = vm.name
       if (name.replace(/\s/g, '') !== '') {
-        ApiUsersFact.updateUser(name, vm.imagegeLink, vm.description)
+        ApiUsersFact.updateUser(name, vm.imageLink, vm.description)
       }
     }
 
