@@ -31,7 +31,12 @@
       const url = '/upload'
       const file = vm.file
       Upload.upload({ url, file })
-            .success(({imageLink}) => { vm.imageLink = imageLink })
+            .success(({imageLink}) => {
+              if (vm.imageLink !== undefined) {
+                ApiUsersFact.removeImg(vm.imageLink)
+              }
+              vm.imageLink = imageLink
+            })
     }
   }
 })()

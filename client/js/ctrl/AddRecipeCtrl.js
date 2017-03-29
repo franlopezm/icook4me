@@ -4,7 +4,7 @@
     .module('iCook4meApp')
     .controller('AddRecipeCtrl', AddRecipeCtrl)
 
-  function AddRecipeCtrl ($rootScope, ApiRecipesFact, $q, $location, Upload) {
+  function AddRecipeCtrl ($rootScope, ApiRecipesFact, $q, $location, Upload, ApiUsersFact) {
     $rootScope.section = 'add'
     let vm = this
     vm.ingredients = []
@@ -61,7 +61,12 @@
       const url = '/upload'
       const file = vm.file
       Upload.upload({ url, file })
-            .success(({imageLink}) => { vm.imageLink = imageLink })
+            .success(({imageLink}) => {
+              if (vm.imageLink !== undefined) {
+                ApiUsersFact.removeImg(vm.imageLink)
+              }
+              vm.imageLink = imageLink
+            })
     }
   }
 })()

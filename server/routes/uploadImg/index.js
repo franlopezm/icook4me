@@ -5,6 +5,7 @@ const passport = require(__base + 'config/passport')
 
 const uploadFolderPath = path.join(global.__base, process.env.UPLOAD_FOLDER)
 const uploadCloudinary = require('./handlers/uploadCloudinary')
+const destroyCloudinary = require('./handlers/destroyCloudinary')
 
 const Router = express.Router()
 
@@ -18,5 +19,6 @@ Router
     const { imageLink } = req
     res.status(200).json({ imageLink })
   })
+  .post('/destroy', destroyCloudinary)
 
 module.exports = Router

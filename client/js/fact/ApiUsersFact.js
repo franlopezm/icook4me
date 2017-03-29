@@ -10,7 +10,8 @@
       getUserPopulate,
       updateUser,
       bookmark,
-      getBookmarks
+      getBookmarks,
+      removeImg
     }
 
   // Helper functions
@@ -68,6 +69,12 @@
           })
           return data.reverse()
         })
+    }
+
+    function removeImg (url) {
+      const idpublic = url
+      return $http.post('/upload/destroy', {idpublic})
+                .then(data => data)
     }
   }
 })()
