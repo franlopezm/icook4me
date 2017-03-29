@@ -60,6 +60,7 @@
             <li>
                 <button ng-if="vm.title !== '' && vm.ingredients.length !== 0 && vm.steps.length !== 0" type="button" ng-click="vm.updateRecipe($event)" class="btn btn-success">Guardar cambios</button>
                 <button ng-if="vm.title === '' || vm.ingredients.length === 0 || vm.steps.length === 0" type="submit " form="form-add-recipe" class="btn btn-success">Guardar cambios</button>
+                <button type="button" ng-click="vm.deleteRecipe()" class="btn btn-danger">Eliminar receta</button>
             </li>
         </ul>
     </div>

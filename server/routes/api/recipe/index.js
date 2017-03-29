@@ -4,16 +4,18 @@ const Router = express.Router()
 const getById = require('./handlers/getById')
 const getAllById = require('./handlers/getAllById')
 const add = require('./handlers/add')
+const addExternal = require('./handlers/addExternal')
 const updateById = require('./handlers/updateById')
 const updateLike = require('./handlers/updateLike')
-const addExternal = require('./handlers/addExternal')
+const deleteById = require('./handlers/deleteById')
 
 Router
-  .post('/', add)
   .get('/:id', getById)
-  .put('/:id', updateById)
-  .post('/external', addExternal)
   .get('/all/:id', getAllById)
+  .post('/', add)
+  .post('/external', addExternal)
+  .put('/:id', updateById)
   .put('/like/:id', updateLike)
+  .delete('/:id', deleteById)
 
 module.exports = Router

@@ -12,6 +12,7 @@
       getAllPopAutor,
       getAllRecipesExternal,
       updateRecipe,
+      deleteRecipe,
       searchRecipes,
       like
     }
@@ -67,6 +68,10 @@
     function updateRecipe (id, title, image, description, ingredients, steps) {
       return $http.put(`/api/recipe/${id}`, {title, image, description, ingredients, steps})
                 .then(data => data)
+    }
+
+    function deleteRecipe (id) {
+      return $http.delete(`/api/recipe/${id}`)
     }
 
     /* Search the internal recipes */

@@ -65,6 +65,11 @@
       vm.steps.splice(index, 1)
     }
 
+    vm.deleteRecipe = () => {
+      ApiRecipesFact.deleteRecipe(id)
+        .then($location.path('/profile'))
+    }
+
     /* Upload img to Cloudinary */
     vm.fileSelected = (files) => {
       if (files && files.length) {
