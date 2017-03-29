@@ -7,7 +7,7 @@
 
 [![Bootstrap](https://github.com/FransLopez/logo-images/blob/master/logos/bootstrap.png)](http://getbootstrap.com/)
 [![Bower](https://github.com/FransLopez/logo-images/blob/master/logos/bower.png)](https://bower.io/)
-[![SASS](https://github.com/FransLopez/logo-images/blob/master/logos/sass.png)](http://sass-lang.com/)  
+[![SASS](https://github.com/FransLopez/logo-images/blob/master/logos/sass.png)](http://sass-lang.com/) 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 # iCook4me
@@ -58,5 +58,48 @@ You need to create an **.env** file in the project root with the following envir
     npm start
 ```
 All dependencies will be installed automatically
+
+## API
+The server part has multiple Api endpoints using several routes:
+
+`/api` -> Serves the internal data of the users and recipes.
+`/auth` -> Serves the authentication options, register and login.
+`/proxy` -> Serves the external recipes.
+`/uploadImg` -> Serves the routes to upload pictures.
+
+## Built with:
+* **SublimeText**
+* **Front-end**
+    - AngularJS 1.6.3
+    - Angular-route: 1.6.3
+    - Angular-jwt: 0.1.9
+    - NgInfiniteScroll: 1.3.4
+    - Ng-file-upload-shim: 12.2.13
+    - Ng-file-upload: 12.2.13
+    - Bootstrap: 3.3.7
+    - Font-awesome: 4.7.0
+* **Back-end**
+    - express: 4.15.2
+    - dotenv: 4.0.0
+    - get-json: 0.0.3
+    - body-parser: 1.17.1
+    - jsonwebtoken: 7.3.0
+    - mongoose: 4.9.0
+    - passport: 0.3.2
+    - passport-jwt: 2.2.1
+    - passport-local-mongoose: 4.0.0
+    - bower: 1.8.0
+    - multer: 1.3.0
+    - cloudinary: 1.8.0
+    - del: 2.2.2
+
+## Authors
+[Francisco  López](https://github.com/FransLopez)
+
+## References
+- [Food2fork](http://food2fork.com/)
+- [Edamam](https://www.edamam.com/)
+- [Cloudinary](http://cloudinary.com/)
+- [ngInfiniteScroll](https://sroze.github.io/ngInfiniteScroll/)
 
 
