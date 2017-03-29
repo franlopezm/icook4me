@@ -60,8 +60,7 @@ You need to create an **.env** file in the project root with the following envir
 ```
 All dependencies will be installed automatically
 
-
-## API  
+## API
 The server part has multiple Api endpoints using several routes:
 
 `/api` -> Serves the internal data of the users and recipes.
