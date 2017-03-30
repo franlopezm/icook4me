@@ -66,6 +66,7 @@
     }
 
     vm.deleteRecipe = () => {
+      ApiUsersFact.removeImg(vm.imageLink)
       ApiRecipesFact.deleteRecipe(id)
         .then($location.path('/profile'))
     }

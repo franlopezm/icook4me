@@ -4,7 +4,7 @@
     .module('iCook4meApp')
     .controller('ProfileEditCtrl', ProfileEditCtrl)
 
-  function ProfileEditCtrl ($rootScope, ApiUsersFact, Upload) {
+  function ProfileEditCtrl ($rootScope, ApiUsersFact, ApiRecipesFact, Upload, AuthFact, $location) {
     $rootScope.section = 'profile'
     let vm = this
     ApiUsersFact.getUser()
@@ -19,6 +19,14 @@
       if (name.replace(/\s/g, '') !== '') {
         ApiUsersFact.updateUser(name, vm.imageLink, vm.description)
       }
+    }
+    vm.removeUser = () => {
+      ApiUsersFact.removeImg(vm.imageLink)
+      ApiUsersFact.deleteUser($rootScope.loggedUser.id)
+        .then(() => {
+          AuthFact.logout()
+          $location.path('/login')
+        })
     }
 
     /* Upload img to Cloudinary */

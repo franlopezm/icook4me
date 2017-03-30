@@ -11,7 +11,8 @@
       updateUser,
       bookmark,
       getBookmarks,
-      removeImg
+      removeImg,
+      deleteUser
     }
 
   // Helper functions
@@ -74,6 +75,11 @@
     function removeImg (url) {
       const idpublic = url
       return $http.post('/upload/destroy', {idpublic})
+                .then(data => data)
+    }
+
+    function deleteUser (id) {
+      return $http.delete(`/api/user/${id}`)
                 .then(data => data)
     }
   }
